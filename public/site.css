@@ -1,0 +1,52 @@
+/* This file is a demo which I dont use; I borrowed it fom lx10/public/site.css */
+
+body {
+    border-color: #AA0000;
+    border-style: solid;
+    border-width: 5px;
+    padding: 9px;
+    margin: 9px;
+    border-radius: 9px;
+
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: #000077;
+    font-weight: bold;
+}
+
+a:hover{ color: #BB0000; }
+
+a{ color: #0000AA; }
+
+div.syntax pre {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: #330000;
+    font-weight: bold;
+    border-radius: 15px;
+    padding-left:  11px;
+    background-color: #DDDDDD;
+}
+.sbar890 {overflow: scroll; width: 890px; overflow-y: hidden;}
+.sbar950 {overflow: scroll; width: 950px; overflow-y: hidden;}
+.sbar999 {overflow: scroll; width: 999px; overflow-y: hidden;}
+.sbarv300 {width: 990px; height: 300px; overflow: scroll;}
+.zebra_it table tr:nth-child(odd) {
+  background-color: #DDDDDD; }
+
+.rotate90img>img{margin: 122px; display:block; width: 900px; transform: rotate(90deg);}
+
+div.grey_corners {
+    border-radius: 15px;
+    padding-left:  11px;
+    background-color: #DDDDDD;
+}
+
+.dgreen_text { color: #006600; }
+.lgrey_text  { color: #444444 }
+.white_grey_text  { color: #CCCCCC }
+.notice      { color: #441212 }
+.alert       { color: #AA1122 }
+
+.field_blurb textarea { width: 400px; height: 70px}
