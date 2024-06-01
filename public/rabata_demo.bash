@@ -19,6 +19,11 @@ s3Key=$RABATAKEY10
 s3Secret=$RABATASK
 signature=`echo -en ${stringToSign} | openssl sha1 -hmac ${s3Secret} -binary | base64`
 
+# https://minio-py.min.io/
+
+
+exit
+
 /home/lc11/anaconda3/envs/lx12/bin/curl -X PUT -T "${file}" \
   -H "Host: ${bucket}.s3.rcs.rabata.io" \
   -H "Date: ${dateValue}" \
