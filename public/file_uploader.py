@@ -57,3 +57,8 @@ if __name__ == "__main__":
         print("error occurred.", exc)
 
 1
+'''
+(lx12) lc11@d81:~/lx/lx14/public$ python -i file_uploader.py
+error occurred. S3 operation failed; code: MethodNotAllowed, message: The specified method is not allowed against this resource, resource: /legex20240531, request_id: A8B5A4916E714FAC, host_id: None, bucket_name: legex20240531
+>>> 
+'''
