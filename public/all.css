@@ -18,3 +18,8 @@ body {
 a:hover{ color: #BB0000; }
 
 a{ color: #0000AA; }
+
+.iframe1 {
+  resize: both;
+  overflow: hidden;
+}

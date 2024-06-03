@@ -3,9 +3,19 @@
   <head>
     <title>LegalExamples</title>
     <link rel="stylesheet" href="/all.css">
+    <script src="/jquery-3.7.1.min.js"></script>
   </head>
 
   <body>
     <%= render 'layouts/body_table' %>
+
+    <script>
+      $(function() {
+      $("#iframe2").resizable({
+      alsoResize: "#iframe2 iframe",
+      handles: "se"
+      });
+      });
+    </script>    
   </body>
 </html>
