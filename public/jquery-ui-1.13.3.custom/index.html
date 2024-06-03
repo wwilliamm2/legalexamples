@@ -49,7 +49,16 @@
 	</style>
 </head>
 <body>
+<hr />
 
+<div class="resizable ui-widget-content ui-resizable">
+  <h3 class="ui-widget-header">Resizable</h3>
+  <div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div>
+  <div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div>
+  <div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div>
+</div>
+
+<hr />
 <h1>Welcome to jQuery UI!</h1>
 
 <div class="ui-widget">
@@ -498,6 +507,9 @@ $( "#dialog-link, #icons li" ).hover(
 		$( this ).removeClass( "ui-state-hover" );
 	}
 );
+
+$( ".resizable" ).resizable();
+
 </script>
 </body>
 </html>
