@@ -1,7 +1,13 @@
 %h1 Los Angeles County
+-mmonth_s = params['trfile'][0..6]
+%a(href='/counties/listem') Counties -> 
+%a(href='/counties/los_angeles') Los Angeles -> 
+%a(href="/counties/los_angeles_m/#{mmonth_s}") Los Angeles #{mmonth_s} -> 
+Los Angeles #{params["trfile"]}
+
 %p Some Tentative Rulings from a Department for a Specific Day of Court Hearings
 
--html_s = "https://jffjorg.github.io/lacourt/htmls/#{params['trfile']}"
-%a(target="po" href=html_s) PopOut: #{params['trfile']}
+-html_s = "https://jffjorg.github.io/lacourt/htmls/#{params["trfile"]}"
+%a(target="po" href=html_s) PopOut: #{params["trfile"]}
 %iframe(src=html_s width="100%" height="900px")
 

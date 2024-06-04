@@ -12,10 +12,22 @@ class CountiesController < ApplicationController
   end
 
   def los_angeles_m
+    @mmonth_s = params['mmonth']
+    # @mmonth_s = '2024_06'
+    # gpt, write demo Ruby syntax to create a regular expression from the string: '2024_06'
+    @mmonth_regex = Regexp.new(@mmonth_s)
     @html_f_s_a = []
     File.open("public/lacourt_file_list.txt", "r") do |file|
-      file.each_line do |line|
-        @html_f_s_a = @html_f_s_a + [line]
+      file.each_line do |line_s|
+        # if regexp made from mmonth_s matches line_s, add line_s to @html_f_s_a
+        
+        # gpt, write demo Ruby syntax to use a regular expression to
+        # match a string named line_s to regexp /2024_06/
+        
+        if line_s =~ @mmonth_regex #/2024_06/
+          @html_f_s_a = @html_f_s_a + [line_s]
+        end
+        
       end
     end
   end

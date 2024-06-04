@@ -1,14 +1,9 @@
-%h1 los_angeles_m.haml
-=params["mmonth"]
-
-%ul
-  %li
-    -html_s = "2024_06_03_BH__207.html"
-    %a(target="t10" href="/counties/los_angeles_tr/#{html_s}") #{html_s}
-
-  %li
-    -html_s = "2024_06_30_SE__C.html"
-    %a(href="https://jffjorg.github.io/lacourt/htmls/2024_06_30_SE__C.html") 2024_06_30_SE__C.html
+%h1 Los Angeles
+- mmonth_s = params["mmonth"]
+%a(href='/counties/listem') Counties -> 
+%a(href='/counties/los_angeles') Los Angeles ->
+Los Angeles #{mmonth_s}
+%p Some Tentative Rulings from Los Angeles County During a Specific Month.
 
 %ul
   - @html_f_s_a.each do |html_f_s|
