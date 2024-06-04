@@ -1,0 +1,5 @@
+~/lx/lx14/public/hello.txt
+hello
+June 2024
+cats and doggies
+bye
