@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+  get 'counties/listem'
+  get 'counties/contra_costa'
+  get 'counties/fresno'
+  get 'counties/los_angeles'
+  get 'counties/orange_county'
+  get 'counties/riverside'
+  get 'counties/sacramento'
+  get 'counties/san_bernadino'
+  get 'counties/san_luis_obispo'
+  get 'counties/san_mateo'
+  get 'counties/santa_clara'
+  get 'counties/santa_cruz'
+  get 'counties/sonoma'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   get 'home/about'
   get 'home/blog'
