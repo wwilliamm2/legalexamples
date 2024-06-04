@@ -9,6 +9,14 @@ class CountiesController < ApplicationController
   end
 
   def los_angeles
+    # Get a unique set of months from a list of files
+    @mmonth_s_a = []
+    File.open("public/lacourt_file_list.txt", "r") do |file|
+      file.each_line do |line_s|
+        @mmonth_s_a = @mmonth_s_a + [line_s[0..6]]
+      end
+    end
+    @mmonth_s_st = @mmonth_s_a.to_set()
   end
 
   def los_angeles_m

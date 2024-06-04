@@ -2,7 +2,7 @@
 
 
 @yr_mmonth_s_a = []
-File.open("public/lacourt_file_list.txt", "r") do |file|
+File.open("lacourt_file_list.txt", "r") do |file|
   file.each_line do |line_s|
     @yr_mmonth_s_a = @yr_mmonth_s_a + [line_s[0..6]]
   end
