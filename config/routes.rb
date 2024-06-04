@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   get 'counties/fresno'
   get 'counties/los_angeles'
 
-  get 'counties/los_angeles_m/:mmonth', to: 'counties#los_angeles_m'
+  get 'counties/los_angeles_m/:mmonth',  to: 'counties#los_angeles_m'
+  get 'counties/los_angeles_tr/:trfile', to: 'counties#los_angeles_tr'
   
   get 'counties/orange_county'
   get 'counties/riverside'
