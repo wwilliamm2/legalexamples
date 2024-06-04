@@ -11,6 +11,9 @@ class CountiesController < ApplicationController
   def los_angeles
   end
 
+  def los_angeles_m
+  end
+
   def orange_county
   end
 

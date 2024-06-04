@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   get 'counties/contra_costa'
   get 'counties/fresno'
   get 'counties/los_angeles'
+
+  get 'counties/los_angeles_m/:mmonth', to: 'counties#los_angeles_m'
+  
   get 'counties/orange_county'
   get 'counties/riverside'
   get 'counties/sacramento'
