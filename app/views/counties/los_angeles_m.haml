@@ -10,14 +10,8 @@
     -html_s = "2024_06_30_SE__C.html"
     %a(href="https://jffjorg.github.io/lacourt/htmls/2024_06_30_SE__C.html") 2024_06_30_SE__C.html
 
-- (42...47).each do |i|
-  %p= i
+%ul
+  - @html_f_s_a.each do |html_f_s|
+    %li
+      %a(target="t10" href="/counties/los_angeles_tr/#{html_f_s}") #{html_f_s}
 
-
-- File.open("/home/lc11/lx/lx14/public/lacourt_file_list.txt", "r") do |file|
-  # Operate on the file
-  file.each_line do |line|
-    # Process each line
-    %p= line
-  end
-end

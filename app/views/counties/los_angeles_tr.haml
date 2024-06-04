@@ -1,8 +1,7 @@
-%h1 los_angeles_tr.haml
-%p Some Tentative Rulings from a Department on a Specific Day
-=params['trfile']
+%h1 Los Angeles County
+%p Some Tentative Rulings from a Department for a Specific Day of Court Hearings
 
--trfile = '2024_06_03_BH__207.html'
 -html_s = "https://jffjorg.github.io/lacourt/htmls/#{params['trfile']}"
-%iframe(src=html_s)
+%a(target="po" href=html_s) PopOut: #{params['trfile']}
+%iframe(src=html_s width="100%" height="900px")
 

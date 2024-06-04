@@ -12,6 +12,12 @@ class CountiesController < ApplicationController
   end
 
   def los_angeles_m
+    @html_f_s_a = []
+    File.open("public/lacourt_file_list.txt", "r") do |file|
+      file.each_line do |line|
+        @html_f_s_a = @html_f_s_a + [line]
+      end
+    end
   end
 
   def los_angeles_tr
