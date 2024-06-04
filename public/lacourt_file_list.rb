@@ -13,11 +13,26 @@ File.open("hello.txt", "r") do |file|
   end
 end
 
-File.open("lacourt_file_list.txt", "r") do |file|
+File.open("/home/lc11/lx/lx14/public/lacourt_file_list.txt", "r") do |file|
   # Operate on the file
   file.each_line do |line|
     # Process each line
-    print line
+    'print line not now'
   end
 end
+
+lines_a = []
+File.open("/home/lc11/lx/lx14/public/lacourt_file_list.txt", "r") do |file|
+  # Operate on the file
+  file.each_line do |line|
+    # Process each line
+    lines_a = lines_a + [line]
+  end
+end
+
+lines_a
+print lines_a[0]
+print lines_a[5]
+
+
 

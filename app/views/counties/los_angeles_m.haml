@@ -9,3 +9,15 @@
   %li
     -html_s = "2024_06_30_SE__C.html"
     %a(href="https://jffjorg.github.io/lacourt/htmls/2024_06_30_SE__C.html") 2024_06_30_SE__C.html
+
+- (42...47).each do |i|
+  %p= i
+
+
+- File.open("/home/lc11/lx/lx14/public/lacourt_file_list.txt", "r") do |file|
+  # Operate on the file
+  file.each_line do |line|
+    # Process each line
+    %p= line
+  end
+end
