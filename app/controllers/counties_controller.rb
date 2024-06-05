@@ -16,7 +16,7 @@ class CountiesController < ApplicationController
         @mmonth_s_a = @mmonth_s_a + [line_s[0..6]]
       end
     end
-    @mmonth_s_st = @mmonth_s_a.to_set()
+    @mmonth_s_st = @mmonth_s_a.to_set() # maybe convert to array and sort later
   end
 
   def los_angeles_m
