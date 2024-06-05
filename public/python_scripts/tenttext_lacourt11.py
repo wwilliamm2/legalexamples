@@ -40,8 +40,9 @@ for html_file_s in sorted(html_file_s_l):
         soup = BeautifulSoup(cbf, 'html.parser')
     large_s = soup.text
     'Write the text to file so I can study it.'
-    with open(f'{folder_name_s}/soup.txt', 'w') as tf:
-        'do tf.write(large_s) if I want to see it during debugging'
+    '''with open(f'{folder_name_s}/soup.txt', 'w') as tf:
+        tf.write(large_s)
+        if I want to see it during debugging'''
     'Try to create a separate txt file for each tent_ruling.'
     tent_ruling_s_l = large_s.split('CASE_BOUNDARY')
     for r_i, tent_ruling_s in enumerate(tent_ruling_s_l):
