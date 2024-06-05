@@ -11,6 +11,12 @@ text/2023_09_18_ALH_3/text03.txt
 
 ref:
 ~dan/lc17/rt20.py
+
+Demo:
+bash tenttext_lacourt10.bash
+python tenttext_lacourt11.py
+bash tenttext_lacourt12.bash
+
 '''
 
 print('Busy ...')
@@ -20,11 +26,11 @@ from bs4 import BeautifulSoup
 
 os.makedirs('/tmp/lacourt_text/', exist_ok=True) # to store some files
 'Loop through a list of html files.'
-html_file_s_l = glob.glob('/tmp/lacourt_htmls/2024_0[5-6]_*.html')
+html_file_s_l = glob.glob('/tmp/lacourt_htmls/*.html')
 # depends on rsync -av ~tent1/tent1/lacourt/htmls/ /tmp/lacourt_htmls/
 for html_file_s in sorted(html_file_s_l):
     print(f'Processing html_file_s: {html_file_s}')
-    shutil.copy2(html_file_s, "/tmp/lacourt_text/")
+    # shutil.copy2(html_file_s, "/tmp/lacourt_text/")
     'Create a folder to store summaries for each html file.'
     folder_name_s = f"/tmp/lacourt_text/{os.path.basename(html_file_s).replace('.html','')}"
     os.makedirs(folder_name_s, exist_ok=True)
