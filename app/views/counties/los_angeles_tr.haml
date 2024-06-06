@@ -5,15 +5,22 @@
 %a(href="/counties/los_angeles_m/#{mmonth_s}") Los Angeles #{mmonth_s} -> 
 Los Angeles #{params["trfile"]}
 
-%p Some Tentative Rulings from a Department for a Specific Day of Court Hearings
+%p An HTML File of Some Tentative Rulings from a Department for a Specific Day of Court Hearings:
 
--html_s = "https://jffjorg.github.io/lacourt/htmls/#{params["trfile"]}"
-%a(target="po" href=html_s) PopOut: #{params["trfile"]}
+-html_s = "https://jffjorg.github.io/lacourt/htmls/#{params["trfile"]}.html"
+%a(target="po" href=html_s) #{params["trfile"]}.html
+
+%p The above HTML file should contain 0 or more Tentative Rulings.
+
+%p Some Plain Text [via Python "BeautifulSoup"] From Some of Those Rulings Might Be Linked Below:
 
 %ul
   -@txt_f_s_a[..-2].each do |txt_f_s|
     %li
       %a(target='t13' href="https://jffjorg.github.io/lacourt/text/#{params['trfile']}/#{txt_f_s[-19..]}") #{txt_f_s[-19..]}
 
+Also, 
+%a(target="po" href=html_s) #{params["trfile"]}.html
+is displayed to you from an iframe:
 %iframe(src=html_s width="100%" height="900px")
 
