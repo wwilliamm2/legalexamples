@@ -63,7 +63,7 @@ tr_fn_s_l = tr_files_s.split('\n')[:-1] # skip last 1
 
 # for tr_fn_s in tr_fn_s_l:
 # debug
-for tr_fn_s in tr_fn_s_l[-2:]:
+for tr_fn_s in tr_fn_s_l[-12:]:
     # debug
     summ_fn_s = tr_fn_s.replace('/tent_ruling_','/summary_')
     'I shd check if summ_fn_s exists so I dont overwrite it'
@@ -74,7 +74,7 @@ for tr_fn_s in tr_fn_s_l[-2:]:
     else:
         'remem to throttle API calls:'
         print('Busy with API ...')
-        time.sleep(33) # seconds
+        time.sleep(66) # seconds
         with open(tr_fn_s) as txtf:
             tr_pln_txt_s = txtf.read()
         'I shd call LLM here.'
