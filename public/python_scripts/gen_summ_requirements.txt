@@ -1,5 +1,0 @@
-# ~/lx/lx14/public/py/gen_summ_requirements10.txt
-# Rely on conda install before I rely on pip install
-# conda activate lx12
-# conda install conda-forge::langchain
-langchain_groq
