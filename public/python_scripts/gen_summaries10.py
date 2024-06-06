@@ -54,6 +54,15 @@ prompt = langchain_core.prompts.ChatPromptTemplate.from_messages(messages_l)
 'I use this to connect prompt to groq llama3_model:'
 chain = prompt | llama3_model | parser
 
+'Read the plain text file, txt_f_s, into a string, tent_ruling_s:'
+with open(txt_f_s) as txtf:
+    tent_ruling_s = txtf.read()
+
+'Prep a dict to help me call invoke():'
+invoke_d = {'tent_ruling': tent_ruling_s}
+'Rubber meets road:'
+tent_ruling_summary_s = chain.invoke(invoke_d)
+print(tent_ruling_summary_s)
 
 'done'
 
