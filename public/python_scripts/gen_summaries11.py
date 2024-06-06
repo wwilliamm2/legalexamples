@@ -73,13 +73,14 @@ for tr_fn_s in tr_fn_s_l[-2:]:
         f'{summ_fn_s} is a file, avoid it.'
     else:
         'remem to throttle API calls:'
-        'time.sleep(33) # seconds'
+        print('Busy with API ...')
+        time.sleep(33) # seconds
         with open(tr_fn_s) as txtf:
             tr_pln_txt_s = txtf.read()
-            'I shd call LLM here; 4now, fakeit.'
-            summary_s = 'fake_summary of tr_pln_txt_s[:9]\n'
-            with open(f'{summ_fn_s}', 'w') as sumf:
-                sumf.write(summary_s)
-            print(f'New summary: {summ_fn_s}')
+        'I shd call LLM here; 4now, fakeit.'
+        summary_s = 'fake_summary of {tr_pln_txt_s[:9]}\n'
+        with open(f'{summ_fn_s}', 'w') as sumf:
+            sumf.write(summary_s)
+        print(f'New summary: {summ_fn_s}')
 
 'not done yet'
