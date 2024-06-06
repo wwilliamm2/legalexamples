@@ -1,13 +1,13 @@
-'''~/lx/lx14/public/py/gen_summaries10.py'''
+'''gen_summaries11.py'''
 
 '''
-Practices operation of llama3 LLM model to generate summary of tent ruling.
-
 Reads filenames from tenttext_lacourt14.txt
 to generate llm-summaries of the corresponding text files.
 
 Ref:
+gen_summaries10.py
 ~dan/lc17/rt20.py
+
 '''
 
 print('Busy ...')
@@ -17,15 +17,12 @@ import langchain, langchain_core, langsmith, langchain_groq
 
 myts = str(datetime.datetime.now()).replace(' ','_')
 
-'Summarize this large file:'
-txt_f_s = 'lacourt/text/2024_07_19_LAM_71/tent_ruling_01.txt'
-
 os.environ["LANGCHAIN_ENDPOINT"]
 os.environ["LANGCHAIN_HUB_API_URL"]
 os.environ["LANGCHAIN_API_KEY"]
 os.environ["LANGCHAIN_HUB_API_KEY"]
 os.environ["LANGCHAIN_TRACING_V2"]
-os.environ["LANGCHAIN_PROJECT"]=f'gen_summaries10.py_{myts}'
+os.environ["LANGCHAIN_PROJECT"]=f'gen_summaries11.py_{myts}'
 os.environ["LANGCHAIN_PROJECT"]
 os.environ["OPENAI_API_KEY"]
 os.environ["GROQ_API_KEY"]
@@ -56,15 +53,4 @@ prompt = langchain_core.prompts.ChatPromptTemplate.from_messages(messages_l)
 'I use this to connect prompt to groq llama3_model:'
 chain = prompt | llama3_model | parser
 
-'Read the plain text file, txt_f_s, into a string, tent_ruling_s:'
-with open(txt_f_s) as txtf:
-    tent_ruling_s = txtf.read()
-
-'Prep a dict to help me call invoke():'
-invoke_d = {'tent_ruling': tent_ruling_s}
-'Rubber meets road:'
-tent_ruling_summary_s = chain.invoke(invoke_d)
-print(tent_ruling_summary_s)
-
-'done'
-
+'not done yet'
