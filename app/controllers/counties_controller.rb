@@ -44,6 +44,9 @@ class CountiesController < ApplicationController
     params['trfile']
     @trfile_regex = Regexp.new(params['trfile'])
     # I should match lines in public/py/tenttext_lacourt14.txt to params['trfile']
+    # Know that,
+    # I have a python script in public/py which reads filenames from tenttext_lacourt14.txt
+    # to generate llm-summaries of the corresponding text files.
     @txt_f_s_a = []
     File.open("public/py/tenttext_lacourt14.txt", "r") do |file|
       file.each_line do |line_s|
