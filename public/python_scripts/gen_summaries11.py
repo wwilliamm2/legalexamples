@@ -53,4 +53,12 @@ prompt = langchain_core.prompts.ChatPromptTemplate.from_messages(messages_l)
 'I use this to connect prompt to groq llama3_model:'
 chain = prompt | llama3_model | parser
 
+'''Use tenttext_lacourt14.txt, 
+a full of tr-file-names to drive a loop 
+which calls LLM to summarize each tr file.'''
+
+with open('tenttext_lacourt14.txt') as txtf:
+    tr_files_s = txtf.read()
+tr_fn_s_l = tr_files_s.split('\n')
+
 'not done yet'
