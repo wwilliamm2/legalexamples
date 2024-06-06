@@ -8,6 +8,10 @@ Los Angeles #{params["trfile"]}
 %p Some Tentative Rulings from a Department for a Specific Day of Court Hearings
 
 -html_s = "https://jffjorg.github.io/lacourt/htmls/#{params["trfile"]}"
+-txt_s = "https://jffjorg.github.io/lacourt/text/#{params["trfile"]}/tent_ruling_01.txt"
 %a(target="po" href=html_s) PopOut: #{params["trfile"]}
+%ul
+  %li
+    %a(target="txt" href=txt_s) Text
 %iframe(src=html_s width="100%" height="900px")
 
