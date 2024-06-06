@@ -1,0 +1,78 @@
+~/lx/lx14/public/py/gen_summaries10.py.txt
+
+
+(lx12) lc11@d81:~/lx/lx14/public/py$ 
+(lx12) lc11@d81:~/lx/lx14/public/py$ python -i gen_summaries10.py
+Busy ...
+Here is the summary in YAML format:
+
+```
+Case Number: 23STCV20031
+Plaintiff's Name: Lilit Keshishyan, Levon Ehtibaryan
+Defendant's Name: HG Law, Hyka A. Karapetian
+People Names:
+  - Ramon Alcantara
+  - Hyka Karapetian
+Company Names:
+  - HG Law
+  - Commercial Waste Services Inc.
+Places:
+  - Glendale, California
+  - Los Angeles
+Dates:
+  - June 27, 2017
+  - June 28, 2017
+  - August 22, 2022
+  - August 23, 2023
+  - March 19, 2024
+Events:
+  - Auto collision
+  - Filing of personal injury action
+  - Settlement of personal injury action
+  - Disbursement of settlement funds
+  - Forging of promissory note
+Money:
+  - $26,400 (attorneys' fees)
+  - $35,000 (settlement funds)
+  - $45,000 (settlement portion for Plaintiff Keshishyan)
+  - $35,000 (settlement portion for Plaintiff Ehtibaryan)
+Intentions:
+  - To represent Plaintiffs in personal injury action
+  - To advise Plaintiffs of potential or actual conflicts of interest
+  - To communicate settlement offers and obtain Plaintiffs' authorization
+Facts:
+  - Plaintiffs retained Defendants to represent them in personal injury action
+  - Plaintiffs allege that Defendants failed to disclose potential or actual conflicts of interest
+  - Plaintiffs allege that Defendants forged a promissory note
+Disputes:
+  - Plaintiffs claim that Defendants' conduct caused them to suffer actual financial damages
+Acts:
+  - Filing of demurrer
+  - Filing of motion to strike
+  - Forging of promissory note
+  - Failure to disclose potential or actual conflicts of interest
+  - Failure to communicate settlement offers and obtain Plaintiffs' authorization
+Agreements:
+  - Settlement agreement
+  - Promissory note
+Laws:
+  - California Code of Civil Procedure (C.C.P.) §430.10
+  - California Code of Civil Procedure (C.C.P.) §340.6
+  - California Civil Code (Civ. Code) §1710
+Roles:
+  - Judge
+  - Plaintiff
+  - Defendant
+  - Attorney
+Significant Statements:
+  - Demurrer tests the legal sufficiency of the allegations in a complaint
+  - Demurrer can be used to challenge defects that appear on the face of the pleading under attack or from matters outside the pleading that are judicially noticeable
+  - Court views the FAC as alleging at least 2 distinct wrongful acts by defendants
+```
+
+And here is a summary in English text:
+
+The tentative ruling is about a lawsuit between Lilit Keshishyan, Levon Ehtibaryan, and HG Law, represented by Hyka A. Karapetian. The lawsuit arises from a personal injury action that was settled without the plaintiffs' knowledge or consent. The court rules that the defendants' demurrer to the plaintiffs' complaint is sustained with 20 days leave to amend. The court also rules that the defendants' motion to strike is denied as moot. The court finds that the plaintiffs' complaint is uncertain and fails to state a claim for fraud. The court grants the defendants' demurrer to the plaintiffs' third cause of action, alleging fraud.
+>>> 
+>>> 
+(lx12) lc11@d81:~/lx/lx14/public/py$
