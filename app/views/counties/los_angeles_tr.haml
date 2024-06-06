@@ -14,12 +14,14 @@ Los Angeles #{params["trfile"]}
 
 %p Some Plain Text [via Python "BeautifulSoup"] From Some of Those Rulings Might Be Linked Below:
 
-%ul
+%table
   -@txt_f_s_a[..-2].each do |txt_f_s|
-    %li
-      %a(target='t13' href="https://jffjorg.github.io/lacourt/text/#{params['trfile']}/#{txt_f_s[-19..]}") #{txt_f_s[-19..]}
+    %tr
+      %td
+        %a(target='t13' href="https://jffjorg.github.io/lacourt/text/#{params['trfile']}/#{txt_f_s[-19..]}") #{txt_f_s[-19..]}
 
-Also, 
+
+%p Also, 
 %a(target="po" href=html_s) #{params["trfile"]}.html
 is displayed to you from an iframe:
 %iframe(src=html_s width="100%" height="900px")

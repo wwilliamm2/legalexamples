@@ -43,8 +43,7 @@ class CountiesController < ApplicationController
   def los_angeles_tr
     params['trfile']
     @trfile_regex = Regexp.new(params['trfile'])
-    txt_folder = "https://jffjorg.github.io/lacourt/text/#{params['trfile']}/"
-    # I should match params['trfile'] to lines in public/py/tenttext_lacourt14.txt
+    # I should match lines in public/py/tenttext_lacourt14.txt to params['trfile']
     @txt_f_s_a = []
     File.open("public/py/tenttext_lacourt14.txt", "r") do |file|
       file.each_line do |line_s|
