@@ -80,5 +80,6 @@ for tr_fn_s in tr_fn_s_l[:11]:
             summary_s = 'fake_summary of tr_pln_txt_s[:9]\n'
             with open(f'{summ_fn_s}', 'w') as sumf:
                 sumf.write(summary_s)
+            print(f'New summary: {summ_fn_s}')
 
 'not done yet'
