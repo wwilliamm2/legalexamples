@@ -67,13 +67,18 @@ for tr_fn_s in tr_fn_s_l[:11]:
     # debug
     summ_fn_s = tr_fn_s.replace('/tent_ruling_','/summary_')
     'I shd check if summ_fn_s exists so I dont overwrite it'
-    'remem to throttle API calls:'
-    'time.sleep(33) # seconds'
-    with open(tr_fn_s) as txtf:
-        tr_pln_txt_s = txtf.read()
-    'I shd call LLM here; 4now, fakeit.'
-    summary_s = 'fake_summary of tr_pln_txt_s[:9]\n'
-    with open(f'{summ_fn_s}', 'w') as sumf:
-        sumf.write(summary_s)
+    'gpt, write demo python syntax which checks if /tmp/hello.txt exists before I create it.'
+    'Use: os.path.isfile("/tmp/hello.txt")'
+    if os.path.isfile(summ_fn_s):
+        f'{summ_fn_s} is a file, avoid it.'
+    else:
+        'remem to throttle API calls:'
+        'time.sleep(33) # seconds'
+        with open(tr_fn_s) as txtf:
+            tr_pln_txt_s = txtf.read()
+            'I shd call LLM here; 4now, fakeit.'
+            summary_s = 'fake_summary of tr_pln_txt_s[:9]\n'
+            with open(f'{summ_fn_s}', 'w') as sumf:
+                sumf.write(summary_s)
 
 'not done yet'
