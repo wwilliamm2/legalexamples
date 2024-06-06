@@ -59,6 +59,21 @@ which calls LLM to summarize each tr file.'''
 
 with open('tenttext_lacourt14.txt') as txtf:
     tr_files_s = txtf.read()
-tr_fn_s_l = tr_files_s.split('\n')
+tr_fn_s_l = tr_files_s.split('\n')[:-1] # skip last 1
+
+# for tr_fn_s in tr_fn_s_l:
+# debug
+for tr_fn_s in tr_fn_s_l[:11]:
+    # debug
+    summ_fn_s = tr_fn_s.replace('/tent_ruling_','/summary_')
+    'I shd check if summ_fn_s exists so I dont overwrite it'
+    'remem to throttle API calls:'
+    'time.sleep(33) # seconds'
+    with open(tr_fn_s) as txtf:
+        tr_pln_txt_s = txtf.read()
+    'I shd call LLM here; 4now, fakeit.'
+    summary_s = 'fake_summary of tr_pln_txt_s[:9]\n'
+    with open(f'{summ_fn_s}', 'w') as sumf:
+        sumf.write(summary_s)
 
 'not done yet'
