@@ -9,7 +9,7 @@ Ref:
 '''
 
 print('Busy ...')
-import bs4, datetime, glob, inspect, json, operator, os, psycopg, pypdf, re, shutil, sys, time, typing
+import bs4, datetime, glob, inspect, json, operator, os, re, shutil, sys, time, typing
 
 
 'Summarize this large file:'
