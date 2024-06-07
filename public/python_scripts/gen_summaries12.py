@@ -64,7 +64,7 @@ tr_fn_s_l = tr_files_s.split('\n')[:-1] # skip last 1
 
 # for tr_fn_s in tr_fn_s_l:
 # debug
-for tr_fn_s in tr_fn_s_l[-12:]:
+for tr_fn_s in tr_fn_s_l[-22:]:
     # debug
     summ_fn_s = tr_fn_s.replace('/tent_ruling_','/summary_')
     'I shd check if summ_fn_s exists so I dont overwrite it'
