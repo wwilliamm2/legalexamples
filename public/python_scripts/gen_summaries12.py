@@ -84,8 +84,8 @@ for tr_fn_s in tr_fn_s_l[-1382:]:
             print('Busy with API ...')
             time.sleep(66) # seconds            
             'I shd call LLM here.'
-            'Send context sized <= 32001 (about 8000 tokens) to LLM.'
-            context_i = 32001
+            'Send context sized <= 31301 (about 8000 tokens) to LLM.'
+            context_i = 31301
             'Prep a dict to help me call invoke():'
             invoke_d = {'tent_ruling': tr_pln_txt_s[:context_i]}
             'Rubber meets road:'
@@ -93,5 +93,5 @@ for tr_fn_s in tr_fn_s_l[-1382:]:
             with open(f'{summ_fn_s}', 'w') as sumf:
                 sumf.write(summary_s)
             print(f'New summary: {summ_fn_s}')
+#
 
-'not done yet'
