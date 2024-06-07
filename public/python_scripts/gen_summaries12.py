@@ -76,7 +76,7 @@ for tr_fn_s in tr_fn_s_l[-12:]:
         with open(tr_fn_s) as txtf:
             tr_pln_txt_s = txtf.read() # Txt I want to summarize
         'If tr_pln_txt_s is large enough,'
-        if len(tr_pln_txt_s) > 400: # It interests me
+        if len(tr_pln_txt_s) > 700: # It interests me
             'remem to throttle API calls:'
             print('Busy with API ...')
             time.sleep(66) # seconds            
