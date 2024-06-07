@@ -1,4 +1,5 @@
 %h1 Los Angeles County
+-require 'net/http'
 -mmonth_s = params['trfile'][0..6]
 %a(href='/counties/listem') Counties -> 
 %a(href='/counties/los_angeles') Los Angeles -> 
@@ -19,6 +20,16 @@ Los Angeles #{params["trfile"]}
     %tr
       %td
         %a(target='t13' href="https://jffjorg.github.io/lacourt/text/#{params['trfile']}/#{txt_f_s[-19..]}") #{txt_f_s[-19..]}
+      %td .|.
+      %td
+        - summ_f_s = txt_f_s.sub('tent_ruling','summary')[-15..]
+        - hhref = "https://jffjorg.github.io/lacourt/text/#{params['trfile']}/#{summ_f_s}".chomp
+        - uri_s = "jffjorg.github.io/lacourt/text/#{params['trfile']}/#{summ_f_s}".chomp
+        - uri = URI(hhref)
+        - if Net::HTTP.get(uri).include?("404")
+          No Summary
+        - else
+          %a(target='t13' href=hhref) #{summ_f_s}
 
 
 %p Also, 
