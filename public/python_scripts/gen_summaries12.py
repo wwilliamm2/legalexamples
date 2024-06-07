@@ -64,7 +64,7 @@ tr_fn_s_l = tr_files_s.split('\n')[:-1] # skip last 1
 
 # for tr_fn_s in tr_fn_s_l:
 # debug
-for tr_fn_s in tr_fn_s_l[-42:]:
+for tr_fn_s in tr_fn_s_l[-382:]:
     # debug
     summ_fn_s = tr_fn_s.replace('/tent_ruling_','/summary_')
     'I shd check if summ_fn_s exists so I dont overwrite it'
@@ -77,12 +77,17 @@ for tr_fn_s in tr_fn_s_l[-42:]:
             tr_pln_txt_s = txtf.read() # Txt I want to summarize
         'If tr_pln_txt_s is large enough,'
         if len(tr_pln_txt_s) > 700: # It interests me
+            'Note the file name:'
+            print(f'Summarizing this file: {tr_fn_s}')
+            print(f'Its length in chars: {len(tr_pln_txt_s)}')
             'remem to throttle API calls:'
             print('Busy with API ...')
             time.sleep(66) # seconds            
             'I shd call LLM here.'
+            'Send context sized <= 32001 (about 8000 tokens) to LLM.'
+            context_i = 32001
             'Prep a dict to help me call invoke():'
-            invoke_d = {'tent_ruling': tr_pln_txt_s}
+            invoke_d = {'tent_ruling': tr_pln_txt_s[:context_i]}
             'Rubber meets road:'
             summary_s = chain.invoke(invoke_d)
             with open(f'{summ_fn_s}', 'w') as sumf:
