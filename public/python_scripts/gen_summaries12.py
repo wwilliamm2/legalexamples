@@ -94,6 +94,6 @@ for tr_fn_s in tr_fn_s_l[-1382:]:
                 sumf.write(summary_s)
             print(f'New summary: {summ_fn_s}')
             # Make note of invoke_d
-            with open(f'/tmp/invoke_d', 'w') as invdf:
+            with open(f'/tmp/invoke_d.txt', 'w') as invdf:
                 invdf.write(str(prompt.invoke(invoke_d)))
 #
