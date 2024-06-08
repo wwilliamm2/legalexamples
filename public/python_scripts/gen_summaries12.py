@@ -80,12 +80,10 @@ for tr_fn_s in tr_fn_s_l[-2999:]:
             'Note the file name:'
             print(f'Summarizing this file: {tr_fn_s}')
             print(f'Its length in chars: {len(tr_pln_txt_s)}')
-            'remem to throttle API calls:'
             print('Busy with API ...')
-            time.sleep(66) # seconds            
             'I shd call LLM here.'
-            'Send context sized <= 30401 (about 8000 tokens) to LLM.'
-            context_i = 30401
+            'Send context sized <= 30301 (about 8000 tokens) to LLM.'
+            context_i = 30301
             'Prep a dict to help me call invoke():'
             invoke_d = {'tent_ruling': tr_pln_txt_s[:context_i]}
             'Rubber meets road:'
@@ -96,4 +94,6 @@ for tr_fn_s in tr_fn_s_l[-2999:]:
             # Make note of invoke_d
             with open(f'/tmp/invoke_d.txt', 'w') as invdf:
                 invdf.write(str(prompt.invoke(invoke_d)))
-#
+            'remem to throttle API calls:'
+            print('Busy with API ...')
+            time.sleep(66) # seconds

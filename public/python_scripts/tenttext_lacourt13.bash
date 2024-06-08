@@ -3,8 +3,12 @@
 # ~/lx/lx14/public/py/tenttext_lacourt13.bash
 
 # Helps me prep text files for github.io repo for serving
+# --ignore-existing       skip updating files that already exist on receiver
+# --dry-run               perform a trial run with no changes made
+# --list-only             list the files instead of copying them
 
 rsync -av /tmp/lacourt_text/202* ~/lx/jffj/lacourt/text/
+
 du -sh ~/lx/jffj/lacourt/text/
 
 # cd ~/lx/jffj/lacourt/
