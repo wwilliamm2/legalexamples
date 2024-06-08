@@ -13,6 +13,8 @@ ref:
 ~dan/lc17/rt20.py
 
 Demo:
+ll ~/anaconda3/envs/
+. ~/lx/lx12_env.bash
 bash tenttext_lacourt10.bash
 python tenttext_lacourt11.py
 bash tenttext_lacourt12.bash
