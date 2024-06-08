@@ -1,0 +1,8 @@
+%h1 Summary
+=params
+=params['suffix_s']
+- demo_summ_url_s = 'https://jffjorg.github.io/lacourt/text/2024_06_03_LAM_32/summary_03.txt'
+- prefix_s = "https://jffjorg.github.io/lacourt/text/"
+- suffix2_s = "#{params['suffix_s'].sub('_summ','/summ')}.txt"
+- summ_url = "#{prefix_s}#{suffix2_s}"
+%iframe(src="#{summ_url}") width="888px")

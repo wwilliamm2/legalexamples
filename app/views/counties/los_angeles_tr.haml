@@ -24,12 +24,15 @@ Los Angeles #{params["trfile"]}
       %td
         - summ_f_s = txt_f_s.sub('tent_ruling','summary')[-15..]
         - hhref = "https://jffjorg.github.io/lacourt/text/#{params['trfile']}/#{summ_f_s}".chomp
-        - uri_s = "jffjorg.github.io/lacourt/text/#{params['trfile']}/#{summ_f_s}".chomp
         - uri = URI(hhref)
         - if Net::HTTP.get(uri).include?("404")
           No Summary
         - else
           %a(target='t13' href=hhref) #{summ_f_s}
+      %td .|.
+      %td
+        -suffix_s = hhref.sub('https://jffjorg.github.io/lacourt/text/','').sub('/summ','_summ').sub('.txt','')
+        %a(target='t14' href="/counties/los_angeles_summ_if/#{suffix_s}") #{summ_f_s}
 
 
 %p Also, 
