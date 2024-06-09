@@ -33,11 +33,8 @@ Los Angeles #{params["trfile"]}
         - if Net::HTTP.get(uri).include?("404")
           No Summary
         - else
-          %a(target='t13' href=hhref_s_s) #{summ_f_s}
-      %td .|.
-      %td
-        -suffix_s_s = hhref_s_s.sub('https://jffjorg.github.io/lacourt/text/','').sub('/summ','_summ').sub('.txt','')
-        %a(target='t14' href="/counties/los_angeles_summ_if/#{suffix_s_s}") #{summ_f_s}
+          -suffix_s_s = hhref_s_s.sub('https://jffjorg.github.io/lacourt/text/','').sub('/summ','_summ').sub('.txt','')
+          %a(target='t14' href="/counties/los_angeles_summ_if/#{suffix_s_s}") #{summ_f_s}
 
 
 %p Also, 
