@@ -1,8 +1,24 @@
 %h1 Summary
+
 - demo_summ_url_s = 'https://jffjorg.github.io/lacourt/text/2024_06_03_LAM_32/summary_03.txt'
 - prefix_s = "https://jffjorg.github.io/lacourt/text/"
 - suffix2_s = "#{params['suffix_s_s'].sub('_summ','/summ')}.txt"
 - summ_url = "#{prefix_s}#{suffix2_s}"
+
+%a(href='/counties/listem') Counties ->
+%br/
+%a(href='/counties/los_angeles') Los Angeles ->
+%br/
+-mmonth_s = suffix2_s[..6]
+%a(href="/counties/los_angeles_m/#{mmonth_s}") Los Angeles #{mmonth_s} ->
+-html_f_s = suffix2_s
+%br/
+-tr_s = html_f_s[..-16]
+%a(href="/counties/los_angeles_tr/#{tr_s}") Los Angeles #{tr_s} ->
+%br/
+Los Angeles #{suffix2_s}
+
+
 %p Summary URL:
 %p
   %a(href=summ_url target='t20') #{summ_url}
