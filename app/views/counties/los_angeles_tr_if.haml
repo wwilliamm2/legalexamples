@@ -1,11 +1,26 @@
-%h1 Tentative Ruling
+%h1 Los Angeles County Tentative Ruling
+
+-require 'net/http'
 - demo_tr_url_s = 'https://jffjorg.github.io/lacourt/text/2024_06_03_LAM_32/tent_ruling_03.txt'
 - prefix_s = "https://jffjorg.github.io/lacourt/text/"
 - suffix2_s = "#{params['suffix_t_s'].sub('_tent','/tent')}.txt"
 - tr_url = "#{prefix_s}#{suffix2_s}"
+
+%a(href='/counties/listem') Counties ->
+%br/
+%a(href='/counties/los_angeles') Los Angeles ->
+%br/
+-mmonth_s = suffix2_s[..6]
+%a(href="/counties/los_angeles_m/#{mmonth_s}") Los Angeles #{mmonth_s} ->
+%br/
+-tr_s = suffix2_s[..-20]
+%a(href="/counties/los_angeles_tr/#{tr_s}") Los Angeles #{tr_s} ->
+%br/
+Los Angeles #{suffix2_s}
+
 %p Tentative Ruling URL:
 %p
-  %a(href=tr_url target='t21') #{tr_url}
+  %a(href=tr_url target='t21') #{suffix2_s}
 %p The text here is not very human readable.
 %p The human readable text is here:
 
@@ -18,7 +33,17 @@ or
 -gh_html_s = "https://jffjorg.github.io/lacourt/htmls/#{html_f_s}"
 %a(target="t11" href=gh_html_s) #{html_f_s}.html
 
-%p The text here is intended for LLM software which will transform the text into a human readable summary.
+%p The text here is intended for LLM software which should transform the text into a human readable summary.
+
+-suffix_s_s = suffix2_s.sub('tent_ruling','summary')
+-hhref_s_s = "#{prefix_s}#{suffix_s_s}"
+
+-uri = URI(hhref_s_s)
+-if Net::HTTP.get(uri).include?("404")
+  But, this text has No Summary
+-else
+  %a(target='t15' href=hhref_s_s) #{suffix_s_s}
+
 %p Tentative Ruling Text [In an iframe-element]:
 %iframe#iframe1(src="#{tr_url}" width="100%" height="333")
 
