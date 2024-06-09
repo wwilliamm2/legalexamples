@@ -16,22 +16,25 @@ Los Angeles #{params["trfile"]}
 %p Some Plain Text [via Python "BeautifulSoup"] From Some of Those Rulings Might Be Linked Below:
 
 %table
+  -ght_s = 'https://jffjorg.github.io/lacourt/text/'
+  -trif_s = '/counties/los_angeles_tr_if/'
+  -sif_s  = '/counties/los_angeles_summ_if/'
   -@txt_f_s_a[..-2].each do |txt_f_s|
     %tr
       %td
-        - hhref_t_s = "https://jffjorg.github.io/lacourt/text/#{params['trfile']}/#{txt_f_s[-19..]}"
-        -suffix_t_s = hhref_t_s.sub('https://jffjorg.github.io/lacourt/text/','').sub('/tent','_tent').sub('.txt','')
-        %a(target='t14' href="/counties/los_angeles_tr_if/#{suffix_t_s}") #{txt_f_s[-19..]}
+        -hhref_t_s = "#{ght_s}#{params['trfile']}/#{txt_f_s[-19..]}"
+        -suffix_t_s = hhref_t_s.sub(ght_s,'').sub('/tent','_tent').sub('.txt','')
+        %a(target='t14' href="#{trif_s}#{suffix_t_s}") #{txt_f_s[-19..]}
       %td .|.
       %td
-        - summ_f_s = txt_f_s.sub('tent_ruling','summary')[-15..]
-        - hhref_s_s = "https://jffjorg.github.io/lacourt/text/#{params['trfile']}/#{summ_f_s}".chomp
-        - uri = URI(hhref_s_s)
-        - if Net::HTTP.get(uri).include?("404")
+        -summ_f_s = txt_f_s.sub('tent_ruling','summary')[-15..]
+        -hhref_s_s = "#{ght_s}#{params['trfile']}/#{summ_f_s}".chomp
+        -uri = URI(hhref_s_s)
+        -if Net::HTTP.get(uri).include?("404")
           No Summary
-        - else
-          -suffix_s_s = hhref_s_s.sub('https://jffjorg.github.io/lacourt/text/','').sub('/summ','_summ').sub('.txt','')
-          %a(target='t14' href="/counties/los_angeles_summ_if/#{suffix_s_s}") #{summ_f_s}
+        -else
+          -suffix_s_s = hhref_s_s.sub(ght_s,'').sub('/summ','_summ').sub('.txt','')
+          %a(target='t15' href="#{sif_s}#{suffix_s_s}") #{summ_f_s}
 
 
 %p Also, 
