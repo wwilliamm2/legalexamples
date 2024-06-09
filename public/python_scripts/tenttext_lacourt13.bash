@@ -23,6 +23,7 @@ du -sh ~/lx/jffj/lacourt/text/
 /bin/ls -1 ~/lx/jffj/lacourt/text/2023_0*/tent*.txt > ~/lx/lx14/public/py/tenttext_lacourt14.txt
 /bin/ls -1 ~/lx/jffj/lacourt/text/2023_1*/tent*.txt >> ~/lx/lx14/public/py/tenttext_lacourt14.txt
 /bin/ls -1 ~/lx/jffj/lacourt/text/2024_0*/tent*.txt >> ~/lx/lx14/public/py/tenttext_lacourt14.txt
+# Eventually these should not fail:
 /bin/ls -1 ~/lx/jffj/lacourt/text/2024_1*/tent*.txt >> ~/lx/lx14/public/py/tenttext_lacourt14.txt
 /bin/ls -1 ~/lx/jffj/lacourt/text/2025_0*/tent*.txt >> ~/lx/lx14/public/py/tenttext_lacourt14.txt
 /bin/ls -1 ~/lx/jffj/lacourt/text/2025_1*/tent*.txt >> ~/lx/lx14/public/py/tenttext_lacourt14.txt
