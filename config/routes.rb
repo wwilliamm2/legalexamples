@@ -6,7 +6,8 @@ Rails.application.routes.draw do
 
   get 'counties/los_angeles_m/:mmonth',  to: 'counties#los_angeles_m'
   get 'counties/los_angeles_tr/:trfile', to: 'counties#los_angeles_tr'
-  get 'counties/los_angeles_summ_if/:suffix_s', to: 'counties#los_angeles_summ_if'
+  get 'counties/los_angeles_summ_if/:suffix_s_s', to: 'counties#los_angeles_summ_if'
+  get 'counties/los_angeles_tr_if/:suffix_t_s', to: 'counties#los_angeles_tr_if'
   
   get 'counties/orange_county'
   get 'counties/riverside'

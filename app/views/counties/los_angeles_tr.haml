@@ -19,20 +19,25 @@ Los Angeles #{params["trfile"]}
   -@txt_f_s_a[..-2].each do |txt_f_s|
     %tr
       %td
-        %a(target='t13' href="https://jffjorg.github.io/lacourt/text/#{params['trfile']}/#{txt_f_s[-19..]}") #{txt_f_s[-19..]}
+        - hhref_t_s = "https://jffjorg.github.io/lacourt/text/#{params['trfile']}/#{txt_f_s[-19..]}"
+        %a(target='t13' href=hhref_t_s) #{txt_f_s[-19..]}
+      %td .|.
+      %td
+        -suffix_t_s = hhref_t_s.sub('https://jffjorg.github.io/lacourt/text/','').sub('/tent','_tent').sub('.txt','')
+        %a(target='t14' href="/counties/los_angeles_tr_if/#{suffix_t_s}") #{txt_f_s[-19..]}
       %td .|.
       %td
         - summ_f_s = txt_f_s.sub('tent_ruling','summary')[-15..]
-        - hhref = "https://jffjorg.github.io/lacourt/text/#{params['trfile']}/#{summ_f_s}".chomp
-        - uri = URI(hhref)
+        - hhref_s_s = "https://jffjorg.github.io/lacourt/text/#{params['trfile']}/#{summ_f_s}".chomp
+        - uri = URI(hhref_s_s)
         - if Net::HTTP.get(uri).include?("404")
           No Summary
         - else
-          %a(target='t13' href=hhref) #{summ_f_s}
+          %a(target='t13' href=hhref_s_s) #{summ_f_s}
       %td .|.
       %td
-        -suffix_s = hhref.sub('https://jffjorg.github.io/lacourt/text/','').sub('/summ','_summ').sub('.txt','')
-        %a(target='t14' href="/counties/los_angeles_summ_if/#{suffix_s}") #{summ_f_s}
+        -suffix_s_s = hhref_s_s.sub('https://jffjorg.github.io/lacourt/text/','').sub('/summ','_summ').sub('.txt','')
+        %a(target='t14' href="/counties/los_angeles_summ_if/#{suffix_s_s}") #{summ_f_s}
 
 
 %p Also, 

@@ -59,7 +59,11 @@ class CountiesController < ApplicationController
   end
 
   def los_angeles_summ_if
-    params['suffix_s']
+    params['suffix_s_s']
+  end
+  
+  def los_angeles_tr_if
+    params['suffix_t_s']
   end
   
 
