@@ -11,7 +11,7 @@ Los Angeles #{params["trfile"]}
 -html_s = "https://jffjorg.github.io/lacourt/htmls/#{params["trfile"]}.html"
 %a(target="po" href=html_s) #{params["trfile"]}.html
 
-%p The above HTML file should contain 0 or more Tentative Rulings.
+%p The above HTML file should contain 0 or more Tentative Rulings which should be human readable. You will probably need to use text-search in your browser to find the "Case Number" which interests you.
 
 %p Some Plain Text [via Python "BeautifulSoup"] From Some of Those Rulings Might Be Linked Below:
 
@@ -39,6 +39,7 @@ Los Angeles #{params["trfile"]}
 
 %p Also, 
 %a(target="po" href=html_s) #{params["trfile"]}.html
-is displayed to you from an iframe:
+%p is displayed to you from the iframe below. You will probably need to use text-search in your browser to find the "Case Number" which interests you:
+
 %iframe(src=html_s width="100%" height="500")
 
