@@ -20,9 +20,6 @@ Los Angeles #{params["trfile"]}
     %tr
       %td
         - hhref_t_s = "https://jffjorg.github.io/lacourt/text/#{params['trfile']}/#{txt_f_s[-19..]}"
-        %a(target='t13' href=hhref_t_s) #{txt_f_s[-19..]}
-      %td .|.
-      %td
         -suffix_t_s = hhref_t_s.sub('https://jffjorg.github.io/lacourt/text/','').sub('/tent','_tent').sub('.txt','')
         %a(target='t14' href="/counties/los_angeles_tr_if/#{suffix_t_s}") #{txt_f_s[-19..]}
       %td .|.
