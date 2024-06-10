@@ -64,7 +64,7 @@ tr_fn_s_l = tr_files_s.split('\n')[:-1] # skip last 1
 
 # for tr_fn_s in tr_fn_s_l:
 # debug
-for tr_fn_s in tr_fn_s_l[-3999:]:
+for tr_fn_s in tr_fn_s_l[-4999:]:
     # debug
     summ_fn_s = tr_fn_s.replace('/tent_ruling_','/summary_')
     'I shd check if summ_fn_s exists so I dont overwrite it'
@@ -82,8 +82,8 @@ for tr_fn_s in tr_fn_s_l[-3999:]:
             print(f'Its length in chars: {len(tr_pln_txt_s)}')
             print('Busy with API ...')
             'I shd call LLM here.'
-            'Send context sized <= 30301 (about 8000 tokens) to LLM.'
-            context_i = 30301
+            'Send context sized <= 30201 (about 8000 tokens) to LLM.'
+            context_i = 30201
             'Prep a dict to help me call invoke():'
             invoke_d = {'tent_ruling': tr_pln_txt_s[:context_i]}
             'Rubber meets road:'
