@@ -60,7 +60,7 @@ which calls LLM to summarize each tr file.'''
 
 with open('tenttext_lacourt14.txt') as txtf:
     tr_files_s = txtf.read()
-tr_fn_s_l = tr_files_s.split('\n')[:-1] # skip last 1
+tr_fn_s_l = sorted(tr_files_s.split('\n')[:-1]) # skip last 1
 
 # for tr_fn_s in tr_fn_s_l:
 # debug
