@@ -82,8 +82,8 @@ for tr_fn_s in tr_fn_s_l[-4999:]:
             print(f'Its length in chars: {len(tr_pln_txt_s)}')
             print('Busy with API ...')
             'I shd call LLM here.'
-            'Send context sized <= 30201 (about 8000 tokens) to LLM.'
-            context_i = 30201
+            'Send context sized <= 30101 (about 8000 tokens) to LLM.'
+            context_i = 30101
             'Prep a dict to help me call invoke():'
             invoke_d = {'tent_ruling': tr_pln_txt_s[:context_i]}
             'Rubber meets road:'
