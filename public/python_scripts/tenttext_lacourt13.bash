@@ -7,6 +7,10 @@
 # --dry-run               perform a trial run with no changes made
 # --list-only             list the files instead of copying them
 
+# gpt, write demo bash syntax which lists files in /dir1/ which are not in /dir2/.
+# see notin.bash
+
+
 rsync -av /tmp/lacourt_text/202* ~/lx/jffj/lacourt/text/
 
 du -sh ~/lx/jffj/lacourt/text/
