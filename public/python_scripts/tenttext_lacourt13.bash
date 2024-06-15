@@ -11,7 +11,9 @@
 # see notin.bash
 
 
-rsync -av /tmp/lacourt_text/202* ~/lx/jffj/lacourt/text/
+# done:
+# rsync -av /tmp/lacourt_text/2023* ~/lx/jffj/lacourt/text/
+rsync -av /tmp/lacourt_text/2024* ~/lx/jffj/lacourt/text/
 
 du -sh ~/lx/jffj/lacourt/text/
 
