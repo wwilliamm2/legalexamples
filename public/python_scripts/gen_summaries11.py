@@ -1,3 +1,5 @@
+avoid using this script
+use gen_summaries12.py
 '''gen_summaries11.py'''
 
 '''
