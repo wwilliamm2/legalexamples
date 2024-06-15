@@ -5,5 +5,7 @@
 
 rm -rf /tmp/lacourt_htmls/
 rm -rf /tmp/lacourt_text/
-rsync -av ~tent1/tent1/lacourt/htmls/ /tmp/lacourt_htmls/
+# done
+# rsync -av ~tent1/tent1/lacourt/htmls/2023* /tmp/lacourt_htmls/
+rsync -av ~tent1/tent1/lacourt/htmls/2024*   /tmp/lacourt_htmls/
 exit

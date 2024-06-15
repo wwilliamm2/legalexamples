@@ -28,7 +28,7 @@ from bs4 import BeautifulSoup
 
 os.makedirs('/tmp/lacourt_text/', exist_ok=True) # to store some files
 'Loop through a list of html files.'
-html_file_s_l = glob.glob('/tmp/lacourt_htmls/*.html')
+html_file_s_l = glob.glob('/tmp/lacourt_htmls/2024*.html')
 # depends on rsync -av ~tent1/tent1/lacourt/htmls/ /tmp/lacourt_htmls/
 for html_file_s in sorted(html_file_s_l):
     print(f'Processing html_file_s: {html_file_s}')
