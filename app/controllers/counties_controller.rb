@@ -87,6 +87,14 @@ class CountiesController < ApplicationController
 
   def santa_clara
     @mmonth_s_a = []
+    # Get a unique set of months from a list of files
+    @tmp_s_a = []
+    File.open("public/py/tentpdf_scscourt17.txt", "r") do |file|
+      file.each_line do |line_s|
+        @tmp_s_a = @tmp_s_a + [line_s[33..39]]
+      end
+    end
+    @mmonth_s_a = @tmp_s_a.to_set().to_a().sort
   end
 
   def santa_cruz
