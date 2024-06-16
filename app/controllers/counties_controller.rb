@@ -86,6 +86,7 @@ class CountiesController < ApplicationController
   end
 
   def santa_clara
+    @mmonth_s_a = []
   end
 
   def santa_cruz

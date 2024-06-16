@@ -1,2 +1,10 @@
-%h1 Counties#santa_clara
-%p Find me in app/views/counties/santa_clara.html.haml
+%h1 Santa Clara County
+
+%p Santa Clara Data Starts at 2023-09-16
+
+- @mmonth_s_a = []
+%ul
+  - @mmonth_s_a.each do |mmonth_s|
+    %li
+      %a(target="t12" href="/counties/santa_clara_m/#{mmonth_s}") Santa Clara #{mmonth_s}
+
