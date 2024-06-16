@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   get 'counties/santa_clara'
   get 'counties/santa_clara_m/:mmonth',  to: 'counties#santa_clara_m'
+  get 'counties/santa_clara_tr/:trfile', to: 'counties#santa_clara_tr'
 
   get 'counties/santa_cruz'
   get 'counties/sonoma'
