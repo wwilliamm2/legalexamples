@@ -1,0 +1,12 @@
+%h1 Santa Clara
+- mmonth_s = params["mmonth"]
+%a(href='/counties/listem') Counties -> 
+%a(href='/counties/santa_clara') Santa Clara ->
+Santa Clara #{mmonth_s}
+%p Some Tentative Rulings from Santa Clara County During a Specific Month.
+
+%ul
+  - @pdf_f_s_a.each do |pdf_f_s|
+    %li
+      %a(target="t10" href="/counties/santa_clara_tr/#{pdf_f_s}") #{pdf_f_s}
+

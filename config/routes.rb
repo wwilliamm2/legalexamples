@@ -15,7 +15,10 @@ Rails.application.routes.draw do
   get 'counties/san_bernadino'
   get 'counties/san_luis_obispo'
   get 'counties/san_mateo'
+
   get 'counties/santa_clara'
+  get 'counties/santa_clara_m/:mmonth',  to: 'counties#santa_clara_m'
+
   get 'counties/santa_cruz'
   get 'counties/sonoma'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
