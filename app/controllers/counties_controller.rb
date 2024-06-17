@@ -18,7 +18,7 @@ class CountiesController < ApplicationController
     end
     @mmonth_s_a = @tmp_s_a.to_set().to_a().sort
   end
-
+  
   def los_angeles_m
     @mmonth_s = params['mmonth']
     # @mmonth_s = '2024_06'
@@ -103,15 +103,21 @@ class CountiesController < ApplicationController
     @pdf_f_s_a = []
     File.open("public/py/tentpdf_scscourt17.txt", "r") do |file|
       file.each_line do |line_s|
+        lline_s = line_s.sub('/home/lc11/lx/jffj/scscourt/pdfs/','').sub('.pdf','')
         # if regexp made from mmonth_s matches line_s, add line_s to @pdf_f_s_a
-        if line_s =~ @mmonth_regex #/2024_06/
-          @pdf_f_s_a = @pdf_f_s_a + [line_s.sub('/home/lc11/lx/jffj/scscourt/pdfs/','')]
+        if lline_s =~ @mmonth_regex #/2024_06/
+          @pdf_f_s_a = @pdf_f_s_a + [lline_s]
         end
         
       end
     end
   end
 
+  def santa_clara_tr
+    params['trfile']
+  end
+
+  
   def santa_cruz
   end
 
