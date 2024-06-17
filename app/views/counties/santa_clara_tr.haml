@@ -6,9 +6,11 @@
 %a(href="/counties/santa_clara_m/#{mmonth_s}") Santa Clara #{mmonth_s} -> 
 Santa Clara #{params["trfile"]}
 
-%p A PDF File of Some Tentative Rulings from a Department for a Specific Day of Court Hearings:
+%p This PDF File contains some Tentative Rulings from a department for a specific day of court hearings.
 
 -pdf_s = "https://jffjorg.github.io/scscourt/pdfs/#{params["trfile"]}.pdf"
-%a(target="po" href=pdf_s) #{params["trfile"]}.pdf
+/ %a(target="po" href=pdf_s) #{params["trfile"]}.pdf
 
-%p The above PDF file should contain 0 or more Tentative Rulings which should be human readable. You will probably need to use text-search in your browser to find the "Case Number" which interests you.
+%p The PDF file should contain 0 or more Tentative Rulings which should be human readable. You will probably need to use text-search in your browser to find the "Case Number" which interests you.
+
+%iframe(src=pdf_s width="100%" height="700")
