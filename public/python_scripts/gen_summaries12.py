@@ -87,13 +87,16 @@ for tr_fn_s in tr_fn_s_l[-13199:]:
             'Prep a dict to help me call invoke():'
             invoke_d = {'tent_ruling': tr_pln_txt_s[:context_i]}
             'Rubber meets road:'
-            summary_s = chain.invoke(invoke_d)
-            with open(f'{summ_fn_s}', 'w') as sumf:
-                sumf.write(summary_s)
-            print(f'New summary: {summ_fn_s}')
-            # Make note of invoke_d
-            with open(f'/tmp/invoke_d.txt', 'w') as invdf:
-                invdf.write(str(prompt.invoke(invoke_d)))
-            'remem to throttle API calls:'
-            print('Busy with API ...')
-            time.sleep(66) # seconds
+            try:
+                summary_s = chain.invoke(invoke_d)
+                with open(f'{summ_fn_s}', 'w') as sumf:
+                    sumf.write(summary_s)
+                    print(f'New summary: {summ_fn_s}')
+                    # Make note of invoke_d
+                with open(f'/tmp/invoke_d.txt', 'w') as invdf:
+                    invdf.write(str(prompt.invoke(invoke_d)))
+                'remem to throttle API calls:'
+                print('Busy with API ...')
+                time.sleep(66) # seconds
+            except:
+                time.sleep(600) # 10min
