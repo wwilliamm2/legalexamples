@@ -10,6 +10,7 @@ date
 date
 
 . ~/lx/lx12_env.bash
+date
 
 ~/anaconda3/envs/lx12/bin/python tenttext_lacourt11.py
 date
