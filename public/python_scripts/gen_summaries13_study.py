@@ -72,7 +72,7 @@ tr_fn_s_l = sorted(tr_files_s.split('\n')[:-1]) # skip last 1
 
 # for tr_fn_s in tr_fn_s_l:
 # debug
-for tr_fn_s in tr_fn_s_l[-5:]:
+for tr_fn_s in tr_fn_s_l[-11:]:
     # debug , Only a few please.
     summ_fn_s = tr_fn_s.replace('/tent_ruling_','/summary_')
     'I shd check if summ_fn_s exists so I dont overwrite it'
