@@ -1,6 +1,8 @@
 '''~/lx/lx14/public/py/gen_summaries10.py'''
 
 '''
+NOT USED ANYMORE.
+
 Practices operation of llama3 LLM model to generate summary of tent ruling.
 
 Reads filenames from tenttext_lacourt14.txt
