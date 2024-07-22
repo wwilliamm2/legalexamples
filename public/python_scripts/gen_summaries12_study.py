@@ -91,7 +91,7 @@ for tr_fn_s in tr_fn_s_l:
             print('Busy with API ...')
             'I shd call LLM here.'
             'Send context sized <= 30011 (about 8000 tokens) to LLM.'
-            context_i = 30011
+            context_i = 29011
             'Prep a dict to help me call invoke():'
             invoke_d = {'tent_ruling': tr_pln_txt_s[:context_i]}
             'Rubber meets road:'
@@ -103,7 +103,7 @@ for tr_fn_s in tr_fn_s_l:
                     sumf.write(summary_s)
                     print(f'New FAKE summary: {summ_fn_s}')
                     # Make note of invoke_d
-                with open(f'/tmp/invoke_d.txt', 'w') as invdf:
+                with open(f'/tmp/invoke_d_{len(tr_pln_txt_s)}.txt', 'w') as invdf:
                     invdf.write(str(prompt.invoke(invoke_d)))
                 'DONT remem to throttle API calls:'
                 #print('Busy with API ...')
