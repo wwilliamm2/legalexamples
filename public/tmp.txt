@@ -8680,6 +8680,7 @@
 /home/lc11/lx/jffj/lacourt/htmls/2024_07_24_SS__28.html
 /home/lc11/lx/jffj/lacourt/htmls/2024_07_25_CIT_6.html
 /home/lc11/lx/jffj/lacourt/htmls/2024_07_25_EA__O.html
+/home/lc11/lx/jffj/lacourt/htmls/2024_07_25_ING_8.html
 /home/lc11/lx/jffj/lacourt/htmls/2024_07_25_LAM_19.html
 /home/lc11/lx/jffj/lacourt/htmls/2024_07_25_LAM_48.html
 /home/lc11/lx/jffj/lacourt/htmls/2024_07_29_CIT_6.html

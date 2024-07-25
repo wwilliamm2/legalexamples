@@ -41273,11 +41273,17 @@
 /home/lc11/lx/jffj/lacourt/text/2024_07_25_CIT_6/tent_ruling_01.txt
 /home/lc11/lx/jffj/lacourt/text/2024_07_25_CIT_6/tent_ruling_02.txt
 /home/lc11/lx/jffj/lacourt/text/2024_07_25_CIT_6/tent_ruling_03.txt
+/home/lc11/lx/jffj/lacourt/text/2024_07_25_CIT_6/tent_ruling_04.txt
+/home/lc11/lx/jffj/lacourt/text/2024_07_25_CIT_6/tent_ruling_05.txt
+/home/lc11/lx/jffj/lacourt/text/2024_07_25_CIT_6/tent_ruling_06.txt
 /home/lc11/lx/jffj/lacourt/text/2024_07_25_EA__O/tent_ruling_01.txt
 /home/lc11/lx/jffj/lacourt/text/2024_07_25_EA__O/tent_ruling_02.txt
 /home/lc11/lx/jffj/lacourt/text/2024_07_25_EA__O/tent_ruling_03.txt
 /home/lc11/lx/jffj/lacourt/text/2024_07_25_EA__O/tent_ruling_04.txt
 /home/lc11/lx/jffj/lacourt/text/2024_07_25_EA__O/tent_ruling_05.txt
+/home/lc11/lx/jffj/lacourt/text/2024_07_25_ING_8/tent_ruling_01.txt
+/home/lc11/lx/jffj/lacourt/text/2024_07_25_ING_8/tent_ruling_02.txt
+/home/lc11/lx/jffj/lacourt/text/2024_07_25_ING_8/tent_ruling_03.txt
 /home/lc11/lx/jffj/lacourt/text/2024_07_25_LAM_19/tent_ruling_01.txt
 /home/lc11/lx/jffj/lacourt/text/2024_07_25_LAM_19/tent_ruling_02.txt
 /home/lc11/lx/jffj/lacourt/text/2024_07_25_LAM_48/tent_ruling_01.txt
