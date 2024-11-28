@@ -21,8 +21,6 @@ date
 /bin/bash tenttext_lacourt12.bash
 date
 
-exit
-
 /bin/bash tenttext_lacourt13.bash
 date
 
