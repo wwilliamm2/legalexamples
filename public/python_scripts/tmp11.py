@@ -14,7 +14,7 @@ ref:
 
 Demo:
 ll ~/anaconda3/envs/
-. ~/lx/lx12_env.bash
+. ~/lx/lx14/public/lx14b_env.bash
 bash tenttext_lacourt10.bash
 python tenttext_lacourt11.py
 bash tenttext_lacourt12.bash
@@ -28,14 +28,19 @@ from bs4 import BeautifulSoup
 
 os.makedirs('/tmp/lacourt_text/', exist_ok=True) # to store some files
 'Loop through a list of html files.'
-html_file_s_l = glob.glob('/tmp/lacourt_htmls/202[4-5]*.html')
+html_file_s_l = glob.glob('/tmp/lacourt_htmls/2024*.html')
+
+# DEBUGGING
+html_file_s_l = glob.glob('/tmp/lacourt_htmls/2024*.html')[:11]
+# DEBUGGING
+
 # depends on rsync -av ~tent1/tent1/lacourt/htmls/ /tmp/lacourt_htmls/
 for html_file_s in sorted(html_file_s_l):
     print(f'Processing html_file_s: {html_file_s}')
-    # shutil.copy2(html_file_s, "/tmp/lacourt_text/")
     'Create a folder to store summaries for each html file.'
     folder_name_s = f"/tmp/lacourt_text/{os.path.basename(html_file_s).replace('.html','')}"
     os.makedirs(folder_name_s, exist_ok=True)
+
     'Extract html syntax into giant string'
     with open(html_file_s, 'r') as hf:
         html_s = hf.read()
@@ -47,6 +52,7 @@ for html_file_s in sorted(html_file_s_l):
     with open(f'{folder_name_s}/html_cb.html', 'r') as cbf:
         soup = BeautifulSoup(cbf, 'html.parser')
     large_s = soup.text
+    
     'Write the text to file so I can study it.'
     '''with open(f'{folder_name_s}/soup.txt', 'w') as tf:
         tf.write(large_s)
