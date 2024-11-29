@@ -91,7 +91,7 @@ class CountiesController < ApplicationController
     @tmp_s_a = []
     File.open("public/py/tentpdf_scscourt17.txt", "r") do |file|
       file.each_line do |line_s|
-        @tmp_s_a = @tmp_s_a + [line_s[33..39]]
+        @tmp_s_a = @tmp_s_a + [line_s[32..38]]
       end
     end
     @mmonth_s_a = @tmp_s_a.to_set().to_a().sort
@@ -103,7 +103,7 @@ class CountiesController < ApplicationController
     @pdf_f_s_a = []
     File.open("public/py/tentpdf_scscourt17.txt", "r") do |file|
       file.each_line do |line_s|
-        lline_s = line_s.sub('/home/lc11/lx/jffj/scscourt/pdfs/','').sub('.pdf','')
+        lline_s = line_s.sub('/home/dan/lx/jffj/scscourt/pdfs/','').sub('.pdf','')
         # if regexp made from mmonth_s matches line_s, add line_s to @pdf_f_s_a
         if lline_s =~ @mmonth_regex #/2024_06/
           @pdf_f_s_a = @pdf_f_s_a + [lline_s]
