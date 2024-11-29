@@ -60,7 +60,7 @@ with open('tenttext_lacourt14.txt') as txtf:
     tr_files_s = txtf.read()
 tr_fn_s_l = sorted(tr_files_s.split('\n')[:-1]) # skip last 1
 
-for tr_fn_s in tr_fn_s_l[-299:]:
+for tr_fn_s in tr_fn_s_l[-1299:]:
     summ_fn_s = tr_fn_s.replace('/tent_ruling_','/summary_')
     'I shd check if summ_fn_s exists so I dont overwrite it'
     'gpt, write demo python syntax which checks if /tmp/hello.txt exists before I create it.'
