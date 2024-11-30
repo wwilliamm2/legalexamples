@@ -13,14 +13,14 @@
 
 # done:
 # rsync -av /tmp/lacourt_text/2023* ~/lx/jffj/lacourt/text/
-rsync -av /tmp/lacourt_text/2024* ~/lx/jffj/lacourt/text/
+rsync -av /tmp/lacourt_text/202* ~/lx/jffj/lacourt/text/
 
 du -sh ~/lx/jffj/lacourt/text/
 
-# cd ~/lx/jffj/lacourt/
-# git add text
-# git commit -am more-text
-# git push origin main
+cd ~/lx/jffj/lacourt/
+git add text
+git commit -am more-text
+git push origin main
 
 # /bin/ls -1 ~/lx/jffj/lacourt/text/202*/tent*.txt > ~/lx/lx14/public/py/tenttext_lacourt14.txt
 # bash: /bin/ls: Argument list too long
