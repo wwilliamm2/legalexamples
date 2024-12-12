@@ -29,17 +29,18 @@ rm -f /tmp/R2pdfs2.txt
 for cn in `cat /tmp/R2cases1.txt`
 do
     r2p=r2:2024-1209kv/ca/sacramento/cases/real_property/
-    $rclone lsf ${r2p}${cn}|sed "s|^|$cn/|">> /tmp/R2pdfs2.txt
+    $rclone lsf ${r2p}${cn}|sed "s|^|$cn|">> /tmp/R2pdfs2.txt
 done
 
 r2prefix=https://lglx.org/ca/sacramento/cases/real_property/
 
-rm -f /tmp/R2pdfs3.txt
+rm -f /tmp/R2hrefs1.txt /tmp/R2hrefs2.txt
 
 for pdf in `cat /tmp/R2pdfs2.txt`
 do
     href=${r2prefix}${pdf}
-    echo $href >> /tmp/R2pdfs3.txt
+    echo $href >> /tmp/R2hrefs1.txt
+    echo '<a href="'${href}'">'${href}'</a>' >> /tmp/R2hrefs2.txt
 done
 
 exit
