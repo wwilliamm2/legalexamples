@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'counties/orange_county'
   get 'counties/riverside'
   get 'counties/sacramento'
+  get "/counties/R2hrefs_hr1.html", to: redirect('/R2hrefs_hr1.html')
   get 'counties/san_bernadino'
   get 'counties/san_luis_obispo'
   get 'counties/san_mateo'
