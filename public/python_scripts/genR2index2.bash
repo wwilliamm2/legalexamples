@@ -19,17 +19,16 @@ rclone=~/anaconda3/envs/r2/bin/rclone
 
 cd ~/lx/lx14/public/
 
-# $rclone lsf r2:2024-1209kv/ca/sacramento/cases/real_property/ | sort > /tmp/R2cases1.txt
-
 # dev only
-$rclone lsf r2:2024-1209kv/ca/sacramento/cases/real_property/ | grep 23CV000 > /tmp/R2cases1.txt
+#$rclone lsf r2:2024-1209kv/ca/sacramento/cases/real_property/ | grep 23CV000 > /tmp/R2cases1.txt
 # dev only
+r2p=r2:2024-1209kv/ca/sacramento/cases/real_property/
+$rclone lsf $r2p | sort > /tmp/R2cases1.txt
 
 rm -f /tmp/R2pdfs2.txt
 
 for cn in `cat /tmp/R2cases1.txt`
 do
-    r2p=r2:2024-1209kv/ca/sacramento/cases/real_property/
     $rclone lsf ${r2p}${cn}|sed "s|^|$cn|">> /tmp/R2pdfs2.txt
 done
 
