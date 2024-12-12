@@ -2,8 +2,8 @@
 
 # ~/lx/lx14/public/py/genR2index2.bash
 
-# Generates a sorted list of cases     in my R2 bucket.
-# Generates a sorted list of pdf files in my R2 bucket.
+# Generates a sorted list of cases     from my R2 bucket.
+# Generates a sorted list of pdf files from my R2 bucket.
 
 # demo:
 # conda activate r2
@@ -26,6 +26,7 @@ $rclone lsf r2:2024-1209kv/ca/sacramento/cases/real_property/ | grep 23CV000 > /
 # dev only
 
 rm -f /tmp/R2pdfs2.txt
+
 for cn in `cat /tmp/R2cases1.txt`
 do
     r2p=r2:2024-1209kv/ca/sacramento/cases/real_property/
@@ -34,14 +35,19 @@ done
 
 r2prefix=https://lglx.org/ca/sacramento/cases/real_property/
 
-rm -f /tmp/R2hrefs1.txt /tmp/R2hrefs2.txt
+rm -f /tmp/R2hrefs1.txt /tmp/R2hrefs2.html /tmp/R2hrefs_hr1.html
 
 for pdf in `cat /tmp/R2pdfs2.txt`
 do
     href=${r2prefix}${pdf}
     echo $href >> /tmp/R2hrefs1.txt
-    echo '<a href="'${href}'">'${href}'</a>' >> /tmp/R2hrefs2.txt
+    echo '<a href="'${href}'">'${href}'</a>' >> /tmp/R2hrefs2.html
+    echo '<a href="'${href}'">'${href}'</a><hr />' >> /tmp/R2hrefs_hr1.html
 done
+
+
+cp /tmp/R2pdfs2.txt ~/lx/lx14/public/
+cp /tmp/R2hrefs1.txt /tmp/R2hrefs2.html /tmp/R2hrefs_hr1.html ~/lx/lx14/public/
 
 exit
 
