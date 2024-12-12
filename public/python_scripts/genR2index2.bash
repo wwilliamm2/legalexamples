@@ -42,12 +42,13 @@ do
     href=${r2prefix}${pdf}
     echo $href >> /tmp/R2hrefs1.txt
     echo '<a href="'${href}'">'${href}'</a>' >> /tmp/R2hrefs2.html
-    echo '<a href="'${href}'">'${href}'</a><hr />' >> /tmp/R2hrefs_hr1.html
+    echo '<a href="'${href}'" target="r2">'${href}'</a><hr />' >> /tmp/R2hrefs_hr1.html
 done
 
 
 cp /tmp/R2pdfs2.txt ~/lx/lx14/public/
 cp /tmp/R2hrefs1.txt /tmp/R2hrefs2.html /tmp/R2hrefs_hr1.html ~/lx/lx14/public/
+cat /tmp/R2hrefs_hr1.html > ~/lx/lx14/app/views/counties/_many_sacramento_pdfs.erb
 
 exit
 
