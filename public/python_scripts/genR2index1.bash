@@ -28,5 +28,7 @@ do
     $rclone lsf r2:2024-1209kv/ca/sacramento/cases/real_property/$cn
 done
 
+r2prefix=https://lglx.org/ca/sacramento/cases/real_property/
+
 exit
 
