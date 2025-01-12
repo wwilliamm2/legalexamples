@@ -53,14 +53,14 @@ prompt = langchain_core.prompts.ChatPromptTemplate.from_messages(messages_l)
 chain = prompt | llama3_model | parser
 
 '''Use tenttext_lacourt14.txt, 
-a full of tr-file-names to drive a loop 
+a file full of tr-file-names to drive a loop 
 which calls LLM to summarize each tr file.'''
 
 with open('tenttext_lacourt14.txt') as txtf:
     tr_files_s = txtf.read()
 tr_fn_s_l = sorted(tr_files_s.split('\n')[:-1]) # skip last 1
 
-for tr_fn_s in tr_fn_s_l[-11001:]:
+for tr_fn_s in tr_fn_s_l[-15001:]:
     summ_fn_s = tr_fn_s.replace('/tent_ruling_','/summary_')
     'I shd check if summ_fn_s exists so I dont overwrite it'
     'gpt, write demo python syntax which checks if /tmp/hello.txt exists before I create it.'
