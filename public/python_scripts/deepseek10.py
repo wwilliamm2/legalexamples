@@ -1,7 +1,7 @@
 '''~/lx/lx14/public/py/deepseek10.py'''
 
 '''
-Helps me study groq + deepseek.
+Helps me study groq + llama3.
 
 Demo:
 ll ~/anaconda3/envs/
@@ -35,3 +35,13 @@ prompt = langchain_core.prompts.ChatPromptTemplate.from_messages(messages_l)
 
 'I use this to connect prompt to groq llama3_model:'
 chain = prompt | llama3_model | parser
+
+'Prep a dict to help me call invoke():'
+
+invoke_d = {'tent_ruling': 'And please include dates.'}
+
+'Rubber meets road:'
+summary_s = chain.invoke(invoke_d)
+print(summary_s)
+
+'done'
