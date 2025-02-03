@@ -1,0 +1,59 @@
+```
+Case Number: 24PSCV00918
+Plaintiff's Name: Mediterranean Shipping Company (USA) Inc.
+Defendant's Name: Yun Long Trucking Inc.
+People Names:
+  - Neil Ross
+Company Names:
+  - Mediterranean Shipping Company (USA) Inc.
+  - MSC Mediterranean Shipping Company, S.A.
+  - Yun Long Trucking Inc.
+Places:
+  - Mediterranean
+Dates:
+  - September 28, 2021
+  - June 12, 2023
+  - March 25, 2024
+  - November 12, 2024
+  - February 7, 2025
+Events:
+  - Entry into Uniform Intermodel Interchange and Facilities Access Agreement
+  - Breach of Access Agreement
+  - Filing of complaint
+  - Entry of default
+Money:
+  - None mentioned
+Intentions:
+  - Plaintiff seeks default judgment against Defendant
+Facts:
+  - Plaintiff and Defendant entered into an Access Agreement
+  - Defendant breached the Access Agreement
+  - Plaintiff filed a complaint
+  - Defendant's default was entered
+Disputes:
+  - Breach of contract
+  - Standing to sue as agent of MSC Mediterranean Shipping Company, S.A.
+Acts:
+  - Plaintiff has not provided documentary evidence of standing
+  - Plaintiff has not provided signature pages to Access Agreements
+  - Court requests invoices summarized in Exhibit 3
+Agreements:
+  - Uniform Intermodel Interchange and Facilities Access Agreement
+Laws:
+  - None mentioned
+Case Citations:
+  - None mentioned
+Statutes:
+  - None mentioned
+Roles:
+  - Plaintiff: Mediterranean Shipping Company (USA) Inc.
+  - Defendant: Yun Long Trucking Inc.
+  - Judge: Presiding over the case
+Significant Statements:
+  - Plaintiff's default judgment application is denied without prejudice
+  - Plaintiff is directed to submit a revised default judgment packet
+```
+
+And here is a summary of the judge's tentative ruling in English text:
+
+The judge has denied the Plaintiff's application for default judgment without prejudice. The Plaintiff, Mediterranean Shipping Company (USA) Inc., as agent for MSC Mediterranean Shipping Company, S.A., is seeking default judgment against Yun Long Trucking Inc. for breaching a Uniform Intermodel Interchange and Facilities Access Agreement. However, the judge has noted several defects in the Plaintiff's application, including a lack of documentary evidence of the Plaintiff's standing to sue as agent, a lack of signature pages to the Access Agreements, and a failure to provide invoices summarized in Exhibit 3. The judge has directed the Plaintiff to submit a revised default judgment packet that addresses these issues.
