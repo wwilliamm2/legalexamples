@@ -87,6 +87,6 @@ for llm_s in llm_s_l:
                 'remem to throttle API calls:'
                 print('Busy with API ...')
                 time.sleep(9) # seconds
-        except Exception as myex:
-            print(f'Exception on 1st-try. I am sleeping it off:\n{str(myex)}')
-            time.sleep(400)
+            except Exception as myex:
+                print(f'Exception on 1st-try. I am sleeping it off:\n{str(myex)}')
+                time.sleep(400)
