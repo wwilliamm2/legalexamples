@@ -36,6 +36,10 @@ Statutes, Roles and Signifcant Statements.
 I really appreciate your help!
 Oh, also please write English-text to summarize this judge's tentative ruling: '''
 
+user_tpl = ("user", prompt_s + "\n[[{tent_ruling}]]")
+messages_l = [user_tpl]
+prompt = langchain_core.prompts.ChatPromptTemplate.from_messages(messages_l)
+            
 dot_s = '..................... ..................... ..................... ......'
 top0_s = 'The summary displayed below was created by an LLM named: '
 
@@ -56,17 +60,19 @@ for tr_fn_s in tr_fn_s_l[-6:]:
         print('Busy with API ...')
         'Prep a dict to help me call invoke():'
         invoke_d = {'tent_ruling': tr_pln_txt_s[:context_i]}
-        'Rubber meets road:'
-        for llm_s in llm_s_l:          
+        for llm_s in llm_s_l:
             'Note the file name:'
             print(f'{llm_s} might summarize this file: {tr_fn_s}')
             print(f'File length in chars: {len(tr_pln_txt_s)}')
             try:
+                myllm_model = langchain_groq.ChatGroq(model=llm_s)            
+                chain = prompt | myllm_model | parser
+                'Rubber meets road:'
                 summary_s = chain.invoke(invoke_d)
                 with open(f'{summ_fn_s}', 'a') as sumf:
                     top_s = f'{dot_s}\n{top0_s} "{llm_s}":\n'
                     sumf.write(f'{top_s}{summary_s}\n')
-                    print(f'New summary: {llm_s} + {summ_fn_s}')
+                print(f'We might have new summary: {llm_s} + {summ_fn_s}')
                 # Make note of invoke_d
                 with open(f'/tmp/invoke_d.txt', 'w') as invdf:
                     invdf.write(str(prompt.invoke(invoke_d)))
