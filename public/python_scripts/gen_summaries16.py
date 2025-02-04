@@ -52,7 +52,7 @@ context_i = 199011 # large-ish, smaller is friendlier to LLM
 # I want the outer loop to loop through file names.
 # Inside each file-effort I will loop through names of LLM-models.
 
-for tr_fn_s in tr_fn_s_l[-100:]:
+for tr_fn_s in tr_fn_s_l[:100]:
     summ_fn_s = tr_fn_s.replace('/tent_ruling_','/summary_')
     with open(tr_fn_s) as txtf:
         tr_pln_txt_s = txtf.read()
