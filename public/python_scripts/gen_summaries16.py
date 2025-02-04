@@ -53,14 +53,14 @@ for tr_fn_s in tr_fn_s_l[-6:]:
     with open(tr_fn_s) as txtf:
         tr_pln_txt_s = txtf.read()
     if len(tr_pln_txt_s) > 700: # It interests me
-        'Note the file name:'
-        print(f'{llm_s} is summarizing this file: {tr_fn_s}')
-        print(f'File length in chars: {len(tr_pln_txt_s)}')
         print('Busy with API ...')
         'Prep a dict to help me call invoke():'
         invoke_d = {'tent_ruling': tr_pln_txt_s[:context_i]}
         'Rubber meets road:'
         for llm_s in llm_s_l:          
+            'Note the file name:'
+            print(f'{llm_s} might summarize this file: {tr_fn_s}')
+            print(f'File length in chars: {len(tr_pln_txt_s)}')
             try:
                 summary_s = chain.invoke(invoke_d)
                 with open(f'{summ_fn_s}', 'a') as sumf:
