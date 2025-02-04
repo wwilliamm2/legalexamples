@@ -242,8 +242,8 @@ for tr_fn_s in tr_fn_s_l[-3:]:
             'remem to throttle API calls:'
             print('Busy with API ...')
             time.sleep(6) # seconds
-        except:
-            print('Exception on 1st-try. I am sleeping it off.')
+        except Exception as myex:
+            print(f'Exception on 1st-try. I am sleeping it off.\n{str(myex)}')
             time.sleep(400)
             try: # 2nd try
                 summary_s = chain2.invoke(invoke_d)
@@ -258,5 +258,5 @@ for tr_fn_s in tr_fn_s_l[-3:]:
                 print('Busy with API ...')
                 time.sleep(6) # seconds
             except:
-                print(f'Exception on 2nd-try.\nI gave up on {summ_fn_s}\nI am sleeping it off.')
+                print(f'Exception on 2nd-try.\nI gave up on {summ_fn_s}\nI am sleeping it off.\n{str(myex)}')
                 time.sleep(400)
