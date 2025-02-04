@@ -25,13 +25,19 @@ myts = str(datetime.datetime.now()).replace(' ','_')
 
 os.environ["GROQ_API_KEY"]
 
-LLM_NAME = 'gemma2-9b-it'
-LLM_NAME = 'llama3-8b-8192'
+
+
 LLM_NAME = 'llama-3.1-8b-instant'
 LLM_NAME = 'llama-3.3-70b-versatile'
+
+# works
+LLM_NAME = 'llama3-8b-8192'
+LLM_NAME = 'gemma2-9b-it'
 LLM_NAME = 'mixtral-8x7b-32768'
 LLM_NAME = 'llama-3.3-70b-specdec'
-LLM_NAME = 'deepseek-r1-distill-llama-70b-specdec'
+
+# nope:
+notLLM_NAME = 'deepseek-r1-distill-llama-70b-specdec'
 
 
 

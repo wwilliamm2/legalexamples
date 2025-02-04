@@ -25,16 +25,9 @@ myts = str(datetime.datetime.now()).replace(' ','_')
 
 os.environ["GROQ_API_KEY"]
 
-LLM_NAME = 'gemma2-9b-it'
-LLM_NAME = 'llama3-8b-8192'
-LLM_NAME = 'llama-3.1-8b-instant'
-LLM_NAME = 'llama-3.3-70b-versatile'
-LLM_NAME = 'mixtral-8x7b-32768'
-LLM_NAME = 'llama-3.3-70b-specdec'
-LLM_NAME = 'deepseek-r1-distill-llama-70b-specdec' # broken
-
 parser = langchain_core.output_parsers.StrOutputParser()
-llm_s_l = ['gemma2-9b-it', 'llama3-8b-8192', 'llma3-70b-8192', 'mixtral-8x7b-32768']
+
+llm_s_l = ['gemma2-9b-it', 'llama3-8b-8192', 'llama-3.3-70b-specdec', 'mixtral-8x7b-32768']
 
 # create prompt list of tpls acting as messages
 prompt_s = '''Please write a simple summary in YAML format of a legal document, a
