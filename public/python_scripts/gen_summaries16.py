@@ -40,7 +40,7 @@ user_tpl = ("user", prompt_s + "\n[[{tent_ruling}]]")
 messages_l = [user_tpl]
 prompt = langchain_core.prompts.ChatPromptTemplate.from_messages(messages_l)
             
-dot_s = '..................... ..................... ..................... ......'
+dot_s = '..................... .....................'
 top0_s = 'The summary displayed below was created by an LLM named: '
 
 with open('tenttext_lacourt14.txt') as txtf:
@@ -52,7 +52,7 @@ context_i = 199011 # large-ish, smaller is friendlier to LLM
 # I want the outer loop to loop through file names.
 # Inside each file-effort I will loop through names of LLM-models.
 
-for tr_fn_s in tr_fn_s_l[-6:]:
+for tr_fn_s in tr_fn_s_l[-100:]:
     summ_fn_s = tr_fn_s.replace('/tent_ruling_','/summary_')
     with open(tr_fn_s) as txtf:
         tr_pln_txt_s = txtf.read()
