@@ -33,7 +33,7 @@ llm_s_l = ['gemini-2.0-flash-lite-preview','gemini-2.0-flash-exp']
 
 # create prompt list of tpls acting as messages
 prompt_s = '''Study the HTML syntax below. Please extract text from the HTML sysntax and strip away all the HTML-tags.
-Typically I use Python BeautifulSoup to do this but I want you to use your knowledge of English and HTML to do this task.
+Typically I use Python BeautifulSoup to do this task but I want you to use your knowledge of English and HTML to do this task.
 The way I do this with BeautifulSoup is I rely on syntax like this: 
 ```
 with open('my.html', 'r') as cbf:
@@ -43,9 +43,25 @@ large_s = soup.text
 with open('my.txt', 'w') as mytf:
     mytf.write(large_s)
 ```
-Now that you know how I extract text using BeautifulSoup,
-please extract text (using your intelligence, knowledge of HTML, and knowledge of English) from this HTML sysntax: '''
+Now that you know how I extract text using BeautifulSoup (and then write it into a file named my.txt),
+please extract and display the text (using your intelligence, knowledge of HTML, and knowledge of English) inside this HTML syntax: '''
 
-user_tpl = ("user", prompt_s + "\n[[{tent_ruling}]]")
+user_tpl = ("user", prompt_s + "\n[[{html_syntax}]]")
 messages_l = [user_tpl]
 prompt = langchain_core.prompts.ChatPromptTemplate.from_messages(messages_l)
+
+html_s = '<html>Hello Mr. Model. I like vegetarian pizza with a wide variety of veggies.</html>'
+
+invoke_d = {'html_syntax': html_s}
+
+llm_s = llm_s_l[0]
+
+myllm_model = ChatGoogleGenerativeAI(model=llm_s)
+
+chain = prompt | myllm_model | parser
+
+text_fromhtml_s = chain.invoke(invoke_d)
+
+print(text_fromhtml_s)
+
+'done'
