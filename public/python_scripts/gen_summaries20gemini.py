@@ -105,7 +105,7 @@ context_i = 1234567890 # large-ish, smaller is friendlier to LLM
 # I want the outer loop to loop through file names.
 # Inside each file-effort I will loop through names of LLM-models.
 
-for tr_fn_s in tr_fn_s_l[0:11]:
+for tr_fn_s in tr_fn_s_l[11:100]:
     summ_fn_s = tr_fn_s.replace('/tent_ruling_','/summary_')
     with open(tr_fn_s) as txtf:
         tr_pln_txt_s = txtf.read()
@@ -132,15 +132,14 @@ for tr_fn_s in tr_fn_s_l[0:11]:
                     invdf.write(str(prompt.invoke(invoke_d)))
                 'remem to throttle API calls:'
                 print('Busy with API ...')
-                time.sleep(45) # seconds
-                
+                time.sleep(35) # seconds
             except Exception as myex:
                 print(f'Exception on 1st-try. I am sleeping it off:\n{str(myex)}')
                 # I want to make note of this Exception.
                 # Rather deal with logging, just put it in the summary file.
-                # I can filter it out later if I change my mind about the best destinationn.
+                # I can filter it out later if I change my mind about the best destination.
                 with open(f'{summ_fn_s}', 'a') as sumf:
                     tsnow_s = str(datetime.datetime.now()).replace(' ','_')
                     top_s = f'{dot_s}\nOn {tsnow_s}\n{top0_s} "{llm_s}":\n'
                     sumf.write(f'{top_s}Exception:\n{str(myex)}\n')
-                time.sleep(600)
+                time.sleep(400)
