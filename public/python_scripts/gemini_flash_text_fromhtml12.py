@@ -36,6 +36,7 @@ prompt_s = '''Please study the HTML syntax (from a file named hal.html) below.
 Try to understand the intentions of the HTML-author ("Hal") about how Hal wants to present the English to us.
 Please look for headings, bolded words, horizontal lines, paragraphs, sentences, and any formatting clues.
 Try to ignore syntax which contains JavaScript. Also ignore any non-English content.
+Try to ignore any syntax which is a long-string of characters because that might be encoded data which I dont care about.
 From a semantic viewpoint,
 the English in hal.html contains legal information about some specific Court cases (or maybe just 1 case).
 That legal information is important to me, please ensure you focus on it.

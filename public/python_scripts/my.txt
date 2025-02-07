@@ -1,69 +1,51 @@
 ```markdown
-**DEPARTMENT F51 LAW AND MOTION RULINGS**
+## Department 31 Law and Motion Rulings
 
-*   Counsel wishing to submit on a tentative ruling may inform the clerk or courtroom assistant in North Valley Department F51, 9425 Penfield Ave., Chatsworth, CA 91311, at (818) 407-2251.
-*   Please be aware that unless all parties submit, the matter will still be called for hearing and may be argued by any appearing/non-submitting parties.
-*   If the matter is submitted on the court's tentative ruling by all parties, counsel for moving party shall give notice of ruling. This may be done by incorporating verbatim the court's tentative ruling.
-*   The tentative ruling may be extracted verbatim by copying and specially pasting, as unformatted text, from the Los Angeles Superior Court’s website, http://www.lasuperiorcourt.org.
-*   All hearings on law and motion and other calendar matters are generally NOT transcribed by a court reporter unless one is provided by the party(ies).
+---
 
-<hr size="4">
+**Case Number:** 18STCV01564  **Hearing Date:** September 27, 2023  **Dept:** 31
 
-*   **Case Number:** 21CHCV00787
-*   **Hearing Date:** September 18, 2023
-*   **Dept:** F51
+**SUPERIOR COURT OF THE STATE OF CALIFORNIA**
 
-**MOTION FOR LEAVE OF COURT TO PERMIT MENTAL EXAMINATION OF PLAINTIFF**
+**FOR THE COUNTY OF LOS ANGELES - CENTRAL DISTRICT**
 
-*   **Los Angeles Superior Court Case #** 21CHCV00787
+**STEPHEN HARRIS**,
 
-*   **Motion Filed:** 8/21/23
+Plaintiff(s),
 
-*   **MOVING PARTY:** Defendant California Automobile Insurance Company (“Moving Defendant”)
+vs.
 
-*   **RESPONDING PARTY:** Plaintiffs Massimiliano Trevis and Guillermina Trevis (collectively, “Plaintiffs”)
+**JACK SWANK**, ET AL.,
 
-*   **NOTICE:** OK
+Defendant(s).
 
-*   **RELIEF REQUESTED:** An order permitting a mental examination of Plaintiff Guillermina Trevis with psychiatrist James R. High, M.D.
+**[TENTATIVE] ORDER DENYING DEFENDANT’S MOTION TO COMPEL**
 
-*   **TENTATIVE RULING:** The motion is granted. The Court orders Plaintiff to submit to a psychiatric IME with Dr. High and his staff on October 10, 2023, at 9:00 a.m., at Behavioral Diagnostics Medical Group, Inc. 1990 South Bundy Drive, Suite 430, Los Angeles, CA 90025, or via Zoom at a Court Reporters office location to be determined.
+**I. Background**
 
-*   **BACKGROUND**
+On May 25, 2023, Defendant Jack Swank (“Decedent”) filed a motion to compel Plaintiff Stephen Harris (“Plaintiff”) to provide responses to supplemental form interrogatories, set one, and supplemental requests for production (“RPD”) set one. Preliminarily, since the filing of the instant motion, the Court granted Plaintiff’s motion to substitute Decedent’s personal representative, Judith Lorraine Swank (“Defendant”), in place of Decedent. (Min. Order, Aug. 29, 2023.) Therefore, the Court will not consider arguments related to standing.
 
-    *   This is an action brought by Plaintiffs, homeowners, against various insurance Defendants to recover insurance funds related to the damage to Plaintiffs’ home resulting from the Saddlebridge Fire in October 2019. Plaintiffs allege that Defendants “denied coverage, and/or paid for only some or part of the claims, and/or have delayed payment of claims, unreasonably and/or without proper cause.” (Compl. ¶ 21.)
-    *   On 10/7/21, Plaintiffs filed their complaint against Moving Defendant, as well as Mercury Casualty Company, Mercury Insurance Company, Mercury Insurance Services, LLC, and Mercury General Corporation, alleging the following causes of action: (1) Breach of Contract; and (2) Breach of Implied Covenant of Good Faith and Fair Dealing (Bad Faith Insurance).
-    *   On 8/21/23, Moving Defendant filed the instant motion for leave of court to permit a mental examination of Plaintiff Guillermina Trevis. On 9/5/23, Plaintiffs filed their opposition. On 9/11/23, Moving Defendant filed its reply.
+On April 14, 2023, Decedent propounded supplemental form interrogatories, set one, and supplemental RPDs, set one, on Plaintiff. On May 19, 2023, Plaintiff served objections to the supplemental discovery requests. Defendant argues Plaintiff has failed to serve responses because Plaintiff served objections only.
 
-*   **ANALYSIS**
+In opposition, Plaintiff contends before Decedent passed away, Decedent already propounded supplemental discovery requests, and Plaintiff served responses to the initial set of supplemental discovery requests. Plaintiff argues he is not obligated to respond to what is actually a second set of supplemental discovery requests. Furthermore, Plaintiff avers that responses to the second set were due after the discovery cut-off date.
 
-    *   A party may obtain discovery by means of a physical or mental examination in an action in which the mental or physical condition of the person to be examined is “in controversy.” (Code Civ. Proc. § 2032.020, subd. (a).) A motion and court order are required to obtain a mental examination of a party or party-affiliated individual. (Code Civ. Proc. § 2032.310, subd. (a).)
+In reply, defense counsel provides he re-filed his declaration with exhibits because it was unclear if the exhibits to the original motion were kept with the moving papers.
 
-    *   **A. Meet and Confer**
+**II. Discussion**
 
-        *   “A motion for an examination under subdivision (a) shall specify the time, place, manner, conditions, scope, and nature of the examination, as well as the identity and the specialty, if any, of the person or persons who will perform the examination. The motion shall be accompanied by a meet and confer declaration under Section 2016.040.” (<i>Id.</i> at subd. (b).)
+A party may propound a supplemental interrogatory or supplemental demand for production of documents to elicit any later acquired information bearing on all answers previously made by any party.  (Code of Civ. Proc., §§ 2030.070, subd. (a), 2031.050, subd. (a).)  Where a party fails to serve timely responses to discovery requests, the court may make an order compelling responses.  (Code Civ. Proc., §§ 2030.290, 2031.300; Healthcare Consulting, Inc. v. Pacific Healthcare Consultants (2007) 148 Cal.App.4th 390, 403.) There is no time limit for a motion to compel responses to interrogatories or production of documents other than the cut-off on hearing discovery motions 15 days before trial. (Code Civ. Proc., §§ 2024.020, subd. (a), 2030.290; Code Civ. Proc., § 2031.300.) No meet and confer efforts are required before filing a motion to compel responses to the discovery. (Code Civ. Proc., § 2030.290; Code Civ. Proc., § 2031.300; Sinaiko Healthcare Consulting, Inc. v. Pacific Healthcare Consultants (2007) 148 Cal.App.4th 390, 411.)
 
-        *   Here, Moving Defendant’s counsel declares that Dr. James High, M.D. “is a clinical professor of psychiatry at the University of Southern California Keck School of Medicine with over 45 years of clinical teaching experience in adult psychiatry.” (Decl. of Brandon Gnekow ¶ 8.) Further details specifying the “time, place, manner, conditions, scope, and nature of the examination” are contained within the same paragraph of counsel’s declaration. (<i>Ibid.</i>)
+A party may propound a supplemental interrogatory or supplemental demand for production twice before the initial trial date, and subject to the time limits of discovery proceedings. (Code of Civ. Proc., §§ 2030.070, subd. (b), 2031.050, subd. (b).) In terms of addressing Plaintiff’s contention that supplemental discovery requests had previously been propounded and responded to, Defendant is entitled to propound a second set. However, Defendant did not reply to Plaintiff’s contention that the due date of the second set of supplemental discovery requests, propounded on April 14, 2023, were due after the discovery cut-off date. Plaintiff avers that discovery closed on May 4, 2023 based upon the trial date of June 2, 2023. Nonetheless, Plaintiff served responses to the second set of supplemental discovery requests in the form of objections. Rather than a motion to compel, in which no responses (whether it be substantive or objections only) were served, the appropriate motion should have been a motion to compel further. Nonetheless, at issue is the discovery cut-off deadline.
 
-        *   Additionally, Moving Defendant’s counsel declares that beginning on 7/12/23, he served Plaintiffs’ counsel with a demand for a mental examination of Guillermina. (<i>Id.</i> at ¶ 9.) Counsel parties further met and conferred regarding the issues raised in the instant motion, but were unable to come to a resolution. (<i>Id.</i> at ¶¶ 10–15.) Accordingly, the Court finds that counsel has satisfied the preliminary requirements set forth under Code of Civil Procedure section 2032.310, subdivision (b).
+The Court reviewed the docket. The trial date and all discovery and motion cut-off dates were initially based upon a June 8, 2022 trial date. (Min. Order, Nov. 9, 2020.) However, at a FSC, the June 8, 2022 trial date was vacated and a TSC set. (Min. Order, May 25, 2022.) At the TSC, the trial date of June 2, 2023 was set, and all discovery and motion related dates were based on this date. (Min. Order, Jan. 28, 2023.) Since then, the trial date has been continued four times; the Court did not explicitly continue any discovery-related dates. Except as provided in Section 2024.050, a continuance or postponement of the trial date does not operate to reopen discovery proceedings. (CCP § 2024.020(b).) At the August 17, 2023 FSC, the Court advanced the instant motion to compel from March 27, 2024 to September 27, 2023 so that it may be heard prior to the current trial date of October 9, 2023. (Min. Order, Aug. 17, 2023.) However, at no point was discovery re-opened. Accordingly, Plaintiff had no obligation to respond to discovery requests due after the discovery cut-off date, on which the instant motion is premised on.
 
-    *   **B. “In Controversy” Requirement**
+Based on the foregoing, Defendant’s motion to compel is DENIED.
 
-        *   Here, Moving Defendant argues that a mental examination of plaintiff Guillermina Trevis is warranted because she put her mental condition in controversy by virtue of her discovery responses. “Specifically, on June 8, 2022 CAIC served Form Interrogatories, Set 2 on Plaintiff Guillermina Trevis, which defined ‘INCIDENT’ as ‘California Automobile Insurance Company’s handling of your claim that is the subject of this litigation’ and included interrogatories regarding any physical, mental, or emotional injuries, Plaintiff attributed to the incident. … Plaintiff's verified Further and Amended Response to Form Interrogatories, Set Two, Plaintiff Guillermina Trevis alleges she experienced and continues to experience ‘mental suffering including, but not limited to, anxiety, frustration, anger, humiliation, emotional distress, depression, stress, sadness, insomnia, worry, relationship conflict and struggles’ as a result of CAIC alleged conduct. … Plaintiff Guillermina Trevis claims her symptoms worsen due to ‘financial and/or housing stresses.’” (Def.’s Mot. 3:10–21, citing Exs. A and B to Gnekow Decl.)
+**III. Sanctions**
 
-        *   Moving Defendant concludes that “Plaintiff Guillermina Trevis has alleged mental injuries and need for future treatment for mental injuries as a result of CAIC's alleged conduct. Therefore, a mental examination of Plaintiff is necessary in order to determine the extent of Plaintiff's claimed injuries related to CAIC’s alleged conduct.” (<i>Id.</i> at 4:5–8.)
+Where the court grants a motion to compel responses, sanctions shall be imposed against the party who unsuccessfully makes or opposes a motion to compel, unless the party acted with substantial justification or the sanction would otherwise be unjust.  (Code Civ. Proc., § 2030.290, subd. (c), 2031.300, subd. (c).) Defendant sought to compel responses to discovery due after the discovery cut-off deadline. Therefore, Plaintiff’s request for sanctions against defense counsel is GRANTED and imposed against defense counsel only in the reduced amount of $415.00 to be paid within twenty (20) days of the date of this Order.
 
-        *   Plaintiffs argue in opposition that Guillermina’s mental condition is no longer “in controversy,” as set forth in her verified supplemental discovery responses, served on 9/5/23 in conjunction with the instant opposition. “Recently, on the date of the filing of this opposition – September 5, 2023 – Plaintiff Guillermina Trevis served on defense counsel a verified supplemental response to form interrogatories (set two, as relating to the bad faith claims handling), stating: ‘Plaintiff is no longer claiming ongoing emotional distress as a result of Defendant's bad faith. The exacerbation of her diagnosed anxiety disorder and other related symptoms caused by Defendant's bad faith ceased at or about the time of Plaintiff's deposition (May 31, 2023 – Volume I), after which she realized it was the litigation, as opposed to the bad faith claims handling, that was causing her *current* intense anxiety.’” (Pls.’ Opp. 3:17–25, quoting Ex. A to Decl. of Cheryl Ruggiero [emphasis in original].) Additionally, Guillermina’s supplemental responses state that she no longer requires future treatment for any alleged injuries sustained from the subject incident. (Ex. A to Ruggiero Decl. 2:7–14.)
+Moving party is ordered to give notice.
 
-        *   “Where a plaintiff alleges that she is not suffering any current mental injury but only that she has suffered emotional distress in the past arising from the defendant's misconduct, a mental examination is unnecessary because such an allegation alone does not place the nature and cause of the plaintiff's current mental condition ‘in controversy.’” (<i>Doyle v. Superior Court</i> (1996) 50 Cal.App.4th 1878, 1887.)
-
-        *   Moving Defendant argues in reply that these supplemental discovery responses are ineffective to remove Guillermina’s mental condition from being in controversy, “since Plaintiff is admittedly suffering from ongoing mental distress.” (Def.’s Reply 4:24–26.) “Defendant has a right to investigate the nature and extent of Plaintiff current mental injury as well as the actual cause of this injury.” (<i>Id.</i> at 4:26–27.)
-
-        *   Moving Defendant seeks to distinguish <i>Doyle</i>, arguing that there, “the plaintiff … was no longer experiencing *any* mental condition. Here, Plaintiff clearly admits to ongoing intense anxiety. Since Plaintiff is admittedly suffering from ongoing mental distress, Plaintiff's mental condition is still in controversy.” (Def.’s Reply 4:23 – 26, citing <i>Doyle</i>, 50 Cal.App.4th at 1887.) Moving Defendant further asserts that “instead of clarifying the issues with a stipulation pursuant to California Code Civil Procedure Section 2032.320 (b-c), Plaintiff continues to provide contradictory information regarding her mental and emotional damage claims in a thinly veiled attempt to unjustifiably disrupt Defendant's investigation and discovery of Plaintiff Guillermina Trevis' claimed mental injuries.” (<i>Id.</i> at 5:19–23.)
-
-        *   The Court agrees and finds that based on Guillermina’s assertion that she is experiencing “*current* intense anxiety,” there remains an ambiguity as to the causation of her mental condition, and therefore her mental condition remains “in controversy.” (Ex. A to Ruggiero Decl. 2:6 [emphasis in original].) Accordingly, the Court grants the instant motion to permit a mental examination of plaintiff Guillermina Trevis.
-
-*   **CONCLUSION**
-
-    *   The motion is granted. The Court orders Plaintiff to submit to a psychiatric IME with Dr. High and his staff on October 10, 2023, at 9:00 a.m., at Behavioral Diagnostics Medical Group, Inc. 1990 South Bundy Drive, Suite 430, Los Angeles, CA 90025, or via Zoom at a Court Reporters office location to be determined.
+---
 ```
