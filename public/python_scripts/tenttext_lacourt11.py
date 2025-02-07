@@ -10,11 +10,11 @@ text/2023_09_18_ALH_3/text02.txt
 text/2023_09_18_ALH_3/text03.txt
 
 ref:
-~dan/lc17/rt20.py
+~/lx/lx14/public/py/runem_on_hp88.bash
 
 Demo:
 ll ~/anaconda3/envs/
-. ~/lx/lx12_env.bash
+. ~/lx/lx14/public/lx14b_env.bash
 bash tenttext_lacourt10.bash
 python tenttext_lacourt11.py
 bash tenttext_lacourt12.bash
