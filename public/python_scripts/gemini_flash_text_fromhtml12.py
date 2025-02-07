@@ -42,6 +42,7 @@ That legal information is important to me, please ensure you focus on it.
 Please try to ignore information displayed by boiler-plate template nav-bar menu links like 'Home', 'Online Services' and so on.
 Next, try to extract the important semantic English relevant to the Court case(s).
 During your extraction efforts, do your best to format the English using Markdown syntax so that Hal's formatting efforts are still honored.
+If you semantically sense more than one Court case from hal.html, please separate each case by a horizontal line.
 When you are done, please display the English (formatted by your Markdown) full of legal information to me.
 So, now that you understand what I want, please study this HTML syntax and display the English in it: '''
 
