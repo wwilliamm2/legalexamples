@@ -73,6 +73,8 @@ from langchain.prompts import ChatPromptTemplate
 from langchain.chains import LLMChain
 import langchain_core
 
+parser = langchain_core.output_parsers.StrOutputParser()
+
 llm_s_l = ['gemini-2.0-flash-exp','gemini-2.0-pro-exp']
 
 # create prompt list of tpls acting as messages
