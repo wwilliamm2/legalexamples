@@ -105,3 +105,40 @@ context_i = 1234567890 # large-ish, smaller is friendlier to LLM
 
 for tr_fn_s in tr_fn_s_l[0:11]:
     summ_fn_s = tr_fn_s.replace('/tent_ruling_','/summary_')
+    with open(tr_fn_s) as txtf:
+        tr_pln_txt_s = txtf.read()
+    if len(tr_pln_txt_s) > 700: # It interests me
+        print('Busy with API ...')
+        'Prep a dict to help me call invoke():'
+        invoke_d = {'tent_ruling': tr_pln_txt_s[:context_i]}
+        for llm_s in llm_s_l:
+            'Note the file name:'
+            print(f'{llm_s} might summarize this file: {tr_fn_s}')
+            print(f'File length in chars: {len(tr_pln_txt_s)}')
+            try:
+                myllm_model = ChatGoogleGenerativeAI(model=llm_s)
+                chain = prompt | myllm_model | parser
+                'Rubber meets road:'
+                summary_s = chain.invoke(invoke_d)
+                with open(f'{summ_fn_s}', 'a') as sumf:
+                    tsnow_s = str(datetime.datetime.now()).replace(' ','_')
+                    top_s = f'{dot_s}\nOn {tsnow_s}\n{top0_s} "{llm_s}":\n'
+                    sumf.write(f'{top_s}{summary_s}\n')
+                print(f'We might have new summary: {llm_s} + {summ_fn_s}')
+                # Make note of invoke_d
+                with open(f'/tmp/invoke_gemini_d.txt', 'w') as invdf:
+                    invdf.write(str(prompt.invoke(invoke_d)))
+                'remem to throttle API calls:'
+                print('Busy with API ...')
+                time.sleep(45) # seconds
+                
+            except Exception as myex:
+                print(f'Exception on 1st-try. I am sleeping it off:\n{str(myex)}')
+                # I want to make note of this Exception.
+                # Rather deal with logging, just put it in the summary file.
+                # I can filter it out later if I change my mind about the best destinationn.
+                with open(f'{summ_fn_s}', 'a') as sumf:
+                    tsnow_s = str(datetime.datetime.now()).replace(' ','_')
+                    top_s = f'{dot_s}\nOn {tsnow_s}\n{top0_s} "{llm_s}":\n'
+                    sumf.write(f'{top_s}Exception:\n{str(myex)}\n')
+                time.sleep(600)
