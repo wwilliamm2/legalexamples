@@ -24,7 +24,7 @@ with open('soup.txt', 'w') as tf:
     tf.write(large_s)
 
 # Find and remove all unneeded elements
-tag_l = ['a', 'script', 'style', 'link', 'form', 'input']
+tag_l = ['a', 'script', 'style']
 for elmnt in soup(tag_l):
     elmnt.decompose() # They should have called it delete() or rm() or ...
 

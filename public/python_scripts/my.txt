@@ -1,0 +1,177 @@
+Here's the extracted legal information from the HTML, formatted using Markdown:
+
+***
+
+**Case Number: 18STCV01564**
+**Hearing Date: September 18, 2023**
+**Dept: 31**
+
+*   **Parties:**
+    *   Plaintiff: STEPHEN HARRIS
+    *   Defendant: JACK SWANK, ET AL.
+*   **Subject:** \[TENTATIVE] ORDER RE: MOTION TO COMPEL PLAINTIFF’S EXPERTS’ DEPOSITIONS
+*   **Background:**
+    *   On October 19, 2018, Plaintiff Stephen Harris filed a Complaint against Defendant Jack Swank ("Decedent"), for damages from an automobile accident.
+    *   On October 20, 2022, Plaintiff filed a Creditor’s Claim.
+    *   Plaintiff brought a motion to substitute Judith Lorraine Swank (“Swank” or “Defendant”) as the personal representative of Decedent, which was granted on August 29, 2023.
+    *   On May 25, 2023, Decedent filed a motion to compel depositions of Plaintiff’s experts.
+    *   Plaintiff's only argument in opposition is that the motion was filed on behalf of Decedent at the time, and therefore defense counsel lacks authority to notice or take depositions in this case.
+    *   Defendant contends that Plaintiff’s motion is untimely and should not be considered, and that the Court at a recent informal discovery conference (“IDC”) ordered Plaintiff to make Plaintiff’s experts immediately available. Furthermore, Defendant argues that Plaintiff still has not served the Administrator of the Estate with the Complaint as ordered.
+*   **Procedural:**
+    *   The Court will consider Plaintiff’s opposition, despite it being slightly late.
+    *   The Court is guided by Code Civ. Proc. § 377.30, which states that a cause of action survives the death of the person entitled to commence an action or proceeding passes to the decedent’s successor in interest . . . and an action may be commenced by the decedent’s personal representatives or, if none, by the decedent’s successor in interest.
+    *   The Court will not consider Defendant’s argument that Plaintiff still has not served the amended complaint on Swank because the purpose of a reply brief is not to raise new issues. Regardless, Plaintiff was ordered to serve Swank with an amended complaint within 20 days of the ruling. (Min. Order, Aug. 29, 2023.) The due date is the day of the hearing on the instant motion, on September 18, 2023. Therefore, the time had yet to expire for Defendant to properly set forth this argument.
+*   **Motion to Compel Deposition of Plaintiff’s Experts:**
+    *   Defendant argues the depositions of Plaintiff’s experts Steven Dunbar, D.C. and Babak Samimi, M.D. were properly noticed, and that Plaintiff failed to produce these experts.
+    *   Defense counsel’s declaration refers to six exhibits in support of the motion, none of which were attached to the declaration.
+    *   The Court will not consider any documents outside of and not properly incorporated to the motion.
+    *   It is not clear that Defendant tendered the expert witness fee or whether the parties stipulated otherwise.
+    *   **Ruling:** The motion compelling Steven Dunbar, D.C.’s and Babak Samimi, M.D.’s deposition is DENIED without prejudice.
+*   **Order:** Moving party is ordered to give notice.
+
+***
+
+**Case Number: 20STCV19624**
+**Hearing Date: September 18, 2023**
+**Dept: 31**
+
+*   **Subject:** PETITION TO APPROVE COMPROMISE OF PENDING ACTION OF A MINOR
+*   **Parties:**
+    *   Gianna Rutigliano, Age 9
+    *   Abrielle Rutigliano, Age 7
+    *   Plaintiff Anthony Rutigliano
+*   **Recommendation:** GRANT
+*   **Settlement:**
+    *   Plaintiffs have agreed to settle their claims for \$70,000.
+        *   \$50,000 to Gianna Rutigliano (“Gianna”)
+        *   \$10,000 to Abrielle Rutigliano (“Abrielle”)
+        *   \$10,000 to Plaintiff Anthony Rutigliano
+*   **Gianna Rutigliano:**
+    *   If the settlement is approved:
+        *   \$2,924.50 will be used for medical expenses.
+        *   \$12,500 for attorneys’ fees.
+        *   \$816.50 will be used for costs.
+        *   The net balance of \$33,759 will be invested in a single-premium deferred annuity, subject to withdrawal only on authorization of the Court.
+    *   The Court finds the settlement fair and reasonable.
+    *   The Court finds the attorneys’ fees fair and reasonable, at 25% of Claimant Gianna’s settlement.
+*   **Abrielle Rutigliano:**
+    *   If the settlement is approved:
+        *   \$2,500 will be used for attorneys’ fees.
+        *   \$562.69 will be used for costs.
+        *   The net balance of \$6,937.31 will be invested in a single-premium deferred annuity, subject to withdrawal only on authorization of the Court.
+    *   The Court finds the settlement fair and reasonable.
+    *   The Court finds the attorneys’ fees fair and reasonable, at 25% of Claimant Abrielle’s settlement.
+*   **Ruling:** Based on the foregoing, the Court approves and GRANTS the petitions.
+*   **Order:** The Court sets an Order to Show Cause Re: Compliance: Proof of Purchase of Annuity(ies) on ____________________ IN DEPARTMENT SS-31 AT 8:30 AM.
+*   **Order:** Moving party is ordered to give notice.
+
+***
+
+**Case Number: 21STCV03805**
+**Hearing Date: September 18, 2023**
+**Dept: 31**
+
+*   **Parties:**
+    *   Plaintiff: ANTONIETTE WILLIAMS
+    *   Defendants: BERTA GLORIA RODRIGUEZ, ET AL.
+*   **Subject:** \[TENTATIVE] ORDER GRANTING MOTION FOR ORDER SUBSTITUTING SUCCESSOR IN INTEREST FOR DECEDENT PLAINTIFF
+*   **Background:**
+    *   On January 29, 2021, Plaintiff Antoniette Williams filed this action against Defendants Bertha Gloria Rodriguez, EAN Holdings, LLC., Enterprise Holdings, Lawrence Bryant, and Angel on My Shoulders.
+    *   On August 9, 2023, Angella Davis (“Davis”) filed a motion to be substituted as Plaintiff’s successor-in-interest.
+    *   Davis declares she is the daughter of Plaintiff, and is Plaintiff’s successor-in-interest as the sole child and sole beneficiary of Plaintiff’s estate.
+*   **Legal Basis:**
+    *   Code Civ. Proc., § 377.30: A cause of action that survives the death of the person entitled to commence an action or proceeding passes to the decedent’s successor in interest . . . and an action may be commenced by the decedent’s personal representatives or, if none, by the decedent’s successor in interest.
+    *   Code Civ. Proc., § 377.31: After the death of a plaintiff, the court, on motion, shall allow a pending action that does not abate to be continued by the decedent’s personal representative or successor-in-interest.
+    *   Code Civ. Proc., § 377.32: Outlines requirements for the person seeking to continue an action as the decedent’s successor-in-interest, including an affidavit or declaration with specific information, and a certified copy of the death certificate.
+*   **Facts:**
+    *   Plaintiff passed away on September 27, 2021.
+    *   Davis executed a declaration that satisfies the requirements of CCP section 377.32.
+*   **Ruling:** The unopposed motion is GRANTED.
+*   **Order:** Moving party to give notice.
+
+***
+
+**Case Number: 21STCV33689**
+**Hearing Date: September 18, 2023**
+**Dept: 31**
+
+*   **Parties:**
+    *   Plaintiff: SHIRLEY LEE WEDDLE
+    *   Defendants: HEIDI JAUREGUI, ET AL.
+*   **Subject:** \[TENTATIVE] ORDER CONTINUING HEARING ON MOTION TO COMPEL
+*   **Background:**
+    *   Defendants Heidi Jauregui and Gabriel Jauregui (“Defendants”) filed a motion to compel the physical examination of Plaintiff Shirley Lee Weddle (“Plaintiff”).
+    *   Plaintiff filed an opposition, and Defendants filed a reply.
+*   **Agreed Examination:** The parties agreed to Plaintiff’s physical examination with Neeraj Gupta, M.D. (“Dr. Gupta”) at 160 East Artesia, Suite 360, Pomona CA 91767 for October 16, 2023 at 1:00 p.m.
+*   **Plaintiff's Actions:** Plaintiff notified Defendants of Plaintiff’s willingness to pay Dr. Gupta’s \$1,600 charge for the two missed appointments.
+*   **Ruling:** The Court will briefly continue this motion.
+*   **Order:** Defendants are ordered to notify the Court at least five (5) court days prior to the rescheduled hearing date as to whether Plaintiff appeared for her physical examination with Dr. Gupta, and whether Defendants will be taking the motion off-calendar.
+*   **Continuation:** The hearing on the motion is continued to October ________, 2023 at 1:30 p.m. in Department 31 of the Spring Street Courthouse.
+*   **Order:** Defendants are ordered to give notice.
+
+***
+
+**Case Number: 21STCV33822**
+**Hearing Date: 9/18/2023**
+**Dept: 31**
+
+*   **Subject:** REQUEST FOR COURT JUDGMENT AGAINST \[DEFAULTING PARTY]: LITCO ENTERTAINMENT INC.
+*   **Recommendation:** DENY for reasons stated below.
+*   **Reasons for Denial:**
+    1.  Plaintiff has not dismissed all other parties whom default is not sought against, including all Doe defendants. (CRC 3.1800(a)(7).) If Plaintiff will not dismiss the other defendant in this action, Plaintiff must apply for separate relief for severable claims. (Ibid.)
+    2.  CIV-100, Item 2(a) provides that the demand of complaint is \$350,000. There is no demand on the face of Plaintiff's complaint. Furthermore, Plaintiff did not provide a copy of the Statement of Damages. Plaintiff must review and accurately fill Item 2 to reflect the correct amounts.
+    3.  Plaintiff has not demonstrated that the Statement of Damages was served on Defendant prior to entry of default. If Plaintiff is unable to provide proof of service as such, then default is void. (CCP 425.11(c)-(d).) Furthermore, Plaintiff must file a copy of the Statement of Damages served on Defendant. (CRC 3.250(a)(20).)
+*   **Order:** No later than ________, Plaintiff is to submit a new default judgment package correcting these defects. Failure to do so may result in the imposition of sanctions, including monetary sanctions and/or dismissal. The OSC re entry of default judgment is continued to ______________.
+
+***
+
+**Case Number: 22STCV13872**
+**Hearing Date: September 18, 2023**
+**Dept: 31**
+
+*   **Parties:**
+    *   Plaintiff: IMELDA BARRAGAN
+    *   Defendants: THE HERTZ CORPORATION, ET AL.
+*   **Subject:** \[TENTATIVE] ORDER RE: MOTION TO STAY ACTION
+*   **Background:**
+    *   On April 26, 2022, Plaintiff Imelda Barragan filed this action against defendants The Hertz Corporation (“Hertz”) and Dyllan William Williams (“Williams”) for damages arising from a motor vehicle incident on April 27, 2020.
+    *   Hertz brings a motion to stay all further proceedings in this action pursuant to bankruptcy filed by Hertz.
+*   **Bankruptcy Filing:**
+    *   On May 22, 2020, Hertz filed a Petition in Bankruptcy under Chapter 11, Case No. 20-11218 (MWF) in the United States Bankruptcy Court for the District of Delaware.
+    *   On June 10, 2021, the Bankruptcy Court approved the Second Modified Third Amended Joint Chapter 11 Plan of Reorganization of the Hertz Corporation and its Debtor Affiliates and on June 30, 2021, the bankruptcy court entered a permanent injunction.
+*   **Ruling:**
+    *   The automatic stay has been in place since May 2020.
+    *   The motion to stay proceedings against Hertz is moot.
+    *   The automatic stay does not extend to Defendant Williams.
+*   **Order:** Moving party is ordered to give notice.
+
+***
+
+**Case Number: 22STCV39242**
+**Hearing Date: September 18, 2023**
+**Dept: 31**
+
+*   **Parties:**
+    *   Plaintiff: SAMUEL YUN
+    *   Defendant: 21ST CENTURY INSURANCE COMPANY
+*   **Subject:** \[TENTATIVE] ORDER RE: DEFENDANT’S MOTIONS TO COMPEL
+*   **Motions to Compel:**
+    *   Defendant 21st Century Insurance Company (“Defendant”) propounded form interrogatories, set one, and request for production of documents (“RPDs”), set one, on Plaintiff Samuel Yun (“Plaintiff”) on October 25, 2022.
+    *   On November 25, 2022, Plaintiff’s counsel served unverified responses.
+    *   On December 1, 2022, defense counsel requested verified responses without objections.
+    *   After sending meet and confer emails, Defendant has not received verified responses.
+    *   Defendant seeks an order compelling Plaintiff to respond, without objections, to the outstanding discovery and to pay sanctions.
+    *   Any opposition was due on or before September 5, 2023; Plaintiff filed on September 12, 2023. The Court will not consider the untimely oppositions.
+    *   CCP § 2030.260 and CCP § 2031.260 provides that a shall serve responses within 30 days of service. Furthermore, the parties are provided an additional 5 days if served by mail, and 2 days if served by electronic mail. (CCP § 1013.) Here, Defendant propounded discovery on October 25, 2022 via electronic mail. Therefore, Plaintiff’s responses to Defendant’s discovery were due on or before November 28, 2022. Plaintiff timely served responses on November 25, 2022; however, the attached verifications were unsigned. Plaintiff’s responses are comprised of a mixture of both objections and substantive responses.
+*   **Legal Basis:**
+    *   CCP § 2031.300: Where a party fails to serve timely responses to discovery requests, the court may make an order compelling responses. A party that fails to serve timely responses waives any objections to the request.
+    *   CCP §§ 2030.290(b), 2031.300(b)
+*   **Ruling:** Defendant’s motions are GRANTED IN PART. Plaintiff is ordered to serve verifications to Defendant’s form interrogatories, set one, and RPDs, set one, within twenty (20) days.
+*   **Sanctions:**
+    *   Sanctions are mandatory against any party, person, or attorney who unsuccessfully makes or opposes a motion to compel a response to interrogatories, unless a court makes certain findings. (Code Civ. Proc., § 2030.290(c), 2031.300(c).)
+    *   Defendant is awarded 1 hour to prepare each motion to compel and one hour to appear at the hearing- but is awarded this time only once- all at the reasonable rate of \$120 per hour, for a total of \$360 in attorney fees.
+    *   Defendant is awarded two motion filing fees of \$60, for a total of \$120, as costs.
+*   **Sanction Order:** Sanctions are imposed against Plaintiff and Plaintiff’s attorney of record, jointly and severally. Plaintiff and/or Plaintiff’s counsel are ordered to pay sanctions to Defendant, by and through counsel of record, in the total amount of \$480, within twenty (20) days.
+*   **Order:** Defendant is ordered to give notice.
+
+***
