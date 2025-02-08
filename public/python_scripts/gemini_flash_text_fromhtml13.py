@@ -50,23 +50,24 @@ user_tpl = ("user", prompt_s + "\n[[{html_syntax}]]")
 messages_l = [user_tpl]
 prompt = langchain_core.prompts.ChatPromptTemplate.from_messages(messages_l)
 
-fn_s_l = sorted(glob.glob('/media/dan/ssd2/tmp/enhanced_htmls/2023*.html'))[:2]
+fn_s_l = sorted(glob.glob('/media/dan/ssd2/tmp/enhanced_htmls/2023*.html'))[:4]
 
-html_fn_s = fn_s_l[0]
-txt_fn_s = html_fn_s.replace('.html','.txt')
-if os.path.exists(txt_fn_s):
-    'Done already'
-else:
-    'I will extract case info into: ' + txt_fn_s
-    with open(html_fn_s, 'r') as myhf:
-        html_s = myhf.read()
-    invoke_d = {'html_syntax': html_s}
-    llm_s = llm_s_l[0]
-    myllm_model = ChatGoogleGenerativeAI(model=llm_s)
-    chain = prompt | myllm_model | parser
-    text_fromhtml_s = chain.invoke(invoke_d)
-    with open(txt_fn_s, 'w') as mytf:
-        mytf.write(text_fromhtml_s)
+for html_fn_s in fn_s_l:
+    nothtml_fn_s = fn_s_l[1]
+    txt_fn_s = html_fn_s.replace('.html','.txt')
+    if os.path.exists(txt_fn_s):
+        'The text is already extracted. Work on the next file.'
+    else:
+        'I will extract case info into text file: ' + txt_fn_s
+        with open(html_fn_s, 'r') as myhf:
+            html_s = myhf.read()
+        invoke_d = {'html_syntax': html_s}
+        llm_s = llm_s_l[0] # I have choices, now I want the 0th model.
+        myllm_model = ChatGoogleGenerativeAI(model=llm_s)
+        chain = prompt | myllm_model | parser
+        text_fromhtml_s = chain.invoke(invoke_d)
+        with open(txt_fn_s, 'w') as mytf:
+            mytf.write(text_fromhtml_s)
 
 'done'
 
