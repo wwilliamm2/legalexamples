@@ -29,7 +29,7 @@ for elmnt in soup(tag_l):
     elmnt.decompose() # They should have called it delete() or rm() or ...
 
 # Find and remove all comment nodes
-comments = soup.find_all(text=lambda text: isinstance(text, Comment))
+comments = soup.find_all(string=lambda string: isinstance(string, Comment))
 for comment in comments:
     comment.extract()
 
