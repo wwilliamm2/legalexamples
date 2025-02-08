@@ -39,9 +39,9 @@ for fn_s in fn_s_l:
     # Write the modified HTML to a new file
     with open(fn_enh_s, 'w', encoding='utf-8') as enf:
         # Replace re pattern matches with an empty string
-        nodiv_html_s = re.sub(div_re_pattern, '', str(soup))
+        nodiv_html_s = re.sub(div_re_pattern, '', str(soup), flags=re.MULTILINE)
         nospan_html_s = re.sub(span_re_pattern, '', nodiv_html_s)
-        enh_html_s = re.sub(r'^\s*$\n', '', nospan_html_s) #, flags=re.MULTILINE)
+        enh_html_s = re.sub(r'^\s*$\n', '', nospan_html_s, flags=re.MULTILINE)
         enf.write(enh_html_s)
 'done'
 
