@@ -25,3 +25,12 @@ client = genai.Client(api_key=api_key)
 
 model_id =  "gemini-2.0-flash" # or "gemini-2.0-flash-lite-preview-02-05"  , "gemini-2.0-pro-exp-02-05"
 
+from pydantic import BaseModel, Field
+
+class Form(BaseModel):
+    """Extract the form number, fiscal start date, fiscal end date, and the plan liabilities beginning of the year and end of the year."""
+    form_number: str = Field(description="The Form Number")
+    start_date: str = Field(description="Effective Date")
+    beginning_of_year: float = Field(description="The plan liabilities beginning of the year")
+    end_of_year: float = Field(description="The plan liabilities end of the year")
+ 
