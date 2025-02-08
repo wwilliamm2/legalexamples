@@ -16,13 +16,13 @@ import bs4, datetime, glob, inspect, operator, os, re, shutil, sys, time
 
 from bs4 import BeautifulSoup, Comment
 
-fn_s_l = sorted(glob.glob('/media/dan/ssd2/tmp/htmls/202*.html'))[:3]
+fn_s_l = sorted(glob.glob('/media/dan/ssd2/tmp/htmls/202*.html'))[:33]
 
 for fn_s in fn_s_l:
     with open(fn_s, 'r', encoding='utf-8') as cbf:
         soup = BeautifulSoup(cbf, 'html.parser')
     # Find and remove all unneeded elements
-    tag_l = ['a', 'script', 'style']
+    tag_l = ['a', 'script', 'style', 'input', 'fieldset', 'link']
     for elmnt in soup(tag_l):
         elmnt.decompose() # They should have called it delete() or rm() or destroy()
     # Find and remove all comment nodes
@@ -35,6 +35,7 @@ for fn_s in fn_s_l:
     fn_enh_s = fn_s.replace('/htmls/','/enhanced_htmls/')    
     # Write the modified HTML to a new file
     with open(fn_enh_s, 'w', encoding='utf-8') as enf:
-        enf.write(str(soup))
+        enh_html_s = str(soup).replace('<div></div>','').replace('<span></span>','')
+        enf.write(enh_html_s)
 'done'
 
