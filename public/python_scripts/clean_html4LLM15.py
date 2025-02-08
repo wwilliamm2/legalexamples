@@ -1,9 +1,10 @@
 '''~/lx/lx14/public/py/clean_html4LLM15.py'''
 
 '''
-Cleans my.html so my LLM can more easily parse my.html.
-Removes html-elements: anchor , script , style , link , comments , form , input
-Removes attributes: id , class
+Cleans HTML files so my LLM can more easily parse them.
+Removes html-elements: ['a', 'script', 'style', 'input', 'fieldset', 'link']
+Removes all element attributes; only bare tags are left.
+Removes some empty elements and white space using regexp syntax.o
 
 Demo:
 . ~/lx/lx14/public/lx14b_env.bash
@@ -16,7 +17,7 @@ import bs4, datetime, glob, inspect, operator, os, re, shutil, sys, time
 
 from bs4 import BeautifulSoup, Comment
 
-fn_s_l = sorted(glob.glob('/media/dan/ssd2/tmp/htmls/202*.html'))[:9]
+fn_s_l = sorted(glob.glob('/media/dan/ssd2/tmp/htmls/202*.html'))[:6]
 # Define the regular expression patterns
 div1_re_pattern = r'<div>\s*</div>'
 div2_re_pattern = r'<div>\s*</div>\n'
@@ -45,7 +46,7 @@ for fn_s in fn_s_l:
         nospan_html_s = re.sub(span_re_pattern, '', nodiv2_html_s)
         enh_html_s = re.sub(r'^\s*$\n', '', nospan_html_s, flags=re.MULTILINE)
         enf.write(enh_html_s)
-        print(f'Enhanced HTML should now be inside: {enh_html_s}')
+    print(f'Enhanced HTML should now be inside: {fn_enh_s}')
 'done'
 
 '''
