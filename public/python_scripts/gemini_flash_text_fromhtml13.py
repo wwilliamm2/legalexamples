@@ -50,7 +50,7 @@ user_tpl = ("user", prompt_s + "\n[[{html_syntax}]]")
 messages_l = [user_tpl]
 prompt = langchain_core.prompts.ChatPromptTemplate.from_messages(messages_l)
 
-fn_s_l = sorted(glob.glob('/media/dan/ssd2/tmp/enhanced_htmls/2023*.html'))[:4]
+fn_s_l = sorted(glob.glob('/media/dan/ssd2/tmp/enhanced_htmls/202*.html'))[:7]
 
 for html_fn_s in fn_s_l:
     nothtml_fn_s = fn_s_l[1]
@@ -66,8 +66,9 @@ for html_fn_s in fn_s_l:
         myllm_model = ChatGoogleGenerativeAI(model=llm_s)
         chain = prompt | myllm_model | parser
         text_fromhtml_s = chain.invoke(invoke_d)
+        top_s = f'This file contains information generated from:\n{html_fn_s}\nby an LLM named {llm_s}.\n'
         with open(txt_fn_s, 'w') as mytf:
-            mytf.write(text_fromhtml_s)
+            mytf.write(top_s + text_fromhtml_s)
 
 'done'
 
