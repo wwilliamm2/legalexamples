@@ -16,8 +16,8 @@ import bs4, datetime, glob, inspect, operator, os, re, shutil, sys, time
 
 from bs4 import BeautifulSoup, Comment
 
-fn_s_l = sorted(glob.glob('/media/dan/ssd2/tmp/htmls/202*.html'))[:333]
-# Define the regular expression pattern
+fn_s_l = sorted(glob.glob('/media/dan/ssd2/tmp/htmls/202*.html'))[:9]
+# Define the regular expression patterns
 div1_re_pattern = r'<div>\s*</div>'
 div2_re_pattern = r'<div>\s*</div>\n'
 span_re_pattern = r'<span>\s*</span>'
@@ -45,6 +45,7 @@ for fn_s in fn_s_l:
         nospan_html_s = re.sub(span_re_pattern, '', nodiv2_html_s)
         enh_html_s = re.sub(r'^\s*$\n', '', nospan_html_s, flags=re.MULTILINE)
         enf.write(enh_html_s)
+        print(f'Enhanced HTML should now be inside: {enh_html_s}')
 'done'
 
 '''
