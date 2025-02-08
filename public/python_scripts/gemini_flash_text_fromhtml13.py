@@ -50,13 +50,13 @@ user_tpl = ("user", prompt_s + "\n[[{html_syntax}]]")
 messages_l = [user_tpl]
 prompt = langchain_core.prompts.ChatPromptTemplate.from_messages(messages_l)
 
-fn_s_l = sorted(glob.glob('/media/dan/ssd2/tmp/enhanced_htmls/202*.html'))[:7]
+fn_s_l = sorted(glob.glob('/media/dan/ssd2/tmp/enhanced_htmls/202*.html'))[:500]
 
 for html_fn_s in fn_s_l:
-    nothtml_fn_s = fn_s_l[1]
     txt_fn_s = html_fn_s.replace('.html','.txt')
+    print(f'At {str(datetime.datetime.now())}, Busy with: {txt_fn_s}')    
     if os.path.exists(txt_fn_s):
-        'The text is already extracted. Work on the next file.'
+        print('The text is already extracted. Work on the next file.')
     else:
         'I will extract case info into text file: ' + txt_fn_s
         with open(html_fn_s, 'r') as myhf:
@@ -69,6 +69,7 @@ for html_fn_s in fn_s_l:
         top_s = f'This file contains information generated from:\n{html_fn_s}\nby an LLM named {llm_s}.\n'
         with open(txt_fn_s, 'w') as mytf:
             mytf.write(top_s + text_fromhtml_s)
+        time.sleep(15) # Throttle my calls to avoid trouble with API.
 
 'done'
 
