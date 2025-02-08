@@ -14,7 +14,7 @@ python -i clean_html4LLM13.py
 print('Busy ...')
 import bs4, datetime, glob, inspect, operator, os, re, shutil, sys, time
 
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Comment
 
 with open('my.html', 'r', encoding='utf-8') as cbf:
     soup = BeautifulSoup(cbf, 'html.parser')
