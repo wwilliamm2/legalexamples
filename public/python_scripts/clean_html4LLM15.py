@@ -40,7 +40,8 @@ for fn_s in fn_s_l:
     with open(fn_enh_s, 'w', encoding='utf-8') as enf:
         # Replace re pattern matches with an empty string
         nodiv_html_s = re.sub(div_re_pattern, '', str(soup))
-        enh_html_s = re.sub(span_re_pattern, '', nodiv_html_s)
+        nospan_html_s = re.sub(span_re_pattern, '', nodiv_html_s)
+        enh_html_s = re.sub(r'^\s*$\n', '', nospan_html_s) #, flags=re.MULTILINE)
         enf.write(enh_html_s)
 'done'
 
@@ -52,4 +53,17 @@ using a regular expression to match 0 or more space characters between the two d
 Answer:
 div_re_pattern = r'<div>\s*</div>'
 clean_s = re.sub(div_re_pattern, '', dirty_s)
+'''
+
+'''
+gpt, Please write a simple Python demo which removes empty lines from a text file.
+Perhaps a regular expression exists which matches an empty line?
+
+Answer:
+
+pattern = r'^\s*$\n'
+
+# Remove empty lines
+cleaned_content = re.sub(pattern, '', mystring, flags=re.MULTILINE)
+
 '''
