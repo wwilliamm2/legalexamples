@@ -28,7 +28,7 @@ div1_re_pattern = r'<div>\s*</div>'
 div2_re_pattern = r'<div>\s*</div>\n'
 span_re_pattern = r'<span>\s*</span>'
 
-fn_s = 'ugly.html'
+fn_s = 'ugly.html' # 2025_02_10_SS__29.html
 with open(fn_s, 'r', encoding='utf-8') as cbf:
     soup = BeautifulSoup(cbf, 'html.parser')
 # Find and remove all unneeded elements
@@ -57,4 +57,5 @@ better_md_s = convert_to_markdown(enh_html_s)
 'Write Markdown syntax to a file.'
 with open('better_md.txt', 'w', encoding='utf-8') as enf:
     enf.write(better_md_s)
+print('better_md.txt, better be ready.')
 'done'
