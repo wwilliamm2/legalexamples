@@ -51,7 +51,10 @@ with open(fn_enh_s, 'w', encoding='utf-8') as enf:
     nospan_html_s = re.sub(span_re_pattern, '', nodiv2_html_s)
     enh_html_s = re.sub(r'^\s*$\n', '', nospan_html_s, flags=re.MULTILINE)
     enf.write(enh_html_s)
-print(f'Enhanced HTML should now be inside: {fn_enh_s}')
-
+print(f'Enhanced HTML should now be inside file: {fn_enh_s}')
+'Convert Enhanced HTML string to Markdown syntax string.'
+better_md_s = convert_to_markdown(enh_html_s)
+'Write Markdown syntax to a file.'
+with open('better_md.txt', 'w', encoding='utf-8') as enf:
+    enf.write(better_md_s)
 'done'
-    
