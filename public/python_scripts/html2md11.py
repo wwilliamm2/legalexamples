@@ -59,3 +59,24 @@ with open('better_md.txt', 'w', encoding='utf-8') as enf:
     enf.write(better_md_s)
 print('better_md.txt, better be ready.')
 'done'
+
+'''
+(lx14b) dan@hpsda6:~/lx/lx14/public/py$ python -i html2md11.py
+Busy ...
+Enhanced HTML should now be inside file: better.html
+better_md.txt, better be ready.
+>>> quit() 
+(lx14b) dan@hpsda6:~/lx/lx14/public/py$ 
+(lx14b) dan@hpsda6:~/lx/lx14/public/py$ head better_md.txt 
+
+ Tentative Rulings \- Online Services \- LA Court
+
+
+
+
+
+
+ LANGUAGE TRANSLATION DISCLAIMER
+
+(lx14b) dan@hpsda6:~/lx/lx14/public/py$
+'''
