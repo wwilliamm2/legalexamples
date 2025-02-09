@@ -22,7 +22,7 @@ print('Busy ...')
 import bs4, datetime, glob, inspect, operator, os, re, shutil, sys, time
 from bs4 import BeautifulSoup, Comment
 
-fn_s_l = sorted(glob.glob('/media/dan/ssd2/tmp/htmls/202*.html'))[:4]
+fn_s_l = sorted(glob.glob('/media/dan/ssd2/tmp/htmls/202*.html'))[:444]
 
 # Define some regular expression patterns to help me remove some empty elements.
 div1_re_pattern = r'<div>\s*</div>'
@@ -59,5 +59,5 @@ for fn_s in fn_s_l:
     fn_markdown_s = fn_s.replace('htmls', 'markdown_files').replace('.html', '.md')
     with open(fn_markdown_s, 'w', encoding='utf-8') as betterf:
         betterf.write(better_md_s)
-    print(f'{fn_markdown_s}, better be ready.')
+    print(f'Better be ready: {fn_markdown_s}')
 'done'
