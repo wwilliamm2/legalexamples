@@ -37,7 +37,7 @@ for fn_s in fn_s_l:
     # Remove all attributes
     for tag in soup.find_all(True):
         tag.attrs = {}
-    fn_enh_s = fn_s.replace('/htmls/','/enhanced_htmls/')    
+    fn_enh_s = fn_s.replace('/htmls/','/enhanced_htmls/')  
     # Write the modified HTML to a new file
     with open(fn_enh_s, 'w', encoding='utf-8') as enf:
         # Replace re pattern matches with an empty string
