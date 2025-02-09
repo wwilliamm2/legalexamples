@@ -17,7 +17,7 @@ python split_pdf_demo2.py
 
 'gpt, Please write a Python demo to get file name from a path'
 
-import PyPDF2, glob, os
+import PyPDF2, glob, os, time
 
 fn_s_l = sorted(glob.glob('/media/dan/ssd2/tmp/scscourt/pdfs/202*pdf'))[:3]
 magick_s = '/home/dan/anaconda3/envs/imagemagick/bin/magick'
