@@ -1,7 +1,7 @@
 '''~/lx/lx14/public/py/html2md11.py'''
 
 '''
-Converts ugly.html to better.html to better_md.txt
+Converts ugly.html to better.html to better.md
 Demo:
 . ~/lx/lx14/public/lx14b_env.bash
 [ or conda activate lx14b ]
@@ -55,7 +55,7 @@ print(f'Enhanced HTML should now be inside file: {fn_enh_s}')
 'Convert Enhanced HTML string to Markdown syntax string.'
 better_md_s = convert_to_markdown(enh_html_s)
 'Write Markdown syntax to a file.'
-with open('better_md.txt', 'w', encoding='utf-8') as enf:
+with open('better.md', 'w', encoding='utf-8') as enf:
     enf.write(better_md_s)
 print('better_md.txt, better be ready.')
 'done'
@@ -67,7 +67,7 @@ Enhanced HTML should now be inside file: better.html
 better_md.txt, better be ready.
 >>> quit() 
 (lx14b) dan@hpsda6:~/lx/lx14/public/py$ 
-(lx14b) dan@hpsda6:~/lx/lx14/public/py$ head better_md.txt 
+(lx14b) dan@hpsda6:~/lx/lx14/public/py$ head better.md
 
  Tentative Rulings \- Online Services \- LA Court
 
