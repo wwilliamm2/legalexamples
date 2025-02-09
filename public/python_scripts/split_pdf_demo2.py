@@ -32,4 +32,4 @@ for fn_s in fn_s_l:
             pg_n_s = f"{folder_n_s}{fn_ospbn_s}_page{i+1:02d}.pdf"
             print(pg_n_s)
             with open(pg_n_s, 'wb') as page_f:
-                'pdf_writer.write(page_f)'
+                pdf_writer.write(page_f)
