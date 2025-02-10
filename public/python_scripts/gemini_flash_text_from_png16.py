@@ -35,8 +35,11 @@ print(f'File: {doc_png.display_name} equals to {file_size.total_tokens} tokens')
 prompt_s = '''Please study information from my file and then extract (verbatim) all text you see in it.
 My file is an image of a single page in California legal document filed in a county court.
 Please preserve the format and placement of all the words, sentenances, and paragraphs.
-Please give me plain text; I dislike Markdown and HTML.
+If the image contains text in a single rectangle, please use Markdown to show the text inside a single-cell table.
+If the image contains a table with text in the cells, please use Markdown to show that table and the text in the table's cells.
+Otherwise just show plain text; please avoid trying to style the text with Markdown if the text is outside a table.
 I want you to preserve the format because I want your extracted and verbatim text to be comprehensive for an attorney.
+Thanks!
 '''
 
 response = client.models.generate_content(model=model_id, contents=[doc_png, prompt_s])
