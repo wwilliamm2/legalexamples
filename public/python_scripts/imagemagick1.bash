@@ -12,12 +12,12 @@ echo started:
 date
 
 fldr=/media/dan/ssd2/tmp/scscourt/pdfs/
-for pdf in ${fldr}2023_0916*tues*/2*page*.pdf
+for pdf in ${fldr}2024_010*/2*page*.pdf
 do
-    echo ${pdf}.png
     if [ -f ${pdf}.png ]; then
-	echo magick did this already.
+	echo magick did this already: ${pdf}.png
     else
+	echo magick $pdf ${pdf}.png
 	magick $pdf ${pdf}.png
     fi
 done
