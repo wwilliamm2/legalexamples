@@ -12,7 +12,7 @@ echo started:
 date
 
 fldr=/media/dan/ssd2/tmp/scscourt/pdfs/
-for pdf in ${fldr}2024_01*/2*page*.pdf
+for pdf in ${fldr}2024*/2*page*.pdf
 do
     if [ -f ${pdf}.png ]; then
 	echo magick did this already: ${pdf}.png
