@@ -1,7 +1,8 @@
 '''~/lx/lx14/public/py/split_pdf_demo2.py'''
 
 '''
-Splits pdfs into folders of pages. I get both pdf pages and png pages.
+Splits pdfs into folders of pages.
+I rely on a bash script to convert each page pdf to a page png.
 
 Demo:
 
@@ -19,11 +20,12 @@ python split_pdf_demo2.py
 
 import PyPDF2, glob, os, time
 
-fn_s_l = sorted(glob.glob('/media/dan/ssd2/tmp/scscourt/pdfs/202*pdf'))[:3]
+fn_s_l = sorted(glob.glob('/media/dan/ssd2/tmp/scscourt/pdfs/202*pdf'))
 magick_s = '/home/dan/anaconda3/envs/imagemagick/bin/magick'
 
 for fn0_s in fn_s_l:
     try:
+        print(fn0_s)
         fn_s = fn0_s.replace(' ','_')
         fn_ospbn_s = os.path.basename(fn_s).replace('.pdf','')
         with open(fn_s, 'rb') as file:
@@ -36,9 +38,9 @@ for fn0_s in fn_s_l:
                 png_n_s = pg_n_s.replace('.pdf', '.png')
                 with open(pg_n_s, 'wb') as page_f:
                     pdf_writer.write(page_f)
-                    time.sleep(1) # throttle
-                    os.system(f'{magick_s} {pg_n_s} {png_n_s}')
-                    print(png_n_s)
     except Exception as myex:
         print(f'I see a problematic file: {fn0_s}')
         print(f'Due to: {str(myex)}')
+# Now I can call:
+# conda activate imagemagick
+# bash ~/lx/lx14/public/py/imagemagick1.bash
