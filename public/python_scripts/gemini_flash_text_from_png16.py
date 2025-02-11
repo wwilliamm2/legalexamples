@@ -49,11 +49,15 @@ for fn_s in fn_s_l:
             file_size = client.models.count_tokens(model=model_id,contents=doc_png)
             print(f'File: {doc_png.display_name} equals to {file_size.total_tokens} tokens')
             response = client.models.generate_content(model=model_id, contents=[doc_png, prompt_s])
+            time.sleep(2) # Throttle my calls to avoid trouble with API.            
             # Extract and print only the "text" field from the response
             if response.candidates:
                 with open(fn_txt_s, 'w') as txtf:
                     txtf.write(response.candidates[0].content.parts[0].text)
     except Exception as myexp:
-        print('I see a problem with {fn_s}\ndue to: ', str(myexp))
-    time.sleep(2) # Throttle my calls to avoid trouble with API.
+        print(f'I see a problem with {fn_s}\ndue to: ', str(myexp))
+        with open(fn_txt_s, 'w') as txtf:
+            # Salvage what I can...
+            txtf.write(f'{str(myexp))}\n{str(response)}')
+
 'done'
