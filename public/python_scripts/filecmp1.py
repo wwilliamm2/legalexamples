@@ -20,7 +20,7 @@ for fn1_s in fn1_s_l:
         if fn1_s < fn2_s:
             if filecmp.cmp(fn1_s, fn2_s, shallow=False):
                 matches_l.append([fn1_s, fn2_s])
-dups_s_l = [fn_s_l[0] for fn_s_l in matches_l]
+dups_s_l = [fn_s_l[0] for fn_s_l in matches_l] # rm oldest
 rm_these_l = sorted(list(set(dups_s_l)))
 for fn_s in rm_these_l:
     print('rm ', fn_s)
