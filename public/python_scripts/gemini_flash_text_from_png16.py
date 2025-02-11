@@ -23,10 +23,14 @@ client = genai.Client(api_key=os.environ["GOOGLE_API_KEY"])
 prompt_s = '''Please study information from my file and then extract (verbatim) all text you see in it.
 My file is an image of a single page in California legal document filed in a county court.
 Please preserve the format and placement of all the words, sentenances, and paragraphs.
+If you see text which looks like a paragraph, please ensure that the text you extract places a tab before the paragraph.
 If the image contains text in a single rectangle, please use Markdown to show the text inside a single-cell table.
-If the image contains a table with text in the cells, please use Markdown to show that table and the text in the table's cells.
-Otherwise just show plain text; please avoid trying to style the text with Markdown if the text is outside a table.
-I want you to preserve the format because I want your extracted and verbatim text to be comprehensive for an attorney.
+If the image contains a table with text in the cells, please use HTML (or Markdown or Haml or YAML) sytax to markup that table and the text in the table's cells.
+The td elements will separate cell-text well.
+The td elements will prevent text from one cell mixing with text in another cell.
+Outside of tables,
+I want you to preserve the text format and avoid using HTML because I want your extracted and verbatim text
+to be comprehensive for an attorney who might be confused by text marked-up by HTML (or Markdown or Haml or YAML).
 Thanks!
 '''
 
