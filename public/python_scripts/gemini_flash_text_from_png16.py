@@ -58,6 +58,6 @@ for fn_s in fn_s_l:
         print(f'I see a problem with {fn_s}\ndue to: ', str(myexp))
         with open(fn_txt_s, 'w') as txtf:
             # Salvage what I can...
-            txtf.write(f'{str(myexp))}\n{str(response)}')
+            txtf.write(f'{str(myexp)}\n{str(response)}')
 
 'done'
