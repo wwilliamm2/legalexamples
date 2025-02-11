@@ -34,7 +34,7 @@ to be comprehensive for an attorney who might be confused by text marked-up by H
 Thanks!
 '''
 
-fn_s_l = sorted(glob.glob('/media/dan/ssd2/tmp/scscourt/pdfs/2023_0916_2245_33_dept10_tues/2*png'))[:4]
+fn_s_l = sorted(glob.glob('/media/dan/ssd2/tmp/scscourt/pdfs/2023_0916_2245_33_dept10_tues/2*png'))[:8]
 
 # fn_s = fn_s_l[0]
 
