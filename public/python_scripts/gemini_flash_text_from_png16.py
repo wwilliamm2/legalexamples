@@ -41,14 +41,19 @@ fn_s_l = sorted(glob.glob('/media/dan/ssd2/tmp/scscourt/pdfs/2023_0916_2245_33_d
 for fn_s in fn_s_l:
     try:
         fn_txt_s = f'{fn_s}.txt'
-        print('Working on: ', fn_txt_s)
-        doc_png = client.files.upload(file=fn_s, config={'display_name': fn_s})
-        file_size = client.models.count_tokens(model=model_id,contents=doc_png)
-        print(f'File: {doc_png.display_name} equals to {file_size.total_tokens} tokens')
-        response = client.models.generate_content(model=model_id, contents=[doc_png, prompt_s])
-        # Extract and print only the "text" field from the response
-        if response.candidates:
-            with open(fn_txt_s, 'w') as txtf:
-                txtf.write(response.candidates[0].content.parts[0].text)
+        if os.path.exists(fn_txt_s):
+            print('File ready already:', fn_txt_s)
+        else:
+            print('Working on: ', fn_txt_s)
+            doc_png = client.files.upload(file=fn_s, config={'display_name': fn_s})
+            file_size = client.models.count_tokens(model=model_id,contents=doc_png)
+            print(f'File: {doc_png.display_name} equals to {file_size.total_tokens} tokens')
+            response = client.models.generate_content(model=model_id, contents=[doc_png, prompt_s])
+            # Extract and print only the "text" field from the response
+            if response.candidates:
+                with open(fn_txt_s, 'w') as txtf:
+                    txtf.write(response.candidates[0].content.parts[0].text)
     except Exception as myexp:
         print('I see a problem with {fn_s}\ndue to: ', str(myexp))
+    time.sleep(2) # Throttle my calls to avoid trouble with API.
+'done'
