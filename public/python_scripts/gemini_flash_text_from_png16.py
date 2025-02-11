@@ -34,7 +34,7 @@ to be comprehensive for an attorney who might be confused by text marked-up by H
 Thanks!
 '''
 
-fn_s_l = sorted(glob.glob('/media/dan/ssd2/tmp/scscourt/pdfs/2023_0916_2245_33_dept10_tues/2*png'))[:8]
+fn_s_l = sorted(glob.glob('/media/dan/ssd2/tmp/scscourt/pdfs/2023_09/2*png'))[:100]
 
 # fn_s = fn_s_l[0]
 
@@ -49,7 +49,7 @@ for fn_s in fn_s_l:
             file_size = client.models.count_tokens(model=model_id,contents=doc_png)
             print(f'File: {doc_png.display_name} equals to {file_size.total_tokens} tokens')
             response = client.models.generate_content(model=model_id, contents=[doc_png, prompt_s])
-            time.sleep(2) # Throttle my calls to avoid trouble with API.            
+            time.sleep(15) # Throttle my calls to avoid trouble with API.            
             # Extract and print only the "text" field from the response
             if response.candidates:
                 with open(fn_txt_s, 'w') as txtf:
