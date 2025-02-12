@@ -95,3 +95,64 @@ models/imagen-3.0-generate-002
 To create a tuned model, you need to pass your dataset to the model in the tunedModels.create method.
 https://ai.google.dev/api/tuning#Dataset
 https://ai.google.dev/api/tuning#method:-tunedmodels.create
+'''
+
+# https://ai.google.dev/gemini-api/docs/model-tuning/tutorial?lang=python#create-tuned-model
+
+# create tuning model
+training_dataset =  [
+    ["1", "2"],
+    ["3", "4"],
+    ["-3", "-2"],
+    ["twenty two", "twenty three"],
+    ["two hundred", "two hundred one"],
+    ["ninety nine", "one hundred"],
+    ["8", "9"],
+    ["-98", "-97"],
+    ["1,000", "1,001"],
+    ["10,100,000", "10,100,001"],
+    ["thirteen", "fourteen"],
+    ["eighty", "eighty one"],
+    ["one", "two"],
+    ["three", "four"],
+    ["seven", "eight"],
+]
+
+'''
+FAILS here:
+NameError: name 'types' is not defined. Did you mean: 'type'?
+
+This is probably a documentation-bug.
+
+oh well...
+I will study the collab notebook I see here:
+https://github.com/google/generative-ai-docs/blob/main/site/en/gemini-api/docs/model-tuning/python.ipynb
+
+training_dataset=types.TuningDataset(
+        examples=[
+            types.TuningExample(
+                text_input=i,
+                output=o,
+            )
+            for i,o in training_dataset
+        ],
+    )
+tuning_job = client.tunings.tune(
+    base_model='models/gemini-1.0-pro-001',
+    training_dataset=training_dataset,
+    config=types.CreateTuningJobConfig(
+        epoch_count= 5,
+        batch_size=4,
+        learning_rate=0.001,
+        tuned_model_display_name="test tuned model"
+    )
+)
+
+# generate content with the tuned model
+response = client.models.generate_content(
+    model=tuning_job.tuned_model.model,
+    contents='III',
+)
+
+print(response.text)
+'''
