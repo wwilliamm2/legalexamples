@@ -7,7 +7,7 @@ to generate llm-summaries of the corresponding text files.
 Demo:
 ll ~/anaconda3/envs/
 . ~/lx/lx14/public/lx14b_env.bash
-python gen_summaries18.py
+python gen_summaries19groq.py
 
 '''
 
