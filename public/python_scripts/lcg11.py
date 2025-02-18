@@ -2,13 +2,13 @@
 
 '''
 Simple demo of passing a prompt and pdf file to Gemini LLM,
-then get the response and pass that response to langchain string output parser.
+then get the response and pass that response to a langchain parser.
 
 Demo:
 conda create -n gemini2 python=3.12
 conda activate  gemini2
 pip install -U "google-genai>=1"
-pip install -U langchain
+pip install -U langchain-core
 
 python -i lcg11.py
 '''
@@ -36,7 +36,5 @@ GenerateContentResponse(candidates=[Candidate(content=Content(parts=[Part(video_
 >>>
 '''
 
-parser = langchain_core.output_parsers.StrOutputParser()
-
-# Pass the response to the parser so that the text portion of the response is extracted.
+# Pass the response to a langchain parser so that the text portion of the response is extracted from the response object.
 
