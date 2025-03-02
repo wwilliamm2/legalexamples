@@ -83,8 +83,6 @@ echo '```' >> ~/prompt.txt
 
 cp ~/prompt.txt ${fn}_llm_prompt.txt
 
-exit
-
 # Ask the llm to fix the OCR output.
 date 
 echo LLM is busy please wait .......
