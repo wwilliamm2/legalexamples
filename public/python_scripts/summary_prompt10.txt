@@ -24,9 +24,9 @@ any information
 which you, an alert and knowledgeable Law Clerk,
 deems relevant to the judge's goals.
 As a Law Clerk,
-please read and understand your job as it is descrbed above.
+please read and understand your summarizing-job as it is descrbed above.
 Please summarize the legal information in legal_info_and_ocr_info.txt for the judge
-so the judge can give wise, knowledgeable, and fair rulings.
+so the judge can write wise, knowledgeable, and fair rulings.
 Thanks!
 
 ```legal_info_and_ocr_info.txt
