@@ -36,11 +36,10 @@ rm -rf   /tmp/mypdf/
 mkdir -p /tmp/mypdf/
 
 cp $fnpdf /tmp/big.pdf
+# Get ready for some warnings from dirty pdf files
 qpdf --show-npages /tmp/big.pdf
 num_pages=$(qpdf --show-npages /tmp/big.pdf)
 echo num_pages $num_pages
-
-exit
 
 echo qpdf is busy...
 for ((i=1; i<=num_pages; i++)); do
@@ -52,17 +51,18 @@ done
 echo magick is busy...
 for ffnpdf in /tmp/mypdf/my*.pdf
 do
-    echo magick -density 300 $ffnpdf -scene 0 -quality 100 ${ffnpdf}.png
-    ~/anaconda3/envs/gemini2/bin/magick -density 300 $ffnpdf -scene 0 -quality 100 ${ffnpdf}.png
+    echo magick -density 300 $ffnpdf -quality 100 ${ffnpdf}.png
+    ~/anaconda3/envs/gemini2/bin/magick -density 300 $ffnpdf -quality 100 ${ffnpdf}.png
 done
 
 # Use tesseract to generate txt files from png files:
 echo tesseract is busy...
 for fnpng in /tmp/mypdf/my*.png
 do
-    echo tesseract $fnpng  ${fnpng}.txt
-    ~/anaconda3/envs/gemini2/bin/tesseract $fnpng  ${fnpng}.txt
+    echo tesseract $fnpng ${fnpng}.txt
+    ~/anaconda3/envs/gemini2/bin/tesseract $fnpng ${fnpng}.txt
 done
+exit
 
 # Prep for llm.
 cat ocr_prompt10.txt /tmp/mypdf/my*.txt > ~/prompt.txt
