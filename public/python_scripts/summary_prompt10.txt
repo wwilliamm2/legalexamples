@@ -1,0 +1,21 @@
+Hi Gemini 2.0,
+Your job is to summarize the legal information in a file named legal_info_and_ocr_info.txt;
+This file contains a text representation of a legal document which a California Court judge to wants to read.
+The file also contains some OCR information about how it was created.
+This creation information (related to OCR and LLM actions) is not very interesting to the judge.
+The judge wants to know all the names of listed in legal_info_and_ocr_info.txt
+The judge wants to sort relevant events by date.
+Other items the judge wants to know:
+- Facts, Disputes, any mentions of money or property.
+- Legal "Elements" of any claims or Causes of Action.
+- Facts under dispute.
+- Legal conclusions under dispute.
+- Other relevant cases affecting Plaintiff or Defendant.
+- Other relevant cases from Case Law.
+- Any statutes applicable to this case.
+Please read and understand your job as it is descrbed above.
+Please summarize the legal information in legal_info_and_ocr_info.txt for the judge
+so the judge can give wise, knowledgeable, and fair rulings.
+Thanks!
+
+```legal_info_and_ocr_info.txt
