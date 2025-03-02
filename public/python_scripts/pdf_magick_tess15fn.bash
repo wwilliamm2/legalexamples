@@ -1,28 +1,23 @@
 #!/bin/bash
 
-# ~/lx/lx14/public/py/pdf_magick_tess14.bash
+# ~/lx/lx14/public/py/pdf_magick_tess15fn.bash
 
 # This script leads towards automating OCR + LLM text generation from Complaint docs.
-
+# This script wants a file name , not a case number
 # Demo:
-# bash pdf_magick_tess14.bash 34-2021-00292843-CU-OR-GDS
+# bash pdf_magick_tess15fn.bash 34-2021-00293039-CL-OR-GDS_5_01_25_2021_Complaint_Global_Capital_Conce.pdf
 
 . gemini2.bash
 
 if [ -n "$1" ]; then
-    cn_s=$1
-    echo cn_s is $cn_s
+    bnpdf=$1 # basename of file I want to study
+    fnpdf=`find /home/dan/gsc1/cases/case_types/real_property/ -iname $1 | head -1`
+    echo fnpdf is $fnpdf
+    dir_cn_s=`dirname $fnpdf`
 else
-    echo You forgot to give me a value for cn_s. Bye.
+    echo You forgot to give me a value for file_name. Bye.
     exit 1
 fi
-
-dir_cn_s=/home/dan/gsc1/cases/case_types/real_property/${cn_s}/
-echo $dir_cn_s
-
-# fnpdf=`find /home/dan/gsc1/cases/case_types/real_property/${cn_s}/ -iname '*complaint*pdf' | head -1`
-fnpdf=`find $dir_cn_s -iname '*complaint*pdf' | head -1`
-echo fnpdf is $fnpdf
 
 if [ ! -f $fnpdf ]; then
   echo "Error: $fnpdf missing , bye."
@@ -30,6 +25,7 @@ if [ ! -f $fnpdf ]; then
 fi
 
 fn=`echo $fnpdf | sed 's/.pdf$//'`
+echo fn is $fn
 
 # Generate png files from pdf using imagemagick
 
@@ -81,15 +77,16 @@ rsync -av /tmp/mypdf $dir_cn_s
 cat ocr_prompt10.txt /tmp/mypdf/my*.txt > ~/prompt.txt
 echo '```' >> ~/prompt.txt
 
-cp ~/prompt.txt ${fn}_llm_prompt.txt
+cp ~/prompt.txt ${fn}_llm_ocr_prompt.txt
 
 echo I am about to use and create some useful artifacts:
 echo ~/bin/llm4.bash
 
 echo ocr_prompt10.txt
 echo Request to read then fix OCR text:
-echo ${fn}_llm_prompt.txt
+echo ${fn}_llm_ocr_prompt.txt
 
+echo summary_prompt10.txt
 echo Better text:
 echo ${fn}_llm_enhanced.txt
 
@@ -97,7 +94,10 @@ echo Request to summarize better text:
 echo which is in most recent prompt: ~/prompt.txt
 
 echo Summary:
+echo ${fn}_summary_prompt.txt
 echo ${fn}_llm_summary.txt
+
+exit
 
 # Ask the llm to fix the OCR output.
 date 
@@ -109,6 +109,7 @@ sleep 61 # throttle it
 # Prep for llm summary.
 cat summary_prompt10.txt ${fn}_llm_enhanced.txt > ~/prompt.txt
 echo '```' >> ~/prompt.txt
+cp ~/prompt.txt ${fn}_summary_prompt.txt
 date 
 echo LLM is busy please wait .......
 ~/bin/llm4.bash gemini-2.0-flash-exp > ${fn}_llm_summary.txt

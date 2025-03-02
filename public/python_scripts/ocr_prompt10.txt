@@ -12,7 +12,6 @@ Row 2 has 1 column naming the court (usually in a county in California),
 Row 3, often with a column separator, has 2 columns describing
 1: Plaintiff(s) and Defendant(s),
 2: More case info and info specific to this document.
-
 Know that most pages (on the left side)
 in legal_doc.png,
 have a column of integers starting at 1 and usually ending at 28.
