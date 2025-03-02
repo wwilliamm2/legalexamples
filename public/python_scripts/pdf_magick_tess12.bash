@@ -1,14 +1,34 @@
 #!/bin/bash
 
-# ~/lx/lx14/public/py/pdf_magick_tess11.bash
+# ~/lx/lx14/public/py/pdf_magick_tess12.bash
 
 # This script leads towards automating OCR + LLM text generation from Complaint docs.
 
 . gemini2.bash
 
-cn_s=34-2021-00291956-CU-OR-GDS
 
-fnpdf=`find /home/dan/gsc1/cases/case_types/real_property/${cn_s}/ -iname '*complaint*pdf'`
+# G, Please give me ideas and syntax I can study to help my place if-then logic in a bash script which looks for $1 and does `echo found dolla1` if $1 has a value.
+
+if [ -n "$1" ]; then
+    cn_s=$1
+    echo cn_s is $cn_s
+else
+    echo You forgot to give me a value for cn_s. Bye.
+    exit 1
+fi
+
+fnpdf=`find /home/dan/gsc1/cases/case_types/real_property/${cn_s}/ -iname '*complaint*pdf' | head -1`
+echo fnpdf is $fnpdf
+
+if [ -n $fnpdf ]; then
+  echo "Error: $fnpdf empty , bye."
+  exit 1
+fi
+
+if [ ! -f $fnpdf ]; then
+  echo "Error: $fnpdf missing , bye."
+  exit 1
+fi
 
 fn=`echo $fnpdf | sed 's/.pdf$//'`
 
@@ -19,6 +39,8 @@ fnpng=`echo $fn | sed 's/$/-%03d.png/'`
 echo busy ...
 echo wait for this:
 echo $fnpng
+
+exit
 
 # use ~/anaconda3/envs/gemini2 imagemagick to convert pdfn to png:
 ~/anaconda3/envs/gemini2/bin/magick -density 300 $fnpdf -scene 0 -quality 100 $fnpng
@@ -45,12 +67,10 @@ echo emacs ${fn}*png.txt
 cat ocr_prompt10.txt ${fn}*png.txt > ~/prompt.txt
 echo '```' >> ~/prompt.txt
 
+cp ~/prompt.txt   ${fn}_llm_prompt.txt
 # Ask the llm to fix the OCR output.
-~/bin/llm4.bash
+~/bin/llm4.bash > ${fn}_llm_enhanced.txt
 
-<<EOF
+exit
 
-'Hi, offer ideas and syntax I can study to help me write bash syntax to do a case insensitive search for /tmp/CoMpLaInt.pDf ; Maybe `ls` offers a case insensitive glob feature? '
-'Ans: find /tmp -iname "complaint.pdf"'
 
-EOF
