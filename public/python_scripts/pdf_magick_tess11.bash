@@ -30,8 +30,24 @@ ls -l ${fn}*png
 echo try this to view the new png files::
 echo eog ${fn}*png
 
+# Use tesseract to generate txt files from png files:
+echo tesseract is busy...
+for pngf in ${fn}*png
+do
+    ~/anaconda3/envs/gemini2/bin/tesseract $pngf $pngf
+done
+echo tesseract is done
 
+echo Maybe study these:
+echo emacs ${fn}*png.txt
 
+# Prep for llm.
+
+cat ocr_prompt10.txt ${fn}*png.txt > ~/prompt.txt
+echo '```' >> ~/prompt.txt
+
+# Ask the llm to fix the OCR output.
+~/bin/llm4.bash
 
 <<EOF
 

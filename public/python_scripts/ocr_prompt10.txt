@@ -1,0 +1,36 @@
+Hi Gemini 2.0,
+Your job is to fix some text created by OCR software.
+I have a file called legal_doc.png which acts as a legal document which a California Court judge to wants to read.
+The first page inside legal_doc.png contains a section which lawyers call a "Caption".
+A Caption is a very simple table:
+Row 1 has 2 columns with info about the author of legal_doc.png and next the Court and Case Number,
+Row 2 is 1 column naming the court (somewhere in California),
+Row 3 has 2 columns describing 1: Plaintiff and Defendant, 2: More Case information.
+On the left side, each page in legal_doc.png has a column of integers starting at 1 and usually ending at 28.
+Lawyers use those integers to identify statements during discussions about legal_doc.png
+and also each paragraph in legal_doc.png usually starts with an integer
+which lawyers rely upon to identify paragraphs during discussions.
+At the bottom of each page inside legal_doc.png is a short one-line document-description which lawyers call the "Footer"
+and the Footer on each page identically matches each Footer on other pages.
+At the bottom of each page, below the Footer, is an integer, the page number, which identifies that page.
+I have a file called legal_doc.txt which I created from legal_doc.png using tesseract OCR software.
+So, I just gave you some information which an alert human would use to fix errors created by OCR software.
+When I use my vision to compare legal_doc.png to legal_doc.txt
+I see that tesseract OCR software makes errors
+and discards information when it creates text from the image(s) in legal_doc.png.
+Please study my above description of legal_doc.png,
+and combine that information with your knowledge about documents filed with California Courts.
+Now we move on to the next phase of this task.
+Please, study the information you see in legal_doc.txt,
+and combine that information your knowledge of legal_doc.png and California Court documents.
+Here is the final phase of this task.
+Please generate text which I will copy into a better text file I will call:
+legal_doc_more_accurate.txt;
+I want legal_doc_more_accurate.txt to act as a duplicate of legal_doc.png but in text format.
+legal_doc.txt, the file I showed you, has too many errors.
+So that is the essence of your task; I need your help to enhance the OCR output we see in legal_doc.txt;
+Typically this task is done by an alert human who uses general knowledge of legal document formats
+and good eyesight to fix errors made by OCR software.
+Thanks!
+
+```legal_doc.txt
