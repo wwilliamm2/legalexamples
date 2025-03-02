@@ -32,7 +32,7 @@ fn=`echo $fnpdf | sed 's/.pdf$//'`
 # use ~/anaconda3/envs/gemini2 imagemagick to convert pdf to png:
 # I need to cut the pdf into pieces or else magick will choke.
 
-rm -rf   /tmp/mypdf/
+# debugging rm -rf   /tmp/mypdf/
 mkdir -p /tmp/mypdf/
 
 cp $fnpdf /tmp/big.pdf
@@ -45,36 +45,38 @@ echo qpdf is busy...
 for ((i=1; i<=num_pages; i++)); do
     output_file=$(printf "/tmp/mypdf/my%s%03d.pdf" "$output_prefix" "$i")
     echo qpdf /tmp/big.pdf --pages /tmp/big.pdf "$i" -- "$output_file"
-    ~/anaconda3/envs/gemini2/bin/qpdf /tmp/big.pdf --pages /tmp/big.pdf "$i" -- "$output_file"
+    echo ~/anaconda3/envs/gemini2/bin/qpdf /tmp/big.pdf --pages /tmp/big.pdf "$i" -- "$output_file"
 done
 
 echo magick is busy...
 for ffnpdf in /tmp/mypdf/my*.pdf
 do
     echo magick -density 300 $ffnpdf -quality 100 ${ffnpdf}.png
-    ~/anaconda3/envs/gemini2/bin/magick -density 300 $ffnpdf -quality 100 ${ffnpdf}.png
+    echo ~/anaconda3/envs/gemini2/bin/magick -density 300 $ffnpdf -quality 100 ${ffnpdf}.png
 done
 
 # Use tesseract to generate txt files from png files:
 echo tesseract is busy...
 for fnpng in /tmp/mypdf/my*.png
 do
-    echo tesseract $fnpng ${fnpng}.txt
-    ~/anaconda3/envs/gemini2/bin/tesseract $fnpng ${fnpng}.txt
+    echo tesseract $fnpng $fnpng
+    echo ~/anaconda3/envs/gemini2/bin/tesseract $fnpng $fnpng
 done
-exit
 
 # Prep for llm.
 cat ocr_prompt10.txt /tmp/mypdf/my*.txt > ~/prompt.txt
 echo '```' >> ~/prompt.txt
 
-cp ~/prompt.txt   ${fn}_llm_prompt.txt
+cp ~/prompt.txt ${fn}_llm_prompt.txt
 
 # Ask the llm to fix the OCR output.
 date 
 echo LLM is busy please wait .......
 ~/bin/llm4.bash > ${fn}_llm_enhanced.txt
+exit
 sleep 61 # throttle it
+
+
 
 # Prep for llm summary.
 cat summary_prompt10.txt ${fn}_llm_enhanced.txt > ~/prompt.txt

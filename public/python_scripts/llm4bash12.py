@@ -18,7 +18,9 @@ import re, os, sys
 
 client = genai.Client(api_key=os.environ["GOOGLE_API_KEY"])
 
-model_id = "gemini-2.0-pro-exp-02-05"
+# model_id = "gemini-2.0-pro-exp-02-05"
+# model_id = 'gemini-2.0-flash-thinking-exp-01-21'
+model_id = 'gemini-2.0-flash-exp'
 
 with open(os.path.expanduser(sys.argv[1]),'r') as pf:
     prompt_s = pf.read()
