@@ -56,22 +56,26 @@ done
 # Save my work to a folder near the Complaint doc.
 rsync -av /tmp/mypdf $dir_cn_s
 
-exit
-
 echo magick is busy...
 for ffnpdf in /tmp/mypdf/my*.pdf
 do
     echo magick -density 300 $ffnpdf -quality 100 ${ffnpdf}.png
-    echo ~/anaconda3/envs/gemini2/bin/magick -density 300 $ffnpdf -quality 100 ${ffnpdf}.png
+    ~/anaconda3/envs/gemini2/bin/magick -density 300 $ffnpdf -quality 100 ${ffnpdf}.png
 done
+
+# Save my work to a folder near the Complaint doc.
+rsync -av /tmp/mypdf $dir_cn_s
 
 # Use tesseract to generate txt files from png files:
 echo tesseract is busy...
 for fnpng in /tmp/mypdf/my*.png
 do
     echo tesseract $fnpng $fnpng
-    echo ~/anaconda3/envs/gemini2/bin/tesseract $fnpng $fnpng
+    ~/anaconda3/envs/gemini2/bin/tesseract $fnpng $fnpng
 done
+
+# Save my work to a folder near the Complaint doc.
+rsync -av /tmp/mypdf $dir_cn_s
 
 # Prep for llm.
 cat ocr_prompt10.txt /tmp/mypdf/my*.txt > ~/prompt.txt
@@ -79,24 +83,22 @@ echo '```' >> ~/prompt.txt
 
 cp ~/prompt.txt ${fn}_llm_prompt.txt
 
+exit
+
 # Ask the llm to fix the OCR output.
 date 
 echo LLM is busy please wait .......
-~/bin/llm4.bash > ${fn}_llm_enhanced.txt
-exit
+~/bin/llm4.bash gemini-2.0-flash-exp > ${fn}_llm_enhanced.txt
+
 sleep 61 # throttle it
-
-
 
 # Prep for llm summary.
 cat summary_prompt10.txt ${fn}_llm_enhanced.txt > ~/prompt.txt
 echo '```' >> ~/prompt.txt
 date 
 echo LLM is busy please wait .......
-~/bin/llm4.bash > ${fn}_llm_summary.txt
+~/bin/llm4.bash gemini-2.0-flash-exp > ${fn}_llm_summary.txt
 echo LLM is done.
 date
 
 exit
-
-

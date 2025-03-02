@@ -10,7 +10,7 @@ conda activate  gemini2
 pip install -U "google-genai>=1"
 
 echo 'Please describe how to access a command line token inside argv in Python. Thanks!' > ~/prompt.txt
-python ~/di/py/llm4bash12.py ~/prompt.txt
+python ~/di/py/llm4bash12.py ~/prompt.txt gemini-2.0-flash-exp
 '''
 
 from google import genai
@@ -18,9 +18,12 @@ import re, os, sys
 
 client = genai.Client(api_key=os.environ["GOOGLE_API_KEY"])
 
-# model_id = "gemini-2.0-pro-exp-02-05"
-# model_id = 'gemini-2.0-flash-thinking-exp-01-21'
-model_id = 'gemini-2.0-flash-exp'
+if len(sys.argv) > 2:
+    model_id = sys.argv[2]
+else:
+    # model_id = "gemini-2.0-pro-exp-02-05"
+    # model_id = 'gemini-2.0-flash-thinking-exp-01-21'
+    model_id = 'gemini-2.0-flash-exp'
 
 with open(os.path.expanduser(sys.argv[1]),'r') as pf:
     prompt_s = pf.read()
@@ -32,7 +35,6 @@ txt_s = response.text
 print(txt_s)
 
 # Define model and pricing
-model_id = "gemini-2.0-pro-exp-02-05"
 INPUT_PRICE_PER_1K_TOKENS = 0.0012
 OUTPUT_PRICE_PER_1K_TOKENS = 0.005
 
