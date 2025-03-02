@@ -82,22 +82,22 @@ cp ~/prompt.txt ${fn}_llm_ocr_prompt.txt
 echo I am about to use and create some useful artifacts:
 echo ~/bin/llm4.bash
 
+echo OCR initial prompt:
 echo ocr_prompt10.txt
 echo Request to read then fix OCR text:
 echo ${fn}_llm_ocr_prompt.txt
 
-echo summary_prompt10.txt
-echo Better text:
+
+echo Better OCR text:
 echo ${fn}_llm_enhanced.txt
 
-echo Request to summarize better text:
-echo which is in most recent prompt: ~/prompt.txt
-
-echo Summary:
+echo Summary initial prompt:
+echo summary_prompt10.txt
+echo Request to summarize the better OCR text:
 echo ${fn}_summary_prompt.txt
-echo ${fn}_llm_summary.txt
 
-exit
+echo Final Summary:
+echo ${fn}_llm_summary.txt
 
 # Ask the llm to fix the OCR output.
 date 
