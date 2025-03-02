@@ -37,6 +37,9 @@ echo $fnpng
 
 # use ~/anaconda3/envs/gemini2 imagemagick to convert pdfn to png:
 ~/anaconda3/envs/gemini2/bin/magick -density 300 $fnpdf -scene 0 -quality 100 $fnpng
+
+exit
+
 echo done.
 echo This:
 ls -l $fnpdf

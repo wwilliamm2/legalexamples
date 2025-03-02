@@ -48,5 +48,5 @@ def calculate_cost(response):
 
 cost, tokens = calculate_cost(response)
 
-print(f"This demo cost ${cost:.6f} to run because it made 1 request to the LLM '{model_id}' and used {tokens} tokens.")
+print(f"This LLM-run cost ${cost:.6f} to run because it made 1 request to the LLM '{model_id}' and used {tokens} tokens.")
 
