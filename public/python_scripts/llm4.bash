@@ -11,6 +11,6 @@
 . "/home/dan/anaconda3/etc/profile.d/conda.sh"
 conda activate gemini2
 
-python ~/di/py/llm4bash11.py ~/prompt.txt
+python ~/di/py/llm4bash12.py ~/prompt.txt
 exit
 

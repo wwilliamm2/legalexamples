@@ -25,7 +25,8 @@ with open(os.path.expanduser(sys.argv[1]),'r') as pf:
     
 response = client.models.generate_content(model=model_id, contents=[prompt_s])
 
-txt_s = response.candidates[0].content.parts[0].text
+# txt_s = response.candidates[0].content.parts[0].text
+txt_s = response.text
 print(txt_s)
 
 
