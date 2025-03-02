@@ -66,6 +66,7 @@ cp ~/prompt.txt   ${fn}_llm_prompt.txt
 date 
 echo LLM is busy please wait .......
 ~/bin/llm4.bash > ${fn}_llm_enhanced.txt
+sleep 61 # throttle it
 
 # Prep for llm summary.
 cat summary_prompt10.txt ${fn}_llm_enhanced.txt > ~/prompt.txt
