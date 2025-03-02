@@ -20,11 +20,6 @@ fi
 fnpdf=`find /home/dan/gsc1/cases/case_types/real_property/${cn_s}/ -iname '*complaint*pdf' | head -1`
 echo fnpdf is $fnpdf
 
-if [ -n $fnpdf ]; then
-  echo "Error: $fnpdf empty , bye."
-  exit 1
-fi
-
 if [ ! -f $fnpdf ]; then
   echo "Error: $fnpdf missing , bye."
   exit 1
@@ -37,10 +32,8 @@ fn=`echo $fnpdf | sed 's/.pdf$//'`
 fnpng=`echo $fn | sed 's/$/-%03d.png/'`
 
 echo busy ...
-echo wait for this:
+echo wait for this pattern to be used by magick:
 echo $fnpng
-
-exit
 
 # use ~/anaconda3/envs/gemini2 imagemagick to convert pdfn to png:
 ~/anaconda3/envs/gemini2/bin/magick -density 300 $fnpdf -scene 0 -quality 100 $fnpng
@@ -49,7 +42,7 @@ echo This:
 ls -l $fnpdf
 echo gave me this:
 ls -l ${fn}*png
-echo try this to view the new png files::
+echo try this to view the new png files:
 echo eog ${fn}*png
 
 # Use tesseract to generate txt files from png files:
@@ -68,7 +61,10 @@ cat ocr_prompt10.txt ${fn}*png.txt > ~/prompt.txt
 echo '```' >> ~/prompt.txt
 
 cp ~/prompt.txt   ${fn}_llm_prompt.txt
+
 # Ask the llm to fix the OCR output.
+date 
+echo LLM is busy please wait .......
 ~/bin/llm4.bash > ${fn}_llm_enhanced.txt
 
 exit
