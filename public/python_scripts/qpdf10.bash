@@ -29,7 +29,14 @@ done
 
 mkdir -p /tmp/mypng/
 
-for fnpdf in /tmp/mypdf/my*.pdf
+for fnpdf in NOPE/tmp/mypdf/my*.pdf
 do
   ~/anaconda3/envs/gemini2/bin/magick -density 300 $fnpdf -scene 0 -quality 100 ${fnpdf}.png
+done
+
+mv /tmp/mypdf/my*.pdf.png /tmp/mypng/
+
+for fnpng in /tmp/mypng/my*.png
+do
+    ~/anaconda3/envs/gemini2/bin/tesseract $fnpng  ${fnpng}.txt
 done

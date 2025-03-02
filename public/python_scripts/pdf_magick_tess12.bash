@@ -38,7 +38,15 @@ echo $fnpng
 # use ~/anaconda3/envs/gemini2 imagemagick to convert pdfn to png:
 ~/anaconda3/envs/gemini2/bin/magick -density 300 $fnpdf -scene 0 -quality 100 $fnpng
 
+exit 
+
+# This script breaks here on a big pdf:
+# ~/gsc1/cases/case_types/real_property/34*GDS/34*GDS*2021_Complaint_Agheli*pdf
+# work-around: cut big pdf into pieces then work with each piece.
+# see: ~/lx/lx14/public/py/pdf_magick_tess13.bash
+
 exit
+
 
 echo done.
 echo This:
