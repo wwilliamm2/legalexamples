@@ -1,4 +1,4 @@
-'''~/lx/lx14/public/py/llm_groq4bash15.py'''
+'''~/lx/lx14/public/py/llm_groq4bash16.py'''
 
 '''
 Sends a request to groq using requests package instead of groq package.
@@ -6,7 +6,7 @@ Sends a request to groq using requests package instead of groq package.
 Demo:
 . gemini2.bash
 pip install groq
-python ~/lx/lx14/public/py/llm_groq4bash15.py
+python ~/lx/lx14/public/py/llm_groq4bash16.py
 Later I will support cmd-line tokens like this:
 python llm_groq4bash14.py ~/prompt.txt 
 python llm_groq4bash14.py ~/prompt.txt gemma2-9b-it
@@ -22,7 +22,18 @@ myts = str(datetime.datetime.now()).replace(' ','_')
 
 llm_s_l = ['gemma2-9b-it', 'llama3-8b-8192', 'llama-3.3-70b-specdec', 'mixtral-8x7b-32768']
 
-with open('/home/dan/prompt.txt', 'r') as pf:
+if len(sys.argv) > 1:
+    promptfn_s = os.path.expanduser(sys.argv[1])
+else:
+    promptfn_s = os.path.expanduser('~/prompt.txt')
+
+if len(sys.argv) > 2:
+    model_s = sys.argv[2]
+else:
+    model_s = 'gemma2-9b-it'
+
+#with open('/home/dan/prompt.txt', 'r') as pf:
+with open(os.path.expanduser(promptfn_s), 'r') as pf:
     prompt_s = pf.read()
 
 # Initialize the Groq client
@@ -42,8 +53,16 @@ chat_completion = client.chat.completions.create(
             "content": prompt_s
         }
     ],
-    model='gemma2-9b-it' #"llama-3.3-70b-versatile",
+    model=model_s 
 )
+
+'''
+# groq_models.txt gemma2-9b-it llama-guard-3-8b llama-3.1-8b-instant
+# llama3-70b-8192 llama3-8b-8192
+expensive: llama-3.2-1b-preview
+llama-3.2-3b-preview llama-3.3-70b-specdec llama-3.3-70b-versatile
+deepseek-r1-distill-llama-70b
+'''
 
 print(chat_completion.choices[0].message.content)
 
