@@ -74,12 +74,7 @@ done
 # Save my work to a folder near the Complaint doc.
 rsync -av /tmp/mypdf $dir_cn_s
 
-# Prep for llm.
-#DEBUG my001.pdf.png.txt instead of my*txt
-cat ocr_prompt13pdf.txt /tmp/mypdf/my001.pdf.png.txt > ~/prompt.txt
-#DEBUG
-
-cp ~/prompt.txt ${fn}_llm_ocr_prompt.txt
+# Prep for the LLM.
 
 echo I am about to use and create some useful artifacts:
 echo ~/bin/llm4.bash
@@ -109,7 +104,7 @@ echo LLM is busy please wait .......
 for mytxtfn in /tmp/mypdf/my*.txt
 do
     echo working on: $mytxtfn ...
-    cat ocr_prompt13pdf.txt $mytxtfn > ~/prompt.txt
+    cat ocr_prompt14pdf.txt $mytxtfn > ~/prompt.txt
     # Feed groq 1 page of text:
     ./groq4.bash > ${mytxtfn}_llm_enhanced.txt
     sleep 33 # throttle it
@@ -118,7 +113,7 @@ done
 cat /tmp/mypdf/m*_llm_enhanced.txt > ${fn}_llm_enhanced.txt
 cat ${fn}_llm_enhanced.txt    
 echo Now I will throttle back for 61 sec to ease load on API server...
-sleep 61 # throttle it
+sleep 6 # throttle it
 
 echo under construction
 
