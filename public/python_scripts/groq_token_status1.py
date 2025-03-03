@@ -39,8 +39,27 @@ response = requests.post(url, headers=HEADERS, json=payload)
 # Extract token usage from response headers
 if response.status_code == 200:
     print("Some Token Info:")
-    print(f"x-ratelimit-remaining-tokens: {response.headers.get('x-ratelimit-remaining-tokens')}")
+    print(f"x-ratelimit-remaining-tokens:   {response.headers.get('x-ratelimit-remaining-tokens')}")
+    print(f"x-ratelimit-remaining-requests: {response.headers.get('x-ratelimit-remaining-requests')}")
+    print(f"x-ratelimit-reset-tokens:       {response.headers.get('x-ratelimit-reset-tokens')}")
+    print(response.headers)
+    if 'retry-after' in response.headers:
+        print(f"retry-after: {response.headers.get('retry-after')}")
 else:
     print(f"Error: {response.status_code}, {response.text}")
+'''
+hallucination:
+rate_limit_url = "https://api.groq.com/v1/rate_limits"
+
+rate_limit_response = requests.get(rate_limit_url, headers=HEADERS)
+
+if rate_limit_response.status_code == 200:
+    print("Rate Limit Details:")
+    print(rate_limit_response.json())  # Assuming the API returns JSON with limit details
+else:
+    print(f"Error: {rate_limit_response.status_code}, {rate_limit_response.text}")
+
+Error: 404, {"error":{"message":"Unknown request URL: GET /v1/rate_limits. Please check the URL for typos, or see the docs at https://console.groq.com/docs/","type":"invalid_request_error","code":"unknown_url"}}
+'''
 
 'done'
