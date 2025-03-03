@@ -106,11 +106,13 @@ date
 echo LLM is busy please wait .......
 
 # Note that groq4.bash uses a different anaconda-env so I can access groq:
-for mytxtfn in /tmp/mypdf/my001.pdf.png.txt /tmp/mypdf/my002.pdf.png.txt
+for mytxtfn in /tmp/mypdf/my*.txt
 do
+    echo working on: $mytxtfn ...
     cat ocr_prompt13pdf.txt $mytxtfn > ~/prompt.txt
+    # Feed groq 1 page of text:
     ./groq4.bash > ${mytxtfn}_llm_enhanced.txt
-    sleep 44 # throttle it
+    sleep 33 # throttle it
 done
 
 cat /tmp/mypdf/m*_llm_enhanced.txt > ${fn}_llm_enhanced.txt

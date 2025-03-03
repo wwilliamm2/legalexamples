@@ -1,6 +1,9 @@
 Hi,
+The attached document is a scan of an original document.
+The original document has an important message for me
+but I only have the scanned document.
 Please study the text in the attached document and use your semantic knowledge
-to fix typos made by OCR software. For example hel1o should be changed to
+to fix typos made by OCR scanning software. For example hel1o should be changed to
 hello and $1o,42m3.OQ should be $10,4233.00.
 Sacramento Coimty should be Sacramento County.
 If you encounter a word which fails spell-check but visually resembles a valid
@@ -11,9 +14,9 @@ After you correct the typos in that text,
 Please extract the corrected text, verbatim, from your context,
 and show it to me.
 I want to copy and paste that corrected text into my editor to check it for spelling errors.
-Thanks!
-
-If you detect text which might be a Caption,
+Oh, be aware of Captions.
+Rarely, the attached document contains a Caption (usually at the top).
+If you detect text (at the top) which might be a Caption,
 please format the text in your response
 so it matches the old-style (pre 1980)
 of Captions written to page 1 of legal documents
@@ -22,6 +25,16 @@ I describe a Caption format as a table with 3 rows.
 Row 1 has 2 columns which name the author on the left and court-clerk filing info on the right.
 Row 2 has 1 column which centers a California Court name.
 Row 3 has 2 columns which names parties on the left and Document info and Case info on the right.
+Anyway,
+after you correct the typos in the attached document,
+please extract the corrected text, verbatim, from your context,
+and show it to me.
+I want to copy and paste that corrected text into my editor to check it for spelling errors.
+Please output only information from attached document;
+Please withhold any information which describes your
+thoughts, motivations, observations, and actions
+because your thoughts might obscure information from the original document.
+
 Thanks!
 
 attached document:
