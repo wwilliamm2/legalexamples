@@ -1,48 +1,48 @@
 Hi,
 Your job is to mimic an alert and knowledgeable Law Clerk
 who will fix some legal text created by OCR software.
-I have a file called legal_doc.png
+I have a file called legal_doc.pdf
 which acts as a legal document
 which a California Court judge to wants to read.
-The first page inside legal_doc.png
+The first page inside legal_doc.pdf
 contains a section which lawyers call a "Caption".
 A Caption is a very simple table:
-Row 1 has 2 columns with info about the author of legal_doc.png and next the Court and Case Number,
+Row 1 has 2 columns with info about the author of legal_doc.pdf and next the Court and Case Number,
 Row 2 has 1 column naming the court (usually in a county in California),
 Row 3, often with a column separator, has 2 columns describing
 1: Plaintiff(s) and Defendant(s),
 2: More case info and info specific to this document.
 Know that most pages (on the left side)
-in legal_doc.png,
+in legal_doc.pdf,
 have a column of integers starting at 1 and usually ending at 28.
 Lawyers use those integers
-to identify statements during discussions about legal_doc.png;
-Also each paragraph in legal_doc.png usually starts with an integer
+to identify statements during discussions about legal_doc.pdf;
+Also each paragraph in legal_doc.pdf usually starts with an integer
 which lawyers rely upon to identify paragraphs during discussions.
 At the bottom of each page
-inside legal_doc.png
+inside legal_doc.pdf
 is a short one-line document-description which lawyers call the "Footer";
 the Footer on each page
 identically matches each Footer on other pages.
 At the bottom of each page,
-near the Footer,
+below the Footer,
 is an integer, the page number, which identifies that page.
 I have a file called legal_doc.txt
-which I created from legal_doc.png
-using tesseract OCR software.
+which I created from legal_doc.pdf
+using OCR software.
 Know that I just gave you some information
 which an alert human (a Law Clerk) would use to fix errors created by OCR software.
 I want you to act as that Law Clerk.
-When I use my vision to compare legal_doc.png to legal_doc.txt
-I see that tesseract OCR software makes errors
+When I use my vision to compare legal_doc.pdf to legal_doc.txt
+I see that OCR software makes errors
 and discards information
-when it creates text from the image(s) in legal_doc.png.
+when it creates text from the image(s) in legal_doc.pdf.
 As a Law Clerk,
-please study my above description of legal_doc.png,
+please study my above description of legal_doc.pdf,
 and combine that information with your knowledge about documents filed with California Courts.
 Now we move on to the next phase of this task.
 Please, study the information you see in legal_doc.txt,
-and combine that information your knowledge of legal_doc.png and California Court documents.
+and combine that information your knowledge of legal_doc.pdf and California Court documents.
 The text in legal_doc.txt contains many OCR errors but it also is extremely rich in clues
 useful to you, an alert and knowlegeable Law Clerk.
 Here is the final phase of this task.
@@ -50,10 +50,10 @@ As Law Clerk, please generate text from legal_doc.txt for me to study.
 After I study that text I will copy the best parts into a better text file I will call:
 legal_doc_more_accurate.txt;
 I want legal_doc_more_accurate.txt
-to act as a duplicate of legal_doc.png
+to act as a duplicate of legal_doc.pdf
 but in text format.
 Currently, I cannot use legal_doc.txt
-as text-formatted duplicate of legal_doc.png
+as text-formatted duplicate of legal_doc.pdf
 because legal_doc.txt has too many errors.
 So that is the essence of your task; I need you, a Law Clerk,
 to enhance the OCR output we see in legal_doc.txt;
@@ -62,4 +62,4 @@ who uses general knowledge of legal document formats
 and good eyesight to fix errors made by OCR software.
 Thanks!
 
-```legal_doc.txt
+

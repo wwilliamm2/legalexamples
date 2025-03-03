@@ -1,0 +1,19 @@
+Hi,
+Please study the text in the attached document and use your semantic knowledge
+to fix typos made by OCR software. For example hel1o should be changed to
+hello and $1o,42m3.OQ should be $10,4233.00.
+Sacramento Coimty should be Sacramento County.
+If you encounter a word which fails spell-check but visually resembles a valid
+word, please consider that you have just encountered an OCR-typo.
+More examples of OCR typos:
+Tmstee should be Trustee, Febmary should be February, tme should be true, or time or tame or me.
+After you correct the typos in that text,
+Please extract the corrected text, verbatim, from your context,
+and show it to me.
+I want to copy and paste that corrected text into my editor.
+Thanks!
+
+Please format the text in your response
+so it matches the old-style of legal documents
+which were written by typewriters.
+Thanks!
