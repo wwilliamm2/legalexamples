@@ -5,15 +5,21 @@ hello and $1o,42m3.OQ should be $10,4233.00.
 Sacramento Coimty should be Sacramento County.
 If you encounter a word which fails spell-check but visually resembles a valid
 word, please consider that you have just encountered an OCR-typo.
-More examples of OCR typos:
-Tmstee should be Trustee, Febmary should be February, tme should be true, or time or tame or me.
+I offer you 4 more examples of OCR typos which I found using my semantic knowledge:
+'''Tmstee should be Trustee, Febmary should be February, tme should be true, or time or tame or me.'''
 After you correct the typos in that text,
 Please extract the corrected text, verbatim, from your context,
 and show it to me.
-I want to copy and paste that corrected text into my editor.
+I want to copy and paste that corrected text into my editor to check it for spelling errors.
 Thanks!
 
-Please format the text in your response
-so it matches the old-style of legal documents
+If you detect text which might be a Caption,
+please format the text in your response
+so it matches the old-style (pre 1980)
+of Captions written to page 1 of legal documents
 which were written by typewriters.
+I describe a Caption format as a table with 3 rows.
+Row 1 has 2 columns which name the author on the left and filing date on the right.
+Row 2 has 1 column which names the Court in the center.
+Row 3 has 2 columns which names parties on the left and Document info and Case info on the right.
 Thanks!
