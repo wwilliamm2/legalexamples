@@ -19,7 +19,7 @@ so it matches the old-style (pre 1980)
 of Captions written to page 1 of legal documents
 which were written by typewriters.
 I describe a Caption format as a table with 3 rows.
-Row 1 has 2 columns which name the author on the left and filing date on the right.
-Row 2 has 1 column which names the Court in the center.
+Row 1 has 2 columns which name the author on the left and court-clerk filing info on the right.
+Row 2 has 1 column which centers a California Court name.
 Row 3 has 2 columns which names parties on the left and Document info and Case info on the right.
 Thanks!
