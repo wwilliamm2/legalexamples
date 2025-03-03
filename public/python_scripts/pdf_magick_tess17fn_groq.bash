@@ -5,7 +5,7 @@
 # This script leads towards automating OCR + groq-LLM text generation from Complaint docs.
 # This script wants a file name , not a case number
 # Demo:
-# bash pdf_magick_tess17fn_groq.bash 34-2021-00293107-CU-OR-GDS_30_01_27_2021_Complaint_Mailman_Randy_M_Pla.pdf
+# bash pdf_magick_tess17fn_groq.bash 34-2021-00293419-CU-OR-GDS_32_01_29_2021_Complaint_Davis_John_Plaintif.pdf
 
 # I need access to qpdf, magick, and tesseract:
 . gemini2.bash
@@ -84,8 +84,7 @@ echo ocr_prompt10.txt
 echo Request to read then fix OCR text:
 echo ${fn}_llm_ocr_prompt.txt
 
-
-echo Better OCR text:
+echo LLM response: Better, cleaner OCR text:
 echo ${fn}_llm_enhanced.txt
 
 echo Summary initial prompt:
@@ -106,7 +105,7 @@ do
     cat ocr_prompt14pdf.txt $mytxtfn > ~/prompt.txt
     # Feed groq 1 page of text:
     ./groq4.bash ~/prompt.txt gemma2-9b-it > ${mytxtfn}_llm_enhanced.txt
-    sleep 23 # throttle it
+    sleep 3 # throttle it
 done
 
 cat /tmp/mypdf/m*_llm_enhanced.txt > ${fn}_llm_enhanced.txt
