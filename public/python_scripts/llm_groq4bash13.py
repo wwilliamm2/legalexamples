@@ -8,6 +8,9 @@ Demo:
 . "/home/dan/anaconda3/etc/profile.d/conda.sh"
 conda activate lx14b
 
+python llm_groq4bash13.py
+
+Later I will support cmd-line tokens like this:
 python llm_groq4bash13.py ~/prompt.txt gemma2-9b-it
 '''
 
@@ -25,11 +28,19 @@ parser = langchain_core.output_parsers.StrOutputParser()
 llm_s_l = ['gemma2-9b-it', 'llama3-8b-8192', 'llama-3.3-70b-specdec', 'mixtral-8x7b-32768']
 
 # create prompt list of tpls acting as messages
-prompt_s = '''Please describe honeybee behavior to a 10 year old student.'''
+with open('/home/dan/prompt.txt', 'r') as pf:
+    prompt_s = pf.read()
 
 user_tpl = ("user", prompt_s + "\n[[{extra_s}]]")
 messages_l = [user_tpl]
 prompt = langchain_core.prompts.ChatPromptTemplate.from_messages(messages_l)
 
-invoke_d = {'extra_s': " One page at most."}
+invoke_d = {'extra_s': " "}
 
+myllm_model = langchain_groq.ChatGroq(model='gemma2-9b-it')
+chain = prompt | myllm_model | parser
+'Rubber meets road:'
+response_s = chain.invoke(invoke_d)
+print(response_s)
+
+'done'
