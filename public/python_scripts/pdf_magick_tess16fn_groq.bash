@@ -104,14 +104,19 @@ echo ${fn}_llm_summary.txt
 # Ask the llm to fix the OCR output.
 date 
 echo LLM is busy please wait .......
-# ~/bin/llm4.bash gemini-2.0-flash-exp > ${fn}_llm_enhanced.txt
-# Note that groq4.bash uses a different anaconda-env so I can access groq:
-./groq4.bash > ${fn}_llm_enhanced.txt
-cat  ${fn}_llm_enhanced.txt
 
+# Note that groq4.bash uses a different anaconda-env so I can access groq:
+for mytxtfn in /tmp/mypdf/my001.pdf.png.txt /tmp/mypdf/my002.pdf.png.txt
+do
+    cat ocr_prompt13pdf.txt $mytxtfn > ~/prompt.txt
+    ./groq4.bash > ${mytxtfn}_llm_enhanced.txt
+    sleep 44 # throttle it
+done
+
+cat /tmp/mypdf/m*_llm_enhanced.txt > ${fn}_llm_enhanced.txt
+cat ${fn}_llm_enhanced.txt    
 echo Now I will throttle back for 61 sec to ease load on API server...
 sleep 61 # throttle it
-
 
 echo under construction
 
