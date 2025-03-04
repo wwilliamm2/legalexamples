@@ -5,7 +5,7 @@
 # This script leads towards automating OCR + groq-LLM text generation from Complaint docs.
 # This script wants a file name , not a case number
 # Demo:
-# bash pdf_magick_tess17fn_groq.bash 34-2021-00293419-CU-OR-GDS_32_01_29_2021_Complaint_Davis_John_Plaintif.pdf
+# bash pdf_magick_tess17fn_groq.bash 34-2021-00293855-CU-OR-GDS_15_03_10_2021_Amended_Complaint_Wong_Christ.pdf
 
 # I need access to qpdf, magick, and tesseract:
 . gemini2.bash
@@ -53,8 +53,12 @@ done
 # Save my work to a folder near the Complaint doc.
 rsync -av /tmp/mypdf $dir_cn_s
 
+exit
+exit
+exit
+
 echo magick is busy...
-for ffnpdf in /tmp/mypdf/my*.pdf
+for ffnpdf in /tmp/mypdf/my00*.pdf
 do
     echo magick -density 300 $ffnpdf -quality 100 ${ffnpdf}.png
     ~/anaconda3/envs/gemini2/bin/magick -density 300 $ffnpdf -quality 100 ${ffnpdf}.png
@@ -65,7 +69,7 @@ rsync -av /tmp/mypdf $dir_cn_s
 
 # Use tesseract to generate txt files from png files:
 echo tesseract is busy...
-for fnpng in /tmp/mypdf/my*.png
+for fnpng in /tmp/mypdf/my00*.png
 do
     echo tesseract $fnpng $fnpng
     ~/anaconda3/envs/gemini2/bin/tesseract $fnpng $fnpng
@@ -81,7 +85,7 @@ rsync -av /tmp/mypdf $dir_cn_s
 date 
 echo LLM is busy please wait .......
 
-for mytxtfn in /tmp/mypdf/my*.txt
+for mytxtfn in /tmp/mypdf/my00*.txt
 do
     echo working on: $mytxtfn ...
     cat ocr_prompt14pdf.txt $mytxtfn > ~/prompt.txt
@@ -92,7 +96,7 @@ do
     sleep 4
 done
 
-cat /tmp/mypdf/m*_llm_enhanced.txt > /tmp/mypdf/big_llm_enhanced.txt
+cat /tmp/mypdf/my00*_llm_enhanced.txt > /tmp/mypdf/big_llm_enhanced.txt
 # Save my work to a folder near the Complaint doc.
 rsync -av /tmp/mypdf $dir_cn_s
 
