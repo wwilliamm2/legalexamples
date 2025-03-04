@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# ~/lx/lx14/public/py/pdf_magick_tess18fn_groq.bash
+# ~/lx/lx14/public/py/pdf_magick_tess19fn_groq.bash
 
 # This script leads towards automating OCR + groq-LLM text generation from Complaint docs.
 # This script wants a file name , not a case number
 # Demo:
-# bash pdf_magick_tess18fn_groq.bash 34-2021-00293855-CU-OR-GDS_15_03_10_2021_Amended_Complaint_Wong_Christ.pdf
+# bash pdf_magick_tess19fn_groq.bash 34-2021-00293861-CU-OR-GDS_28_02_03_2021_Complaint_Matthew_Dobbins_as_.pdf
 
 # I need access to qpdf, magick, and tesseract:
 . gemini2.bash
@@ -97,52 +97,45 @@ done
 # Save my work to a folder near the Complaint doc.
 rsync -av /tmp/mypdf $dir_cn_s
 
-# I should enhance the code below to run 3 times in a loop.
+echo Now I will throttle back for 63 sec to ease load on API server...
+sleep 63
 
-echo Now I will throttle back for 61 sec to ease load on API server...
-sleep 63 # throttle it
+# Do 3 layers of summarization.
+# I use layers to prevent LLM context over-flow
 
 # Get first 9 pages and prep for llm 1 summary.  <----
+echo LLM 1 summary is busy please wait .......
 cat summary_prompt10.txt /tmp/mypdf/my00*_llm_enhanced.txt > /tmp/mypdf/full_summary_1_prompt.txt
 echo '```' >>  /tmp/mypdf/full_summary_1_prompt.txt
-date
-echo LLM 1 summary is busy please wait .......
 ./groq4.bash /tmp/mypdf/full_summary_1_prompt.txt llama3-8b-8192 > /tmp/mypdf/big_llm_1_summary.txt
 echo LLM summary 1 is done.
-# Save my work to a folder near the Complaint doc.
 rsync -av /tmp/mypdf $dir_cn_s
-date
+echo Now I will throttle back for 63 sec to ease load on API server...
+sleep 63
 
-echo Now I will throttle back for 61 sec to ease load on API server...
-sleep 63 # throttle it
+if [ -f my010.pdf.png.txt_llm_enhanced.txt ]; then
+    cat summary_prompt10.txt /tmp/mypdf/big_llm_1_summary.txt /tmp/mypdf/my01*_llm_enhanced.txt > /tmp/mypdf/full_summary_2_prompt.txt
+    echo '```' >> /tmp/mypdf/full_summary_2_prompt.txt
+    echo LLM 2 summary is busy please wait .......
+    ./groq4.bash /tmp/mypdf/full_summary_2_prompt.txt llama3-8b-8192 > /tmp/mypdf/big_llm_2_summary.txt
+    echo LLM summary 2 is done.
+    rsync -av /tmp/mypdf $dir_cn_s
+    echo Now I will throttle back for 63 sec to ease load on API server...
+    sleep 63
+fi
 
-# Get the next 9 pages and prep for LLM summary 2. <----
-cat summary_prompt10.txt /tmp/mypdf/big_llm_1_summary.txt /tmp/mypdf/my01*_llm_enhanced.txt > /tmp/mypdf/full_summary_2_prompt.txt
-echo '```' >> /tmp/mypdf/full_summary_2_prompt.txt
-echo LLM 2 summary is busy please wait .......
-./groq4.bash /tmp/mypdf/full_summary_2_prompt.txt llama3-8b-8192 > /tmp/mypdf/big_llm_2_summary.txt
-
-# Save my work to a folder near the Complaint doc.
-rsync -av /tmp/mypdf $dir_cn_s
-date
-
-echo Now I will throttle back for 61 sec to ease load on API server...
-sleep 63 # throttle it
-
-# Get the next 9 pages and prep for LLM summary 3. <----
-cat summary_prompt10.txt /tmp/mypdf/big_llm_2_summary.txt /tmp/mypdf/my02*_llm_enhanced.txt > /tmp/mypdf/full_summary_3_prompt.txt
-echo '```' >> /tmp/mypdf/full_summary_3_prompt.txt
-echo LLM 3 summary is busy please wait .......
-./groq4.bash /tmp/mypdf/full_summary_3_prompt.txt llama3-8b-8192 > /tmp/mypdf/big_llm_3_summary.txt
+if [ -f my020.pdf.png.txt_llm_enhanced.txt ]; then
+    cat summary_prompt10.txt /tmp/mypdf/big_llm_2_summary.txt /tmp/mypdf/my02*_llm_enhanced.txt > /tmp/mypdf/full_summary_3_prompt.txt
+    echo '```' >> /tmp/mypdf/full_summary_3_prompt.txt
+    echo LLM 3 summary is busy please wait .......
+    ./groq4.bash /tmp/mypdf/full_summary_3_prompt.txt llama3-8b-8192 > /tmp/mypdf/big_llm_3_summary.txt
+fi
 
 # Save my work to a folder near the Complaint doc.
 rsync -av /tmp/mypdf $dir_cn_s
 rsync -av /tmp/mypdf ${fn}/
-date
 
-# 
-
-echo see /tmp/mypdf/big_llm_1_summary.txt  /tmp/mypdf/big_llm_2_summary.txt  /tmp/mypdf/big_llm_3_summary.txt 
+echo see these summary files, perhaps the 3rd is best:
 ls -l /tmp/mypdf/big_llm_1_summary.txt  /tmp/mypdf/big_llm_2_summary.txt  /tmp/mypdf/big_llm_3_summary.txt
 
 exit
