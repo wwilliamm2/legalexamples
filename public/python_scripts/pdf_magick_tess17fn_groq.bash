@@ -36,27 +36,24 @@ echo fn is $fn
 rm -rf   /tmp/mypdf/
 mkdir -p /tmp/mypdf/
 
-cp $fnpdf /tmp/big.pdf
+cp $fnpdf /tmp/mypdf/big.pdf
 
 # Get ready for some warnings from dirty pdf files
-qpdf --show-npages /tmp/big.pdf
+qpdf --show-npages /tmp/mypdf/big.pdf
 num_pages=$(qpdf --show-npages /tmp/big.pdf)
-echo /tmp/big.pdf num_pages $num_pages
+echo /tmp/mpypdf/big.pdf num_pages $num_pages
 
 echo qpdf is busy...
 for ((i=1; i<=num_pages; i++)); do
     output_file=$(printf "/tmp/mypdf/my%s%03d.pdf" "$output_prefix" "$i")
-    echo qpdf /tmp/big.pdf --pages /tmp/big.pdf "$i" -- "$output_file"
-    ~/anaconda3/envs/gemini2/bin/qpdf /tmp/big.pdf --pages /tmp/big.pdf "$i" -- "$output_file"
+    echo qpdf /tmp/mypdf/big.pdf --pages /tmp/mypdf/big.pdf "$i" -- "$output_file"
+    ~/anaconda3/envs/gemini2/bin/qpdf /tmp/mypdf/big.pdf --pages /tmp/mypdf/big.pdf "$i" -- "$output_file"
 done
 
 # Save my work to a folder near the Complaint doc.
 rsync -av /tmp/mypdf $dir_cn_s
 
-exit
-exit
-exit
-
+# Use imagemagick to convert pdf files to png.
 echo magick is busy...
 for ffnpdf in /tmp/mypdf/my00*.pdf
 do
@@ -88,9 +85,9 @@ echo LLM is busy please wait .......
 for mytxtfn in /tmp/mypdf/my00*.txt
 do
     echo working on: $mytxtfn ...
-    cat ocr_prompt14pdf.txt $mytxtfn > ~/prompt.txt
+    cat ocr_prompt14pdf.txt $mytxtfn > ${mytxtfn}_ocr_prompt.txt
     # Feed groq 1 page of text:
-    ./groq4.bash ~/prompt.txt llama3-8b-8192 > ${mytxtfn}_llm_enhanced.txt
+    ./groq4.bash ${mytxtfn}_ocr_prompt.txt llama3-8b-8192 > ${mytxtfn}_llm_enhanced.txt
     # throttle it via 4 sec delay, leading to 15 Req/min (about) ,
     # which is less than API limit of 30 Req/Min:
     sleep 4
@@ -99,6 +96,10 @@ done
 cat /tmp/mypdf/my00*_llm_enhanced.txt > /tmp/mypdf/big_llm_enhanced.txt
 # Save my work to a folder near the Complaint doc.
 rsync -av /tmp/mypdf $dir_cn_s
+
+exit
+exit
+exit
 
 echo Now I will throttle back for 61 sec to ease load on API server...
 
