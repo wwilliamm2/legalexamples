@@ -125,4 +125,7 @@ echo '```' >> /tmp/mypdf/full_summary_2_prompt.txt
 echo LLM is busy please wait .......
 ./groq4.bash /tmp/mypdf/full_summary_2_prompt.txt llama3-8b-8192 > /tmp/mypdf/big_llm_2_summary.txt
 
+# Save my work to a folder near the Complaint doc.
+rsync -av /tmp/mypdf $dir_cn_s
+
 exit
