@@ -8,8 +8,11 @@ Demo:
 pip install groq
 python ~/lx/lx14/public/py/llm_groq4bash16.py
 Later I will support cmd-line tokens like this:
-python llm_groq4bash14.py ~/prompt.txt 
-python llm_groq4bash14.py ~/prompt.txt gemma2-9b-it
+python llm_groq4bash16.py ~/prompt.txt 
+python llm_groq4bash16.py ~/prompt.txt gemma2-9b-it
+python -i llm_groq4bash16.py ~/prompt.txt gemma2-9b-it
+  print(chat_completion.usage) # which might provide 'retry-after' integer I can pass to time.sleep(10 + chat_completion.usage.retry-after)
+  retry-after might only be available from the requests package tho...
 '''
 
 import datetime, glob, inspect, json, operator, os, re, shutil, sys, time, typing
@@ -32,9 +35,10 @@ if len(sys.argv) > 2:
 else:
     model_s = 'gemma2-9b-it'
 
-#with open('/home/dan/prompt.txt', 'r') as pf:
 with open(os.path.expanduser(promptfn_s), 'r') as pf:
     prompt_s = pf.read()
+if prompt_s = '':
+    prompt_s = 'a'
 
 # Initialize the Groq client
 client = Groq(
@@ -44,16 +48,10 @@ client = Groq(
 # Create a chat completion
 chat_completion = client.chat.completions.create(
     messages=[
-        {
-            "role": "system",
-            "content": "You act as a Law Clerk who can spot typos and bad grammar."
+        {"role": "system",
+         "content": "You act as a Law Clerk who can spot typos and bad grammar."
         },
-        {
-            "role": "user",
-            "content": prompt_s
-        }
-    ],
-    model=model_s 
+        {"role": "user", "content": prompt_s }], model=model_s 
 )
 
 '''
@@ -65,6 +63,13 @@ deepseek-r1-distill-llama-70b
 '''
 
 print(chat_completion.choices[0].message.content)
+
+str_token_ratio_f = len(prompt_s) / chat_completion.usage.prompt_tokens
+
+groq_usage_info_s = f'{datetime.datetime.now()}\n{chat_completion.usage}\nstr_token_ratio_f is {str_token_ratio_f} [approx num of chars per token]'
+
+with open('/tmp/groq_usage_info.txt','w') as gf:
+    gf.write(groq_usage_info_s)
 
 'done'
 

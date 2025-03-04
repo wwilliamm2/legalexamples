@@ -105,7 +105,9 @@ do
     cat ocr_prompt14pdf.txt $mytxtfn > ~/prompt.txt
     # Feed groq 1 page of text:
     ./groq4.bash ~/prompt.txt gemma2-9b-it > ${mytxtfn}_llm_enhanced.txt
-    sleep 3 # throttle it
+    # throttle it via 4 sec delay, leading to 15 Req/min (about) ,
+    # which is less than API limit of 30 Req/Min:
+    sleep 4
 done
 
 cat /tmp/mypdf/m*_llm_enhanced.txt > ${fn}_llm_enhanced.txt
