@@ -46,13 +46,13 @@ client = Groq(
 )
 
 # Create a chat completion with token limit of 15000
-# which is about 60000 chars , I will use 59876
+# which is about 60000 chars , I will use 59654
 chat_completion = client.chat.completions.create(
     messages=[
         {"role": "system",
          "content": "You act as a Law Clerk who can spot typos and bad grammar."
         },
-        {"role": "user", "content": prompt_s[:59876] }], model=model_s 
+        {"role": "user", "content": prompt_s[:59654] }], model=model_s 
 )
 
 '''
