@@ -93,39 +93,52 @@ do
     sleep 4
 done
 
-# Get the 1st 9 pages:
-cat /tmp/mypdf/my00*_llm_enhanced.txt > /tmp/mypdf/big_llm_enhanced.txt
 # Save my work to a folder near the Complaint doc.
 rsync -av /tmp/mypdf $dir_cn_s
+
+# I should enhance the code below to run 3 times in a loop.
 
 echo Now I will throttle back for 61 sec to ease load on API server...
 sleep 63 # throttle it
 
-# Prep for llm summary.
-cat summary_prompt10.txt /tmp/mypdf/big_llm_enhanced.txt > /tmp/mypdf/full_summary_prompt.txt
-echo '```' >>  /tmp/mypdf/full_summary_prompt.txt
+# Get first 9 pages and prep for llm 1 summary.  <----
+cat summary_prompt10.txt /tmp/mypdf/my00*_llm_enhanced.txt > /tmp/mypdf/full_summary_1_prompt.txt
+echo '```' >>  /tmp/mypdf/full_summary_1_prompt.txt
 date
-
-echo LLM is busy please wait .......
-./groq4.bash /tmp/mypdf/full_summary_prompt.txt llama3-8b-8192 > /tmp/mypdf/big_llm_summary.txt
+echo LLM 1 summary is busy please wait .......
+./groq4.bash /tmp/mypdf/full_summary_1_prompt.txt llama3-8b-8192 > /tmp/mypdf/big_llm_1_summary.txt
 echo LLM summary 1 is done.
-
 # Save my work to a folder near the Complaint doc.
 rsync -av /tmp/mypdf $dir_cn_s
-
 date
 
 echo Now I will throttle back for 61 sec to ease load on API server...
 sleep 63 # throttle it
 
-# Get the next 9 pages and prep for LLM summary 2.
-cat summary_prompt10.txt /tmp/mypdf/big_llm_summary.txt /tmp/mypdf/my01*_llm_enhanced.txt > /tmp/mypdf/full_summary_2_prompt.txt
+# Get the next 9 pages and prep for LLM summary 2. <----
+cat summary_prompt10.txt /tmp/mypdf/big_llm_1_summary.txt /tmp/mypdf/my01*_llm_enhanced.txt > /tmp/mypdf/full_summary_2_prompt.txt
 echo '```' >> /tmp/mypdf/full_summary_2_prompt.txt
-
-echo LLM is busy please wait .......
+echo LLM 2 summary is busy please wait .......
 ./groq4.bash /tmp/mypdf/full_summary_2_prompt.txt llama3-8b-8192 > /tmp/mypdf/big_llm_2_summary.txt
 
 # Save my work to a folder near the Complaint doc.
 rsync -av /tmp/mypdf $dir_cn_s
+date
+
+echo Now I will throttle back for 61 sec to ease load on API server...
+sleep 63 # throttle it
+
+# Get the next 9 pages and prep for LLM summary 3. <----
+cat summary_prompt10.txt /tmp/mypdf/big_llm_2_summary.txt /tmp/mypdf/my02*_llm_enhanced.txt > /tmp/mypdf/full_summary_3_prompt.txt
+echo '```' >> /tmp/mypdf/full_summary_3_prompt.txt
+echo LLM 3 summary is busy please wait .......
+./groq4.bash /tmp/mypdf/full_summary_3_prompt.txt llama3-8b-8192 > /tmp/mypdf/big_llm_3_summary.txt
+
+# Save my work to a folder near the Complaint doc.
+rsync -av /tmp/mypdf $dir_cn_s
+date
+
+echo see /tmp/mypdf/big_llm_1_summary.txt  /tmp/mypdf/big_llm_2_summary.txt  /tmp/mypdf/big_llm_3_summary.txt 
+ls -l /tmp/mypdf/big_llm_1_summary.txt  /tmp/mypdf/big_llm_2_summary.txt  /tmp/mypdf/big_llm_3_summary.txt
 
 exit
