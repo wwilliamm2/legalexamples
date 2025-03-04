@@ -114,13 +114,7 @@ cat /tmp/mypdf/m*_llm_enhanced.txt > ${fn}_llm_enhanced.txt
 cat ${fn}_llm_enhanced.txt    
 echo Now I will throttle back for 61 sec to ease load on API server...
 
-exit
-exit
-exit
-exit
-exit
-
-sleep 33 # throttle it
+sleep 63 # throttle it
 
 
 # Prep for llm summary.
@@ -130,8 +124,7 @@ cp ~/prompt.txt ${fn}_summary_prompt.txt
 date
 
 echo LLM is busy please wait .......
-# ~/bin/llm4.bash gemini-2.0-flash-exp > ${fn}_llm_summary.txt
-./groq4.bash > ${fn}_llm_summary.txt
+./groq4.bash ~/prompt.txt gemma2-9b-it > ${fn}_llm_summary.txt
 cp ${fn}_llm_summary.txt /tmp/mypdf/llm_summary.txt
 echo LLM is done.
 date

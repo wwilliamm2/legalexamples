@@ -37,7 +37,7 @@ else:
 
 with open(os.path.expanduser(promptfn_s), 'r') as pf:
     prompt_s = pf.read()
-if prompt_s = '':
+if prompt_s == '':
     prompt_s = 'a'
 
 # Initialize the Groq client
