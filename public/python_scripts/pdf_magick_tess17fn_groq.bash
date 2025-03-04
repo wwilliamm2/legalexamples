@@ -71,29 +71,11 @@ do
     ~/anaconda3/envs/gemini2/bin/tesseract $fnpng $fnpng
 done
 
+cat /tmp/mypdf/my???.pdf.png.txt > /tmp/mypdf/big.pdf.png.txt
 # Save my work to a folder near the Complaint doc.
 rsync -av /tmp/mypdf $dir_cn_s
 
 # Prep for the LLM.
-
-echo I am about to use and create some useful artifacts:
-echo ~/bin/groq4.bash
-
-echo OCR initial prompt:
-echo ocr_prompt10.txt
-echo Request to read then fix OCR text:
-echo ${fn}_llm_ocr_prompt.txt
-
-echo LLM response: Better, cleaner OCR text:
-echo ${fn}_llm_enhanced.txt
-
-echo Summary initial prompt:
-echo summary_prompt10.txt
-echo Request to summarize the better OCR text:
-echo ${fn}_summary_prompt.txt
-
-echo Final Summary:
-echo ${fn}_llm_summary.txt
 
 # Ask the llm to fix the OCR output.
 date 
@@ -104,33 +86,34 @@ do
     echo working on: $mytxtfn ...
     cat ocr_prompt14pdf.txt $mytxtfn > ~/prompt.txt
     # Feed groq 1 page of text:
-    # ./groq4.bash ~/prompt.txt gemma2-9b-it > ${mytxtfn}_llm_enhanced.txt
     ./groq4.bash ~/prompt.txt llama3-8b-8192 > ${mytxtfn}_llm_enhanced.txt
     # throttle it via 4 sec delay, leading to 15 Req/min (about) ,
     # which is less than API limit of 30 Req/Min:
     sleep 4
 done
 
-cat /tmp/mypdf/m*_llm_enhanced.txt > ${fn}_llm_enhanced.txt
-cat ${fn}_llm_enhanced.txt    
+cat /tmp/mypdf/m*_llm_enhanced.txt > /tmp/mypdf/big_llm_enhanced.txt
+# Save my work to a folder near the Complaint doc.
+rsync -av /tmp/mypdf $dir_cn_s
+
 echo Now I will throttle back for 61 sec to ease load on API server...
 
 sleep 63 # throttle it
 
 # Prep for llm summary.
-cat summary_prompt10.txt ${fn}_llm_enhanced.txt > ~/prompt.txt
-echo '```' >> ~/prompt.txt
-cp ~/prompt.txt ${fn}_summary_prompt.txt
-cp ~/prompt.txt /tmp/full_summary_prompt.txt
+cat summary_prompt10.txt /tmp/mypdf/big_llm_enhanced.txt > /tmp/mypdf/full_summary_prompt.txt
+echo '```' >>  /tmp/mypdf/full_summary_prompt.txt
 date
 
 exit
 
 echo LLM is busy please wait .......
-#./groq4.bash ~/prompt.txt gemma2-9b-it > ${fn}_llm_summary.txt
-./groq4.bash ~/prompt.txt llama3-8b-8192 > ${fn}_llm_summary.txt
-cp ${fn}_llm_summary.txt /tmp/mypdf/llm_summary.txt
+./groq4.bash /tmp/mypdf/full_summary_prompt.txt llama3-8b-8192 > /tmp/mypdf/big_llm_summary.txt
 echo LLM is done.
+
+# Save my work to a folder near the Complaint doc.
+rsync -av /tmp/mypdf $dir_cn_s
+
 date
 
 exit
