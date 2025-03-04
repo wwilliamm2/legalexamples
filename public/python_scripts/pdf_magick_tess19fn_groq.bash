@@ -113,7 +113,7 @@ rsync -av /tmp/mypdf $dir_cn_s
 echo Now I will throttle back for 63 sec to ease load on API server...
 sleep 63
 
-if [ -f my010.pdf.png.txt_llm_enhanced.txt ]; then
+if [ -f /tmp/mypdf/my010.pdf.png.txt_llm_enhanced.txt ]; then
     cat summary_prompt10.txt /tmp/mypdf/big_llm_1_summary.txt /tmp/mypdf/my01*_llm_enhanced.txt > /tmp/mypdf/full_summary_2_prompt.txt
     echo '```' >> /tmp/mypdf/full_summary_2_prompt.txt
     echo LLM 2 summary is busy please wait .......
@@ -124,7 +124,7 @@ if [ -f my010.pdf.png.txt_llm_enhanced.txt ]; then
     sleep 63
 fi
 
-if [ -f my020.pdf.png.txt_llm_enhanced.txt ]; then
+if [ -f /tmp/mypdf/my020.pdf.png.txt_llm_enhanced.txt ]; then
     cat summary_prompt10.txt /tmp/mypdf/big_llm_2_summary.txt /tmp/mypdf/my02*_llm_enhanced.txt > /tmp/mypdf/full_summary_3_prompt.txt
     echo '```' >> /tmp/mypdf/full_summary_3_prompt.txt
     echo LLM 3 summary is busy please wait .......
@@ -135,7 +135,7 @@ fi
 rsync -av /tmp/mypdf $dir_cn_s
 rsync -av /tmp/mypdf ${fn}/
 
-echo see these summary files, perhaps the 3rd is best:
-ls -l /tmp/mypdf/big_llm_1_summary.txt  /tmp/mypdf/big_llm_2_summary.txt  /tmp/mypdf/big_llm_3_summary.txt
+echo 'See these summary files, maybe we have 3? , perhaps the 3rd is best:'
+ls -l /tmp/mypdf/big_llm_?_summary.txt
 
 exit
