@@ -12,6 +12,7 @@ This creation information (related to OCR and LLM actions) is not very interesti
 The judge wants to know all the names of listed in legal_info_and_ocr_info.txt
 The judge wants to sort relevant events by date.
 Other items the judge wants to know:
+- Roles connected to each name.
 - Facts, Disputes, any mentions of money or property.
 - Legal "Elements" of any claims or Causes of Action.
 - Facts under dispute.

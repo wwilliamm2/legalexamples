@@ -45,14 +45,15 @@ client = Groq(
     api_key=os.environ["GROQ_API_KEY"]
 )
 
-# Create a chat completion with token limit of 15000
-# which is about 60000 chars , I will use 59654
+# Create a chat completion with a limited context:
+charlim_i = int(15000 * 1.5)
+
 chat_completion = client.chat.completions.create(
     messages=[
         {"role": "system",
          "content": "You act as a Law Clerk who can spot typos and bad grammar."
         },
-        {"role": "user", "content": prompt_s[:59654] }], model=model_s 
+        {"role": "user", "content": prompt_s[:charlim_i] }], model=model_s 
 )
 
 '''
@@ -65,7 +66,8 @@ deepseek-r1-distill-llama-70b
 
 print(chat_completion.choices[0].message.content)
 
-str_token_ratio_f = len(prompt_s) / chat_completion.usage.prompt_tokens
+# str_token_ratio_f = len(prompt_s[:charlim_i]) / chat_completion.usage.prompt_tokens
+str_token_ratio_f = len(prompt_s[:charlim_i]) / chat_completion.usage.total_tokens
 
 groq_usage_info_s = f'{datetime.datetime.now()}\n{chat_completion.usage}\nstr_token_ratio_f is {str_token_ratio_f} [approx num of chars per token]'
 

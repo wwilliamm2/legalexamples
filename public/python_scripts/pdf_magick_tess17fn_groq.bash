@@ -104,7 +104,8 @@ do
     echo working on: $mytxtfn ...
     cat ocr_prompt14pdf.txt $mytxtfn > ~/prompt.txt
     # Feed groq 1 page of text:
-    ./groq4.bash ~/prompt.txt gemma2-9b-it > ${mytxtfn}_llm_enhanced.txt
+    # ./groq4.bash ~/prompt.txt gemma2-9b-it > ${mytxtfn}_llm_enhanced.txt
+    ./groq4.bash ~/prompt.txt llama3-8b-8192 > ${mytxtfn}_llm_enhanced.txt
     # throttle it via 4 sec delay, leading to 15 Req/min (about) ,
     # which is less than API limit of 30 Req/Min:
     sleep 4
@@ -116,15 +117,18 @@ echo Now I will throttle back for 61 sec to ease load on API server...
 
 sleep 63 # throttle it
 
-
 # Prep for llm summary.
 cat summary_prompt10.txt ${fn}_llm_enhanced.txt > ~/prompt.txt
 echo '```' >> ~/prompt.txt
 cp ~/prompt.txt ${fn}_summary_prompt.txt
+cp ~/prompt.txt /tmp/full_summary_prompt.txt
 date
 
+exit
+
 echo LLM is busy please wait .......
-./groq4.bash ~/prompt.txt gemma2-9b-it > ${fn}_llm_summary.txt
+#./groq4.bash ~/prompt.txt gemma2-9b-it > ${fn}_llm_summary.txt
+./groq4.bash ~/prompt.txt llama3-8b-8192 > ${fn}_llm_summary.txt
 cp ${fn}_llm_summary.txt /tmp/mypdf/llm_summary.txt
 echo LLM is done.
 date
