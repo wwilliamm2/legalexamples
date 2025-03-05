@@ -1,8 +1,9 @@
-bash pdf_magick_tess22fn_groq.bash 34-2021-00291744-CU-OR-GDS_8_01_05_2021_Complaint_Deborah_S_Fields_Att.pdf
-exit
+# bash pdf_magick_tess22fn_groq.bash 34-2021-00291744-CU-OR-GDS_8_01_05_2021_Complaint_Deborah_S_Fields_Att.pdf
+
 bash pdf_magick_tess22fn_groq.bash 34-2021-00291956-CU-OR-GDS_4_01_06_2021_Complaint_Ottersen_Melanie_M_P.pdf
 bash pdf_magick_tess22fn_groq.bash 34-2021-00292054-CU-OR-GDS_18_01_07_2021_Complaint_Pennymac_Loan_Servi.pdf
 bash pdf_magick_tess22fn_groq.bash 34-2021-00292300-CU-OR-GDS_4_01_12_2021_Complaint_Mata_Julie_V_Plainti.pdf
+exit
 bash pdf_magick_tess22fn_groq.bash 34-2021-00292387-CU-OR-GDS_4_01_13_2021_Complaint_City_of_Sacramento_a.pdf
 bash pdf_magick_tess22fn_groq.bash 34-2021-00292607-CU-OR-GDS_48_08_05_2024_Summons_on_Complaint_1st_Davi.pdf
 bash pdf_magick_tess22fn_groq.bash 34-2021-00292628-CU-OR-GDS_2_06_17_2021_Amended_Complaint_First_Esrig_.pdf
