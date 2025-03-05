@@ -1,4 +1,4 @@
-'''~/lx/lx14/public/py/llm_groq4bash16.py'''
+'''~/lx/lx14/public/py/groqq.py'''
 
 '''
 Sends a request to groq using groq package.
@@ -6,13 +6,16 @@ Sends a request to groq using groq package.
 Demo:
 . gemini2.bash
 pip install groq
-python ~/lx/lx14/public/py/llm_groq4bash16.py
-Later I will support cmd-line tokens like this:
-python llm_groq4bash16.py ~/prompt.txt 
-python llm_groq4bash16.py ~/prompt.txt gemma2-9b-it
-python -i llm_groq4bash16.py ~/prompt.txt gemma2-9b-it
-  print(chat_completion.usage) # which might provide 'retry-after' integer I can pass to time.sleep(10 + chat_completion.usage.retry-after)
-  retry-after might only be available from the requests package tho...
+python groqq.py
+python groqq.py /tmp/prompt.txt 
+python groqq.py /tmp/prompt.txt gemma2-9b-it
+python groqq.py /tmp/prompt.txt llama-3.2-1b-preview
+python groqq.py /tmp/prompt.txt llama-3.2-3b-preview
+python groqq.py /tmp/prompt.txt llama-3.1-8b-instant
+python groqq.py /tmp/prompt.txt llama3-8b-8192
+python groqq.py /tmp/prompt.txt llama-3.3-70b-specdec
+python groqq.py /tmp/prompt.txt llama-3.3-70b-versatile
+python groqq.py /tmp/prompt.txt deepseek-r1-distill-llama-70b
 '''
 
 import datetime, glob, inspect, json, operator, os, re, shutil, sys, time, typing
@@ -40,39 +43,73 @@ with open(os.path.expanduser(promptfn_s), 'r') as pf:
 if prompt_s == '':
     prompt_s = 'a'
 
-# Initialize the Groq client
-client = Groq(
-    api_key=os.environ["GROQ_API_KEY"]
-)
-
-# Create a chat completion with a limited context:
 charlim_i = int(15000 * 1.5)
 
-chat_completion = client.chat.completions.create(
-    messages=[
-        {"role": "system",
-         "content": "You act as a Law Clerk who can spot typos and bad grammar."
-        },
-        {"role": "user", "content": prompt_s[:charlim_i] }], model=model_s 
-)
+def groq1(prompt_s, model_s):
+    # Initialize the Groq client
+    client = Groq(
+        api_key=os.environ["GROQ_API_KEY"]
+    )
+    # Create a chat completion with a limited context:
+    charlim_i = int(15000 * 1.5)
+    max_retries = 3
+    retry_delay = 0  # initial delay
+'''    
+    try:
+        chat_completion = client.chat.completions.create(
+            messages=[
+                {"role": "system",
+                 "content": "You are cheerful, curious, and helpful but, please write complete sentences devoid of emoticons and slang, suitable for an article read by serious business people."
+                 },
+                {"role": "user", "content": prompt_s[:charlim_i] }], model=model_s 
+        )
+        return [chat_completion, prompt_s[:charlim_i]]
+    except:
+        'wait until the API allows me to try again, then, try again 3 times.'
+        return 1
+'''
+
+
+    for attempt in range(max_retries):
+        try:
+            chat_completion = client.chat.completions.create(
+                messages=[
+                    {"role": "system",
+                     "content": "You are cheerful, curious, and helpful but, please write complete sentences devoid of emoticons and slang, suitable for an article read by serious business people."                     
+                     },
+                    {"role": "user", "content": prompt_s[:charlim_i] }
+                ], model=model_s 
+            )
+            return chat_completion
+        except groq.RateLimitError as e:
+    
+    
+
+groq1_l = groq1(prompt_s, model_s)
+chat_completion = groq1_l[0]
+prompt_s = groq1_l[1]
 
 '''
-# groq_models.txt gemma2-9b-it llama-guard-3-8b llama-3.1-8b-instant
-# llama3-70b-8192 llama3-8b-8192
-expensive: llama-3.2-1b-preview
-llama-3.2-3b-preview llama-3.3-70b-specdec llama-3.3-70b-versatile
+# groq_models.txt
+gemma2-9b-it
+llama-3.1-8b-instant
+llama3-8b-8192
+# 
+expensive:
+llama3-70b-8192
+llama-3.3-70b-specdec
+llama-3.3-70b-versatile
 deepseek-r1-distill-llama-70b
 '''
 
 print(chat_completion.choices[0].message.content)
 
-# str_token_ratio_f = len(prompt_s[:charlim_i]) / chat_completion.usage.prompt_tokens
 str_token_ratio_f = len(prompt_s[:charlim_i]) / chat_completion.usage.total_tokens
 
 groq_usage_info_s = f'{datetime.datetime.now()}\n{chat_completion.usage}\nstr_token_ratio_f is {str_token_ratio_f} [approx num of chars per token]'
 
 with open('/tmp/groq_usage_info.txt','w') as gf:
-    gf.write(groq_usage_info_s)
+    gf.write(f'{groq_usage_info_s}\nPrompt:\n{prompt_s[:charlim_i]}\nchat_completion.choices[0].message.content:\n{chat_completion.choices[0].message.content}')
 
 'done'
 
