@@ -69,11 +69,22 @@ def groq1(prompt_s, model_s):
             time.sleep(2)
             return f'groq.RateLimitError as e: {str(e)}'
 
+chat_completion =groq1(prompt_s, model_s)
 
+print(chat_completion.choices[0].message.content)
 
-groq1_l = groq1(prompt_s, model_s)
-chat_completion = groq1_l[0]
-prompt_s = groq1_l[1]
+str_token_ratio_f = len(prompt_s[:charlim_i]) / chat_completion.usage.total_tokens
+
+groq_usage_info_s = f'{datetime.datetime.now()}\n{chat_completion.usage}\nstr_token_ratio_f is {str_token_ratio_f} [approx num of chars per token]'
+
+with open('/tmp/groq_usage_info.txt','w') as gf:
+    s1_s = groq_usage_info_s
+    s2_s = f'Prompt:\n{prompt_s[:charlim_i]}'
+    s3_s = f'chat_completion:\n{chat_completion}'
+    gf.write(f'{s1_s}\n{s2_s}\n{s3_s}')
+
+'done'
+
 
 '''
 # groq_models.txt
@@ -87,17 +98,6 @@ llama-3.3-70b-specdec
 llama-3.3-70b-versatile
 deepseek-r1-distill-llama-70b
 '''
-
-print(chat_completion.choices[0].message.content)
-
-str_token_ratio_f = len(prompt_s[:charlim_i]) / chat_completion.usage.total_tokens
-
-groq_usage_info_s = f'{datetime.datetime.now()}\n{chat_completion.usage}\nstr_token_ratio_f is {str_token_ratio_f} [approx num of chars per token]'
-
-with open('/tmp/groq_usage_info.txt','w') as gf:
-    gf.write(f'{groq_usage_info_s}\nPrompt:\n{prompt_s[:charlim_i]}\nchat_completion.choices[0].message.content:\n{chat_completion.choices[0].message.content}')
-
-'done'
 
 
 '''
