@@ -23,7 +23,7 @@ from groq import Groq
 
 myts = str(datetime.datetime.now()).replace(' ','_')
 
-llm_s_l = ['gemma2-9b-it', 'llama3-8b-8192', 'llama-3.3-70b-specdec', 'mixtral-8x7b-32768']
+llm_s_l = ['gemma2-9b-it', 'llama3-8b-8192', 'llama-3.3-70b-specdec']
 
 if len(sys.argv) > 1:
     promptfn_s = os.path.expanduser(sys.argv[1])
@@ -47,32 +47,45 @@ client = Groq(
 
 # Create a chat completion with a limited context:
 charlim_i = int(15000 * 1.5)
-
-chat_completion = client.chat.completions.create(
-    messages=[
-        {"role": "system",
-         "content": "You act as a Law Clerk who can spot typos and bad grammar."
-        },
-        {"role": "user", "content": prompt_s[:charlim_i] }], model=model_s 
-)
-
-'''
-# groq_models.txt gemma2-9b-it llama-guard-3-8b llama-3.1-8b-instant
-# llama3-70b-8192 llama3-8b-8192
-expensive: llama-3.2-1b-preview
-llama-3.2-3b-preview llama-3.3-70b-specdec llama-3.3-70b-versatile
-deepseek-r1-distill-llama-70b
-'''
-
-print(chat_completion.choices[0].message.content)
-
-# str_token_ratio_f = len(prompt_s[:charlim_i]) / chat_completion.usage.prompt_tokens
-str_token_ratio_f = len(prompt_s[:charlim_i]) / chat_completion.usage.total_tokens
-
-groq_usage_info_s = f'{datetime.datetime.now()}\n{chat_completion.usage}\nstr_token_ratio_f is {str_token_ratio_f} [approx num of chars per token]'
-
-with open('/tmp/groq_usage_info.txt','w') as gf:
-    gf.write(groq_usage_info_s)
+retry_delay = 5 * 60 # 5 min initial delay
+chat_completion = None
+groq_rle = None
+for attempt in range(4):
+    try:
+        if chat_completion:
+            'done already'
+        else:
+            chat_completion = client.chat.completions.create(
+                messages=[
+                    {"role": "system",
+                     "content": "You act as a Law Clerk who can spot typos and bad grammar."
+                     },
+                    {"role": "user", "content": prompt_s[:charlim_i] }], model=model_s 
+            )
+            print(chat_completion.choices[0].message.content)
+            str_token_ratio_f = len(prompt_s[:charlim_i]) / chat_completion.usage.total_tokens
+            groq_usage_info_s = f'{datetime.datetime.now()}\n{chat_completion.usage}\nstr_token_ratio_f is {str_token_ratio_f} [approx num of chars per token]'
+            os.system('mkdir -p /tmp/groq_usage_info/')
+            n_s = datetime.datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
+            with open(f'/tmp/groq_usage_info/groq_{n_s}.txt','w') as gf:
+                s1_s = groq_usage_info_s
+                s2_s = f'Prompt:\n{prompt_s[:charlim_i]}'
+                s3_s = f'chat_completion:\n{chat_completion}'
+                gf.write(f'{s1_s}\n{s2_s}\n{s3_s}')
+    except groq.RateLimitError as groq_rle:
+        chat_completion = None
+        print(f'Throttling myself to please API. Sleeping for {retry_delay} seconds....')
+        time.sleep(retry_delay)
+        retry_delay *= 2  # increasing backoff
+# If all retries fail, return an error message
+if groq_rle:
+    e1_s = f"groq.RateLimitError as groq_rle: {str(groq_rle)}"
+    e2_s = f"Failed to retrieve chat completion after 4 tries."
+    print(f"{e1_s}\n{e2_s}")
+    os.system('mkdir -p /tmp/groq_usage_info/')
+    n_s = datetime.datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
+    with open(f'/tmp/groq_usage_info/groq_{n_s}.txt','w') as gf:
+        gf.write(f"{e1_s}\n{e2_s}")
 
 'done'
 
