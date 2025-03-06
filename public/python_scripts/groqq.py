@@ -53,7 +53,7 @@ def groq1(prompt_s, model_s):
     # Create a chat completion with a limited context:
     charlim_i = int(15000 * 1.5)
     max_retries = 3
-    retry_delay = 0  # initial delay
+    retry_delay = 5 * 60 # 5 min initial delay
     for attempt in range(max_retries):
         try:
             chat_completion = client.chat.completions.create(
@@ -67,7 +67,26 @@ def groq1(prompt_s, model_s):
             return chat_completion
         except groq.RateLimitError as e:
             time.sleep(2)
-            return f'groq.RateLimitError as e: {str(e)}'
+            # Extract the retry delay from the error message
+            error_message = e.response.json()["error"]["message"]
+            delay_pattern0 = r'(Please try again in )(4)(m)(36)(.)(938s)'
+            delay_pattern2 = r'(Please try again in )(\d+)(m)(\d+)(.)(\d+s)'
+            delay_pattern4 = r'(Please try again in )(26)(.)(938s)'
+            delay_pattern6 = r'(Please try again in )(\d+)(.)(\d+s)'
+            m1 = re.match(delay_pattern2, error_message)
+            m3 = re.match(delay_pattern6, error_message)
+            if m3:
+                retry_delay += 120
+            if m1:
+                min_s = m1.group(1) # 4 for ex
+                sec_s = m1.group(3) # 36 for ex , ok to ignore
+                retry_delay += 60 * (1+int(min_s))
+            time.sleep(retry_delay)
+            retry_delay *= 2  # increasing backoff
+    # If all retries fail, return an error message
+    e1_s = f"groq.RateLimitError as e: {str(e)}"
+    e2_s = f"Failed to retrieve chat completion after {max_retries} retries."
+    return f"{e1_s}\n{e2_s}"
 
 chat_completion =groq1(prompt_s, model_s)
 
@@ -77,7 +96,9 @@ str_token_ratio_f = len(prompt_s[:charlim_i]) / chat_completion.usage.total_toke
 
 groq_usage_info_s = f'{datetime.datetime.now()}\n{chat_completion.usage}\nstr_token_ratio_f is {str_token_ratio_f} [approx num of chars per token]'
 
-with open('/tmp/groq_usage_info.txt','w') as gf:
+os.system('mkdir -p /tmp/groq_usage_info/')
+n_s = datetime.datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
+with open(f'/tmp/groq_usage_info/groq_{n_s}.txt','w') as gf:
     s1_s = groq_usage_info_s
     s2_s = f'Prompt:\n{prompt_s[:charlim_i]}'
     s3_s = f'chat_completion:\n{chat_completion}'
