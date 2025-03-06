@@ -54,36 +54,22 @@ def groq1(prompt_s, model_s):
     charlim_i = int(15000 * 1.5)
     max_retries = 3
     retry_delay = 0  # initial delay
-'''    
-    try:
-        chat_completion = client.chat.completions.create(
-            messages=[
-                {"role": "system",
-                 "content": "You are cheerful, curious, and helpful but, please write complete sentences devoid of emoticons and slang, suitable for an article read by serious business people."
-                 },
-                {"role": "user", "content": prompt_s[:charlim_i] }], model=model_s 
-        )
-        return [chat_completion, prompt_s[:charlim_i]]
-    except:
-        'wait until the API allows me to try again, then, try again 3 times.'
-        return 1
-'''
-
-
     for attempt in range(max_retries):
         try:
             chat_completion = client.chat.completions.create(
                 messages=[
                     {"role": "system",
-                     "content": "You are cheerful, curious, and helpful but, please write complete sentences devoid of emoticons and slang, suitable for an article read by serious business people."                     
+                     "content": "You are terse but, you answer in full simple sentences which are helpful, informative, and complete."
                      },
                     {"role": "user", "content": prompt_s[:charlim_i] }
                 ], model=model_s 
             )
             return chat_completion
         except groq.RateLimitError as e:
-    
-    
+            time.sleep(2)
+            return f'groq.RateLimitError as e: {str(e)}'
+
+
 
 groq1_l = groq1(prompt_s, model_s)
 chat_completion = groq1_l[0]
