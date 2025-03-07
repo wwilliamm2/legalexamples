@@ -11,9 +11,12 @@
 # bash pdf_magick_tess22fn_groq.bash 34-2021-00292988-CU-OR-GDS_34_01_25_2021_Complaint_Doyle_Sherrill_M_Pl.pdf
 # bash pdf_magick_tess26fn_groq.bash 34-2021-00293037-CU-OR-GDS_13_04_21_2021_Summons_on_Cross_Complaint_Lu.pdf
 
-bash pdf_magick_tess26fn_groq.bash 34-2021-00293037-CU-OR-GDS_17_02_25_2021_Cross_Complaint_Lupina_Daniel.pdf
-exit
+# bash pdf_magick_tess26fn_groq.bash 34-2021-00293037-CU-OR-GDS_17_02_25_2021_Cross_Complaint_Lupina_Daniel.pdf
+
 bash pdf_magick_tess26fn_groq.bash 34-2021-00293037-CU-OR-GDS_18_02_25_2021_Answer_to_Complaint_Lupina_Da.pdf
+
+exit
+
 bash pdf_magick_tess26fn_groq.bash 34-2021-00293037-CU-OR-GDS_23_01_26_2021_Complaint_Williams_Kelly_Plai.pdf
 bash pdf_magick_tess26fn_groq.bash 34-2021-00293039-CL-OR-GDS_2_03_30_2021_Answer_To_Complaint_Jeff_Brown.pdf
 bash pdf_magick_tess26fn_groq.bash 34-2021-00293039-CL-OR-GDS_5_01_25_2021_Complaint_Global_Capital_Conce.pdf
