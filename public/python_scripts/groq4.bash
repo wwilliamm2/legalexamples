@@ -19,6 +19,6 @@
 prompt_s=$1
 model_s=$2
 
-python ~/lx/lx14/public/py/llm_groq4bash16.py $1 $2
+python ~/lx/lx14/public/py/llm_groq4bash17.py $1 $2
 
 exit
