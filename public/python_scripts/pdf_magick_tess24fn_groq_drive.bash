@@ -15,17 +15,17 @@
 # bash pdf_magick_tess28fn_groq.bash 34-2021-00293037-CU-OR-GDS_23_01_26_2021_Complaint_Williams_Kelly_Plai.pdf
 # bash pdf_magick_tess28fn_groq.bash 34-2021-00293039-CL-OR-GDS_2_03_30_2021_Answer_To_Complaint_Jeff_Brown.pdf
 # bash pdf_magick_tess28fn_groq.bash 34-2021-00293039-CL-OR-GDS_5_01_25_2021_Complaint_Global_Capital_Conce.pdf
+# bash pdf_magick_tess28fn_groq.bash 34-2021-00293053-CU-OR-GDS_12_01_22_2021_Complaint_Griffiths_Gayle_Pla.pdf
+# bash pdf_magick_tess28fn_groq.bash 34-2021-00293059-CL-OR-GDS_4_01_22_2021_Complaint_Consolidated_Electri.pdf
+# bash pdf_magick_tess28fn_groq.bash 34-2021-00293107-CU-OR-GDS_30_01_27_2021_Complaint_Mailman_Randy_M_Pla.pdf
 
-bash pdf_magick_tess28fn_groq.bash 34-2021-00293053-CU-OR-GDS_12_01_22_2021_Complaint_Griffiths_Gayle_Pla.pdf
-bash pdf_magick_tess28fn_groq.bash 34-2021-00293059-CL-OR-GDS_4_01_22_2021_Complaint_Consolidated_Electri.pdf
-bash pdf_magick_tess28fn_groq.bash 34-2021-00293107-CU-OR-GDS_30_01_27_2021_Complaint_Mailman_Randy_M_Pla.pdf
-
-exit
 
 bash pdf_magick_tess28fn_groq.bash 34-2021-00293383-CU-OR-GDS_15_01_29_2021_Complaint_Lakeview_Loan_Servi.pdf
 bash pdf_magick_tess28fn_groq.bash 34-2021-00293419-CU-OR-GDS_32_01_29_2021_Complaint_Davis_John_Plaintif.pdf
 bash pdf_magick_tess28fn_groq.bash 34-2021-00293855-CU-OR-GDS_15_03_10_2021_Amended_Complaint_Wong_Christ.pdf
 bash pdf_magick_tess28fn_groq.bash 34-2021-00293861-CU-OR-GDS_28_02_03_2021_Complaint_Matthew_Dobbins_as_.pdf
+exit
+
 bash pdf_magick_tess28fn_groq.bash 34-2021-00293900-CU-OR-GDS_36_05_21_2021_Answer_To_Cross_Complaint_Mar.pdf
 bash pdf_magick_tess28fn_groq.bash 34-2021-00293900-CU-OR-GDS_37_04_19_2021_Cross_Complaint_Andrews_Gabri.pdf
 bash pdf_magick_tess28fn_groq.bash 34-2021-00293930-CU-OR-GDS_4_02_05_2021_Complaint_Smith_Reggie_Plainti.pdf
