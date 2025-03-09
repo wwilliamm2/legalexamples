@@ -22,13 +22,49 @@ def sshell2(cmd_s):
     out_s = out1_s.decode('utf-8').strip()
     return out_s
 
-# basename of file I want to study
-bnpdf_s = '34-2021-00292515-CU-OR-GDS_29_08_02_2022_Memorandum_of_Points_Authorit.pdf'
-# Later I will get bnpdf_s from sys.argv[1]
-
 # test ; what happens if bash-find gets many file names?
 find1_s = 'find /home/dan/gsc1/cases/case_types/real_property/ -iname '
 many_fnpdf_s_l = sshell2(find1_s+' *memorandum*.pdf').split()
 fnpdf_s = sorted(many_fnpdf_s_l)[0]
 '/home/dan/gsc1/cases/case_types/real_property/23CV001486/23CV001486_20_04_19_2024_Memorandum_of_Points_Authorities_ISO_Demurrer.pdf'
 # test done ; ans: I need to split a large string into list of file names.
+
+# basename of file I want to study
+bnpdf_s = '34-2021-00292515-CU-OR-GDS_29_08_02_2022_Memorandum_of_Points_Authorit.pdf'
+# Later I will get bnpdf_s from sys.argv[1]
+many_fnpdf_s_l = sshell2(f'{find1_s} {bnpdf_s}').split()
+fnpdf_s = sorted(many_fnpdf_s_l)[0]
+
+# Create a name of a folder:
+fn_s = fnpdf_s.replace('.pdf','')
+
+# Generate png files from pdf using imagemagick
+
+# use ~/anaconda3/envs/gemini2 imagemagick to convert pdf to png:
+# I need to cut the pdf into pieces or else magick will choke.
+
+'''
+rm -rf   /tmp/mypdf/
+mkdir -p /tmp/mypdf/
+cp $fnpdf /tmp/mypdf/big.pdf
+'''
+
+sshell2('rm -rf   /tmp/urpdf/')
+sshell2('mkdir -p /tmp/urpdf/')
+sshell2(f'cp {fnpdf_s} /tmp/urpdf/big.pdf')
+
+print('qpdf is busy...')
+
+sshell2('which qpdf')
+
+# test qpdf
+qpdf = os.path.expanduser('~/anaconda3/envs/gemini2/bin/qpdf')
+try:
+    sshell2(f'{qpdf} /tmp/urpdf/big.pdf --pages /tmp/urpdf/big.pdf 1 -- /tmp/urpdf/my001.pdf')
+except:
+    'ignore qpdf errors'
+sshell(f'{qpdf} /tmp/urpdf/big.pdf --pages /tmp/urpdf/big.pdf 1 -- /tmp/urpdf/my001.pdf')
+
+for pg_i in range(1,16):
+    sshell(f'{qpdf} /tmp/urpdf/big.pdf --pages /tmp/urpdf/big.pdf {pg_i} -- /tmp/urpdf/my{pg_i:03}.pdf')
+# works
