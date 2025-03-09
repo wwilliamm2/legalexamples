@@ -120,6 +120,8 @@ date
 # If I have 15 pages I do 2 layers.
 # I use layers to prevent LLM context over-flow
 model_s=llama-3.3-70b-specdec # switch models
+model_s=llama-3.3-70b-versatile # 32k context
+
 # Get first 9 pages and prep for llm 1 summary.  <----
 echo LLM 1 summary is busy please wait .......
 cat summary_prompt10.txt /tmp/mypdf/my00*_llm_enhanced.txt > /tmp/mypdf/full_summary_1_prompt.txt
@@ -139,6 +141,7 @@ date
 
 # switch models:
 model_s=llama-3.3-70b-versatile
+model_s=llama-3.3-70b-specdec # 8k context
 
 if [ -f /tmp/mypdf/my010.pdf.png.txt_llm_enhanced.txt ]; then
     cat summary_prompt12.txt               > /tmp/mypdf/full_summary_2_prompt.txt
