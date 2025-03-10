@@ -8,6 +8,10 @@ conda activate gemini2
 python -i pdf_magick_tess35fn_gemini.py
 '''
 
+# basename of pdf I want to study
+bnpdf_s = '34-2022-00325345-CU-OR-GDS_25_06_05_2023_Memorandum_of_Points_Authorit.pdf'
+# Later I will get bnpdf_s from sys.argv[1]
+
 import datetime, glob, os, re, sys, shlex, subprocess, time
 
 def unq(): return datetime.datetime.now().strftime('%f')
@@ -22,8 +26,8 @@ def wwrite(fn_s, my_s):
     return True
 
 def wwrites(my_s, fn_s):
-    return wwrite(fn_s, my_s) # switch them
-    
+    return wwrite(fn_s, my_s)
+
 def sshell(cmd_s): return os.system(cmd_s)
 
 def sshell2(cmd_s):
@@ -41,9 +45,6 @@ def sshell3(cmd_s):
     wwrite(bash_fn_s, cmd_s+'\n')
     return subprocess.run(['bash', bash_fn_s])
 
-# basename of pdf I want to study
-bnpdf_s = '34-2023-00337041-CU-OR-GDS_21_07_05_2023_Memorandum_of_Points_Authorit.pdf'
-# Later I will get bnpdf_s from sys.argv[1]
 find1_s = 'find /home/dan/gsc1/cases/case_types/real_property/ -iname '
 many_fnpdf_s_l = sshell2(f'{find1_s} {bnpdf_s}').split()
 # Full name of the pdf:
@@ -54,8 +55,6 @@ sshell2(f'mkdir -p {fn_s}')
 
 # Get the first 25 pages of the pdf
 qpdf = os.path.expanduser('~/anaconda3/envs/gemini2/bin/qpdf')
-'llama:   qpdf --pages /tmp/big.pdf 1-25 -- /tmp/little.pdf.' # wrong
-'perplxy: qpdf /tmp/big.pdf --pages . 1-25 -- /tmp/little.pdf' # right
 
 cmd_s = f'''
 rm -rf /tmp/urpdf
@@ -84,7 +83,7 @@ magick = os.path.expanduser('~/anaconda3/envs/gemini2/bin/magick')
 for ffnpdf in glob.glob('/tmp/urpdf/my0*.pdf'):
     sshell2(f'{magick} -density 300 {ffnpdf} -quality 100 {ffnpdf}.png')
 # magick done, I now have png files.
-    
+
 # Use tesseract to generate txt files from png files:
 print('tesseract is busy...')
 tess = os.path.expanduser('~/anaconda3/envs/gemini2/bin/tesseract')
@@ -112,8 +111,8 @@ client = genai.Client(api_key=os.environ["GOOGLE_API_KEY"])
 for txtf_s in glob.glob('/tmp/urpdf/my0*.pdf.png.txt'):
     ocrp2_s = rread('ocr_prompt14pdf.txt') + rread(txtf_s)
     response1 = client.models.generate_content(model=modelf_id, contents=[ocrp2_s])
-    wwrites(response1.text, + 'llm_enhanced_' + txtf_s)
-sshell(f"cat /tmp/urpdf/llm_enhanced_*.txt > /tmp/urpdf/ocr_txt4_llm.txt")
+    wwrites(response1.text, txtf_s + '.txt')
+sshell(f"cat /tmp/urpdf/my0*.txt.txt > /tmp/urpdf/ocr_txt4_llm.txt")
 
 # Summarize the enhanced text
 sshell(f'cat summary_prompt14.txt /tmp/urpdf/ocr_txt4_llm.txt > /tmp/urpdf/full_summary_prompt.txt')
