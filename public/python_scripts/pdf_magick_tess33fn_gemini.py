@@ -113,8 +113,26 @@ sshell('cat /tmp/urpdf/my???.pdf.png.txt > /tmp/urpdf/big.pdf.png.txt')
 
 myf_s_l = [myf_s for myf_s in sorted(glob.glob('/tmp/urpdf/my0*png.txt'))[:15]]
 sshell(f"cat {' '.join(myf_s_l)} > /tmp/urpdf/pages1_14.txt")
-    
-    
 
+# Copy prompt-prefix + pages1_14.txt into /tmp/urpdf/full_summary_1_prompt.txt
+sshell(f'cat summary_prompt10.txt /tmp/urpdf/pages1_14.txt > /tmp/urpdf/full_summary_1_prompt.txt')
+sshell("echo '```' >>  /tmp/urpdf/full_summary_1_prompt.txt")
 
+# Send /tmp/urpdf/full_summary_1_prompt.txt to gemini
 
+with open('/tmp/urpdf/full_summary_1_prompt.txt','r') as fsp:
+    fsp_s = fsp.read()
+
+fsp_s[:33]
+
+from google import genai
+model_id = 'gemini-2.0-flash'
+model_id = 'gemini-2.0-pro-exp-02-05'
+client = genai.Client(api_key=os.environ["GOOGLE_API_KEY"])
+response = client.models.generate_content(model=model_id, contents=[fsp_s])
+response.text
+# response.candidates[0].content.parts[0].text
+with open('/tmp/urpdf/big_llm_1_summary.txt','w') as rspf:
+    rspf.write(response.text)
+
+'done'
