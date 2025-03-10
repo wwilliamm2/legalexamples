@@ -12,11 +12,18 @@ import datetime, glob, os, re, sys, shlex, subprocess, time
 
 def unq(): return datetime.datetime.now().strftime('%f')
 
+def rread(fn_s):
+    with open(fn_s,'r') as rf:
+        return rf.read()
+
 def wwrite(fn_s, my_s):
     with open(fn_s, 'w') as wwf:
         wwf.write(my_s)
     return True
 
+def wwrites(my_s, fn_s):
+    return wwrite(fn_s, my_s) # switch them
+    
 def sshell(cmd_s): return os.system(cmd_s)
 
 def sshell2(cmd_s):
@@ -68,3 +75,52 @@ else:
 
 sshell2(cmd_s)
 
+# Get individual pdf pages:
+for pg_i in range(1,npg_i+1):
+    sshell(f'{qpdf} /tmp/urpdf/big.pdf --pages /tmp/urpdf/big.pdf {pg_i} -- /tmp/urpdf/my{pg_i:03}.pdf')
+
+magick = os.path.expanduser('~/anaconda3/envs/gemini2/bin/magick')
+for ffnpdf in glob.glob('/tmp/urpdf/my0*.pdf'):
+    sshell2(f'{magick} -density 300 {ffnpdf} -quality 100 {ffnpdf}.png')
+# magick done, I now have png files.
+    
+# Use tesseract to generate txt files from png files:
+print('tesseract is busy...')
+tess = os.path.expanduser('~/anaconda3/envs/gemini2/bin/tesseract')
+for fnpng in glob.glob('/tmp/urpdf/my0*.pdf.png'):
+    sshell2(f'{tess} {fnpng} {fnpng}')
+
+# prep txt for the llm to fix the OCR output of pages.
+myf_s_l = [myf_s for myf_s in sorted(glob.glob('/tmp/urpdf/my0*png.txt'))]
+sshell(f"cat {' '.join(myf_s_l)} > /tmp/urpdf/ocr_txt4_llm.txt")
+
+# Copy prompt-prefix + ocr-txt into /tmp/urpdf/full_ocr_prompt.txt
+sshell(f'cat ocr_prompt14pdf.txt /tmp/urpdf/ocr_txt4_llm.txt > /tmp/urpdf/full_ocr_prompt.txt')
+
+# Send /tmp/urpdf/full_ocr_prompt.txt to gemini
+
+fop_s = rread('/tmp/urpdf/full_ocr_prompt.txt')
+
+from google import genai
+model_id = 'gemini-2.0-flash'
+model_id = 'gemini-2.0-pro-exp-02-05'
+client = genai.Client(api_key=os.environ["GOOGLE_API_KEY"])
+response1 = client.models.generate_content(model=model_id, contents=[fop_s])
+# response1.text
+# response1.candidates[0].content.parts[0].text
+
+wwrite('/tmp/urpdf/llm_enhanced_ocr.txt', response1.text)
+# The script has problems here.
+# /tmp/urpdf/llm_enhanced_ocr.txt
+# is incomplete ; I need build up llm_enhanced_ocr.txt page by page.
+
+# Summarize the enhanced text
+sshell(f'cat summary_prompt10.txt /tmp/urpdf/llm_enhanced_ocr.txt > /tmp/urpdf/full_summary_prompt.txt')
+sshell("echo '```' >> /tmp/urpdf/full_summary_prompt.txt")
+
+fsp_s = rread("/tmp/urpdf/full_summary_prompt.txt")
+
+response2 = client.models.generate_content(model=model_id, contents=[fsp_s])
+# response.text
+# response.candidates[0].content.parts[0].text
+wwrite('/tmp/urpdf/full_llm_summary.txt', response2.text)
