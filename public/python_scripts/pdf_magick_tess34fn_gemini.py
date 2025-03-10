@@ -65,5 +65,6 @@ if 25 >= npg_i:
     cmd_s = 'cp /tmp/urpdf/big.pdf /tmp/urpdf/pg1_25.pdf' # just use big.pdf
 else:
     cmd_s = '{qpdf} /tmp/urpdf/big.pdf --pages . 1-25 -- /tmp/urpdf/pg1_25.pdf'
+
 sshell2(cmd_s)
 
