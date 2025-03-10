@@ -136,3 +136,86 @@ with open('/tmp/urpdf/big_llm_1_summary.txt','w') as rspf:
     rspf.write(response.text)
 
 'done'
+
+'''
+Okay, here's a summary of the legal information in `legal_info_and_ocr_info.txt`, prepared for the judge, focusing on the requested elements and avoiding the OCR/LLM generation details:
+
+**Case Summary for Judge**
+
+**Case Name:**  `Adam Harmoning v. Cheyenne Funding et al.`
+
+**Case Number:** 34-2021-00292515
+
+**Court:** Superior Court of the State of California, County of Sacramento
+
+**Current Date of Document:** August 1, 2022, date of signature, Memorandum.
+**Filing Date:** August 2, 2022.
+
+**Document Type:** Memorandum of Points and Authorities in Support of Motion for Dismissal of Action Against Lawyers Title Company and Bea Ayotte; and For Judgment in Their Favor Following Plaintiff's Failure to Amend Complaint
+
+**Parties and Roles:**
+
+*   **Plaintiff:** Adam Harmoning (appearing *pro per*, meaning representing himself)
+*   **Defendants:**
+    *   Cheyenne Funding (aka Cheyenne Funding, a Wyoming Corporation aka Cheyenne Funding, Inc.)
+    *   Milestone Financial LLC
+    *   William R. Stuart
+    *   Lawyers Title Company ("LTC") - *Moving Party for Dismissal*
+    *   Bea Ayotte (aka Beatrice Rose Ayotte aka Beatrice Rose Ayotte-Tyson) - *Moving Party for Dismissal*
+    *   Aquino Trust #2919
+    *   Raul Chavez
+    *   Florence Real Estate
+    *   Christopher J. Firenze
+    *   Emily A. Santana
+    *   Does 8-17 (unnamed defendants)
+
+* **Attorneys:**
+    *   Gina Arico-Smith (SBN: 139645) of Fidelity National Law Group, representing Lawyers Title Company and Bea Ayotte.
+
+**Timeline of Relevant Events:**
+
+1.  **Prior to June 28, 2022:** Plaintiff Adam Harmoning filed a Third Amended Complaint ("TAC") against multiple defendants, including Lawyers Title Company and Bea Ayotte (collectively, "LTC Defendants").
+2.  **June 28, 2022:** The Court issued a tentative ruling sustaining the LTC Defendants' demurrer to the TAC and granted Harmoning leave to amend.  The deadline for filing the amended complaint was set for July 11, 2022.
+3.  **June 29, 2022:** The tentative ruling became a minute order, effective immediately. No formal order or further notice was required.
+4.  **July 11, 2022:** Deadline for Plaintiff Harmoning to file a Fourth Amended Complaint.  He failed to do so.
+5.  **August 1, 2022:** Date of LTC Defendants' current motion.
+6.  **August 2, 2022**: LTC Defendants file the present motion for dismissal.
+7. **Oct 12, 2022**: Date of hearing for Motion. Dept 53, 1:30 p.m.
+
+**Nature of the Motion:**
+
+The LTC Defendants (Lawyers Title Company and Bea Ayotte) are moving for dismissal of the action against them and for entry of judgment in their favor.  The basis for the motion is Plaintiff's failure to file a Fourth Amended Complaint by the court-ordered deadline of July 11, 2022.
+
+**Legal Arguments and Authorities:**
+
+*   **Dismissal for Failure to Amend:**
+    *   **California Rule of Court 3.1320(h):**  Relates to procedures for amending pleadings after a demurrer is sustained.
+    *   **Code of Civil Procedure § 581(f)(2):** Allows the court to dismiss a complaint when a plaintiff fails to amend it within the time allowed by the court after a demurrer is sustained with leave to amend.
+    *    LTC Defendants assert that the court's file should show, pursuant to Evid. Code Section 452(d), that the Fourth Amended Complaint was not filed.
+
+*   **Entry of Separate Judgment:**
+    *   **Code of Civil Procedure § 579:**  Allows the court, in its discretion, to render judgment against one or more defendants, leaving the action to proceed against others, whenever a several judgment is proper.
+    *   **Case Law:**  `Cuevas v. Truline Corp.` (2004) 118 Cal.App.4th 56, 60-61.  This case supports the proposition that the "one final judgment rule" does not prohibit separate judgments against some, but not all, defendants.  It clarifies that CCP § 579 allows for such separate judgments. Other relevant, cited Cases include: `Vandenberg v. Superior Court` (1999) 21 Cal.4th 815, 824, and `T & R Painting Construction, Inc. v. St. Paul Fire & Marine Ins. Co.` (1994) 23 Cal.App.4th 738, 742-743.
+    * LTC Defendants do not know who the remaining defendants are.
+
+**Underlying Dispute (Limited Information):**
+
+The document provides very little information about the underlying dispute. We know:
+
+*   Plaintiff Harmoning filed a Third Amended Complaint, suggesting prior iterations of the complaint and ongoing disputes about its sufficiency.
+*   The LTC Defendants demurred to the Third Amended Complaint, meaning they argued it was legally insufficient.
+*   The court agreed with the LTC Defendants (at least in part) and gave Harmoning a chance to amend.
+*   The specific causes of action and facts are not detailed in this memorandum.  The nature of Harmoning's claims against the LTC Defendants is unknown. We do not know what facts are or were in dispute.
+* There is no explicit mention of money, causes of action, or property, but the involvement of a title company (Lawyers Title Company) suggests a potential dispute related to real estate. The presence of "Cheyenne Funding" and "Milestone Financial LLC" suggests a financial component.
+
+**Relevant Information for the Judge:**
+
+1.  **Procedural Posture:** This is a motion for dismissal based on a procedural failure (failure to amend). The judge needs to verify that the plaintiff did, in fact, fail to file the Fourth Amended Complaint by the deadline.
+2.  **Discretion:**  Code of Civil Procedure § 581(f)(2) states the court *may* dismiss the complaint. This is a discretionary decision. The judge should consider whether there are any extenuating circumstances or reasons to give the plaintiff another opportunity to amend, despite the missed deadline. However, the Plaintiff was *pro per*.
+3.  **Separate Judgment:** The judge needs to determine if a separate judgment for the LTC Defendants is appropriate under CCP § 579. This will likely depend on whether the claims against the LTC Defendants are sufficiently distinct from the claims against the remaining defendants (if any). The *Cuevas* case provides guidance.
+4.  **Underlying Merits:** While the motion is procedural, the judge may want to briefly review the Third Amended Complaint (if available) and the ruling on the demurrer to understand the context of the case and the nature of the deficiencies the plaintiff was supposed to cure. This is important to ensure that dismissal is just and that the plaintiff is not being unfairly penalized for a minor technicality. Because Plaintiff is pro per, a review for fairness is warranted.
+5.  **Verification:** The judge should independently verify that the Fourth Amended Complaint was not filed, as claimed by the LTC Defendants.
+6. **Missing Defendants:** It may be prudent for the Court to ascertain the status of the other Defendants in the case.
+
+This summary provides a clear picture of the procedural situation and the legal arguments, highlighting the key decisions the judge needs to make. It also flags the limited information about the underlying dispute and suggests further review of prior filings to fully understand the context.
+'''
