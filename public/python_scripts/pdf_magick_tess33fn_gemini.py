@@ -35,8 +35,13 @@ bnpdf_s = '34-2021-00292515-CU-OR-GDS_29_08_02_2022_Memorandum_of_Points_Authori
 many_fnpdf_s_l = sshell2(f'{find1_s} {bnpdf_s}').split()
 fnpdf_s = sorted(many_fnpdf_s_l)[0]
 
-# Create a name of a folder:
+# Do I need this:
+dir_cn_s = os.path.dirname(fnpdf_s)
+# ?
+
+# Create a folder which I will use later to store llm summary files:
 fn_s = fnpdf_s.replace('.pdf','')
+sshell2(f'mkdir -p {fn_s}')
 
 # Generate png files from pdf using imagemagick
 
@@ -64,7 +69,52 @@ try:
 except:
     'ignore qpdf errors'
 sshell(f'{qpdf} /tmp/urpdf/big.pdf --pages /tmp/urpdf/big.pdf 1 -- /tmp/urpdf/my001.pdf')
-
+# sshell() works better here.
 for pg_i in range(1,16):
     sshell(f'{qpdf} /tmp/urpdf/big.pdf --pages /tmp/urpdf/big.pdf {pg_i} -- /tmp/urpdf/my{pg_i:03}.pdf')
-# works
+# sshell() works better here.
+
+# Save my work to a folder near the Complaint doc.
+sshell2(f'rsync -av /tmp/urpdf {fn_s}/')
+
+# Use imagemagick to convert pdf files to png.
+'''
+echo magick is busy...
+for ffnpdf in /tmp/mypdf/my0*.pdf
+do
+    echo magick -density 300 $ffnpdf -quality 100 ${ffnpdf}.png
+    ~/anaconda3/envs/gemini2/bin/magick -density 300 $ffnpdf -quality 100 ${ffnpdf}.png
+done
+'''
+
+magick = os.path.expanduser('~/anaconda3/envs/gemini2/bin/magick')
+for ffnpdf in glob.glob('/tmp/urpdf/my0*.pdf'):
+    sshell2(f'{magick} -density 300 {ffnpdf} -quality 100 {ffnpdf}.png')
+# magick done, I now have png files.
+
+# Save my work to a folder near the Complaint doc.
+sshell2(f'rsync -av /tmp/urpdf {fn_s}/')
+
+# Use tesseract to generate txt files from png files:
+print('tesseract is busy...')
+tess = os.path.expanduser('~/anaconda3/envs/gemini2/bin/tesseract')
+for fnpng in glob.glob('/tmp/urpdf/my0*.pdf.png'):
+    sshell2(f'{tess} {fnpng} {fnpng}')
+
+# Save my work to a folder near the Complaint doc.
+sshell2(f'rsync -av /tmp/urpdf {fn_s}/')
+
+# Can I pass a right-carrot to sshell()?
+sshell('cat /tmp/urpdf/my???.pdf.png.txt > /tmp/urpdf/big.pdf.png.txt')
+# yep
+# I will not actually use big.pdf.png.txt but I want to see it.
+
+# Ask the llm to fix the OCR output of pages 0-14
+
+myf_s_l = [myf_s for myf_s in sorted(glob.glob('/tmp/urpdf/my0*png.txt'))[:15]]
+sshell(f"cat {' '.join(myf_s_l)} > /tmp/urpdf/pages1_14.txt")
+    
+    
+
+
+
