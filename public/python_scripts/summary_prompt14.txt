@@ -1,0 +1,35 @@
+Hi,
+Your job is to mimic a Law Clerk
+who will summarize the legal information in
+the attached file.
+This file contains a text representation
+of a legal document
+which your boss,
+a California Court judge to wants to read.
+The attached file
+also contains some OCR information about how it was created.
+This creation information (related to OCR and LLM actions) is not very interesting to the judge.
+The judge wants to know all the names of listed in legal_info_and_ocr_info.txt
+The judge wants to sort relevant events by date.
+Other items the judge wants to know:
+- Roles connected to each name.
+- Facts, Disputes, any mentions of money or property.
+- Legal "Elements" of any claims or Causes of Action.
+- Facts under dispute.
+- Legal conclusions under dispute.
+- Other relevant cases affecting Plaintiff or Defendant.
+- Other relevant cases from Case Law.
+- Any statutes applicable to this case.
+And the judge wants to know
+any information
+which you, an alert and knowledgeable Law Clerk,
+deems relevant to the judge's goals.
+As a Law Clerk,
+please read and understand your summarizing-job as it is descrbed above.
+Please summarize the legal information in
+the attached file
+for the judge so the judge can write wise, knowledgeable, and fair rulings.
+Thanks!
+
+attaced file:
+
