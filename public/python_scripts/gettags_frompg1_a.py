@@ -47,6 +47,14 @@ sshell(cmd_qpdf_s)
 
 magick = os.path.expanduser('~/anaconda3/envs/gemini2/bin/magick')
 
-sshell2(f'{magick} -density 300 {page1pdf} -quality 100 {page1pdf}.png')
+sshell(f'{magick} -density 300 {page1pdf} -quality 100 {page1pdf}.png')
+
+# Use tesseract to get text from png
+
+tess = os.path.expanduser('~/anaconda3/envs/gemini2/bin/tesseract')
+
+sshell(f'{tess} {page1pdf}.png {page1pdf}.png}')
+
+# Prep gemini
 
 'done'
